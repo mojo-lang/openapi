@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Link","type":"object","properties":{"operationRef":{"type":"string"},"operationId":{"type":"string"},"parameters":{"type":"object","additionalProperties":{"type":"string"}},"requestBody":{"$ref":"#/components/schemas/mojo.core.Any"},"description":{"type":"string"},"server":{"$ref":"#/components/schemas/mojo.openapi.Server"}}}

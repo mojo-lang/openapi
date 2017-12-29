@@ -1,0 +1,43 @@
+package openapi
+
+import (
+	jsoniter "github.com/json-iterator/go"
+	"unsafe"
+)
+
+func init() {
+	jsoniter.RegisterTypeDecoder("openapi.ReferenceableParameter", &ReferenceableParameterCodec{})
+	jsoniter.RegisterTypeEncoder("openapi.ReferenceableParameter", &ReferenceableParameterCodec{})
+}
+
+type ReferenceableParameterCodec struct {
+}
+
+func (codec *ReferenceableParameterCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+	any := iter.ReadAny()
+	parameter := (*ReferenceableParameter)(ptr)
+	if any.ValueType() == jsoniter.ObjectValue {
+		if any.Get("$ref") != nil {
+			r := &Reference{}
+			any.ToVal(r)
+			parameter.SetReference(r)
+		} else {
+			s := &Parameter{}
+			any.ToVal(s)
+			parameter.SetParameter(s)
+		}
+	}
+}
+
+func (codec *ReferenceableParameterCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	parameter := (*ReferenceableParameter)(ptr)
+	if s := parameter.GetParameter(); s != nil {
+		stream.WriteVal(s)
+	} else if r := parameter.GetReference(); r != nil {
+		stream.WriteVal(r)
+	}
+}
+
+func (codec *ReferenceableParameterCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	return ((*ReferenceableParameter)(ptr)).ReferenceableParameter == nil
+}

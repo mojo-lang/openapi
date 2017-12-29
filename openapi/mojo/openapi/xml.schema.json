@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Xml","type":"object","properties":{"name":{"type":"string"},"namespace":{"type":"string","format":"url"},"prefix":{"type":"string"},"attribute":{"type":"boolean"},"wrapped":{"type":"boolean"}}}

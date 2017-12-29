@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Response","type":"object","properties":{"headers":{"type":"object","additionalProperties":{"type":"string"}},"content":{"type":"object","additionalProperties":{"type":"string"}},"links":{"type":"object","additionalProperties":{"type":"string"}},"description":{"type":"string"}}}

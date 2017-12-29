@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.ServerVariable","type":"object","properties":{"enum":{"type":"array","items":{"type":"string"}},"default":{"type":"string"},"description":{"$ref":"#/components/schemas/mojo.openapi.CachedDocument"}}}

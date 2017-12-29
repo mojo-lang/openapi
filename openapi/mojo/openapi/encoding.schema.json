@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Encoding","type":"object","properties":{"contentType":{"type":"string"},"headers":{"type":"object","additionalProperties":{"type":"string"}},"style":{"type":"string"},"explode":{"type":"boolean"},"allowReserved":{"type":"boolean"}}}

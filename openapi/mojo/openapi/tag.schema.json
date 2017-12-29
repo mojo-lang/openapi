@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Tag","type":"object","properties":{"name":{"type":"string"},"description":{"$ref":"#/components/schemas/mojo.openapi.CachedDocument"},"externalDocs":{"$ref":"#/components/schemas/mojo.openapi.ExternalDocument"}}}

@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Contact","type":"object","properties":{"url":{"type":"string","format":"url"},"email":{"$ref":"#/components/schemas/mojo.core.EmailAddress"},"name":{"type":"string"}}}

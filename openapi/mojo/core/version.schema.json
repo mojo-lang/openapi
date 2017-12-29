@@ -1,0 +1,1 @@
+{"title":"mojo.core.Version","type":"object","properties":{"minor":{"type":"integer","format":"uint"},"patch":{"type":"integer","format":"uint"},"preReleases":{"type":"array","items":{"type":"string"}},"builds":{"type":"array","items":{"type":"string"}},"major":{"type":"integer","format":"uint"}}}

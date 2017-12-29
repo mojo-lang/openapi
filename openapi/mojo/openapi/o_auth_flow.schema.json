@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.OAuthFlow","type":"object","properties":{"scopes":{"type":"object","additionalProperties":{"type":"string"}},"authorizationUrl":{"type":"string","format":"url"},"tokenUrl":{"type":"string","format":"url"},"refreshUrl":{"type":"string","format":"url"}}}

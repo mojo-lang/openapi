@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Discriminator","type":"object","properties":{"propertyName":{"type":"string"},"mapping":{"type":"object","additionalProperties":{"type":"string"}}}}

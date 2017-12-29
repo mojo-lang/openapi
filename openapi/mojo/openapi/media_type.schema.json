@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.MediaType","type":"object","properties":{"schema":{},"example":{"$ref":"#/components/schemas/mojo.core.Any"},"examples":{"type":"object","additionalProperties":{"type":"string"}},"encoding":{"type":"object","additionalProperties":{"type":"string"}}}}

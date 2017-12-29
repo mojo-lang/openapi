@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Example","type":"object","properties":{"summary":{"type":"string"},"description":{"type":"string"},"value":{"$ref":"#/components/schemas/mojo.core.Any"},"externalValue":{"type":"string","format":"url"}}}

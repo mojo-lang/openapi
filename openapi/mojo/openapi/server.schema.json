@@ -1,0 +1,1 @@
+{"title":"mojo.openapi.Server","type":"object","properties":{"url":{"type":"string","format":"url"},"description":{"$ref":"#/components/schemas/mojo.openapi.CachedDocument"},"variables":{"type":"object","additionalProperties":{"type":"string"}}}}
