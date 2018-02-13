@@ -5,4 +5,9 @@
 /// The default MAY be used as a default response object for all HTTP codes that are not covered individually by the specification.
 ///
 /// The Responses Object MUST contain at least one response code, and it SHOULD be the response for a successful operation call.
-type Responses = {String @in(kHttpStatusCodes, "default"), Response | Reference }
+type Responses = {String @in(HttpStatusCode.k200, "default"): Response | Reference }
+
+enum HttpStatusCode {
+    default
+    k200
+}

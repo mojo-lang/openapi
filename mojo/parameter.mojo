@@ -71,12 +71,12 @@ type Parameter {
         example: Any
 
         /// Examples of the media type. Each example SHOULD contain a value in the correct format as specified in the parameter encoding. The examples object is mutually exclusive of the example object. Furthermore, if referencing a schema which contains an example, the examples value SHALL override the example provided by the schema.
-        examples: {String, Example | Reference}
+        examples: {String: Example | Reference}
     }
 
     /// For more complex scenarios, the content property can define the media type and schema of the parameter. A parameter MUST contain either a schema property, or a content property, but not both. When example or examples are provided in conjunction with the schema object, the example MUST follow the prescribed serialization strategy for the parameter.
     {
         /// A map containing the representations for the parameter. The key is the media type and the value describes it. The map MUST only contain one entry.
-        content: {String, MediaType}
+        content: {String: MediaType}
     }
 }

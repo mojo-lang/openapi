@@ -3,8 +3,8 @@
 /// When using the discriminator, inline schemas will not be considered.
 type Discriminator {
     /// The name of the property in the payload that will hold the discriminator value.
-    property_name: String @required
+    property_name: String @1 @required = r'foobar'
 
     /// An object to hold mappings between payload values and schema names or references.
-    mapping: {String, String}
+    mapping: {String: String} @2
 }

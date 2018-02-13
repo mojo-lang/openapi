@@ -15,10 +15,10 @@ type MediaType {
     /// The examples object is mutually exclusive of the example object.
     /// Furthermore, if referencing a schema which contains an example,
     /// the examples value SHALL override the example provided by the schema.
-    examples: {String, Example | Reference}
+    examples: {String : Example | Reference}
 
     /// A map between a property name and its encoding information.
     /// The key, being the property name, MUST exist in the schema as a property.
     /// The encoding object SHALL only apply to requestBody objects when the media type is multipart or application/x-www-form-urlencoded.
-    encoding: {String, Encoding}
+    encoding: {String : Encoding}
 }

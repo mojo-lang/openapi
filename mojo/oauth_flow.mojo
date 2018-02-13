@@ -11,5 +11,5 @@ type OAuthFlow {
 
     /// The available scopes for the OAuth2 security scheme.
     /// A map between the scope name and a short description for it.
-    scopes: {String, String} @required
+    scopes: {String: String} @required
 }

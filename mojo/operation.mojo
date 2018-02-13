@@ -34,7 +34,7 @@ type Operation {
     /// that may be initiated by the API provider and the expected responses.
     /// The key value used to identify the callback object is an expression,
     /// evaluated at runtime, that identifies a URL to use for the callback operation.
-    callbacks: {String, Callback | Reference}
+    callbacks: {String: Callback | Reference}
 
     /// Declares this operation to be deprecated.
     /// Consumers SHOULD refrain from usage of the declared operation.

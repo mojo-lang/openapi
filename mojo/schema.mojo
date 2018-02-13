@@ -12,11 +12,11 @@ type Schema {
         object //< An unordered set of properties mapping a string to an instance, from the JSON "object" production
     }
 
-    /// The following properties are taken directly from the JSON Schema definition and follow the same specifications:
+    /// The following properties are taken directly from the JSON Schema definition and follow the same specifications
     {
         title: String
 
-        description: String ///< support GFM
+        description: String //< support GFM
 
         /// Value MUST be a string. Multiple types via an array are not supported.
         type: Type

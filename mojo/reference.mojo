@@ -5,5 +5,5 @@
 /// For this specification, reference resolution is accomplished as defined by the JSON Reference specification and not by the JSON Schema specification.
 type Reference {
     /// The reference Uri string.
-    ref: Uri @alias("$ref") @required
+    ref: Uri @1 @alias("$ref") @required
 }
