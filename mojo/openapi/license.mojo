@@ -8,5 +8,5 @@ type License {
     name: String @required
 
     /// A URL to the license used for the API.
-    url: Uri
+    url: Url
 }

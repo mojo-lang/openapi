@@ -65,18 +65,22 @@ type Schema {
 
         min_properties: UInt @default(0)
         
-        required: [String] @unique(true)
+        required: [String] @unique
 
-        enum: [Any] @unique(true) @nonempty(true)
+        enum: [Any] @unique @nonempty
     
         /// Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.
-        all_of: [Schema | Reference] @nonempty(true)
+        /// validates the value against all the subschemas
+        all_of: [Referenceable<Schema>] @nonempty
 
-        one_of: [Schema | Reference]
+        /// validates the value against exactly one of the subschemas
+        one_of: [Referenceable<Schema>]
 
-        any_of: [Schema | Reference]
+        /// validates the value against any (one or more) of the subschemas
+        any_of: [Referenceable<Schema>]
 
-        not: Schema | Reference
+        /// make sure the value is not valid against the specified schema.
+        not: Referenceable<Schema>
 
         default: Any
     }

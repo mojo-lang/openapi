@@ -4,6 +4,8 @@
 ///
 /// For this specification, reference resolution is accomplished as defined by the JSON Reference specification and not by the JSON Schema specification.
 type Reference {
-    /// The reference Uri string.
-    ref: Uri @1 @alias("$ref") @required
+    /// The reference Url string.
+    ref: Url @1 @alias("$ref") @required
 }
+
+type Referenceable<T> = Reference | T

@@ -35,4 +35,4 @@ type OpenAPI {
 /// ```
 /// OpenAPI(package).to<Yaml>
 /// ```
-OpenAPI(Package)
+//OpenAPI(Package: lang.Package)

@@ -1,0 +1,3 @@
+///
+package mojo.openapi {
+}

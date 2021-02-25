@@ -6,7 +6,7 @@ type Xml {
     name: String @1
 
     /// The URI of the namespace definition. Value MUST be in the form of an absolute URI.
-    namespace: Uri @2
+    namespace: Url @2
 
     /// The prefix to be used for the name.
     prefix: String @3

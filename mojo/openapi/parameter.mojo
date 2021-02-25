@@ -65,13 +65,13 @@ type Parameter {
         allow_reserved: Bool
 
         /// The schema defining the type used for the parameter.
-        schema: Schema | Reference
+        schema: Referenceable<Schema>
 
         /// Example of the media type. The example SHOULD match the specified schema and encoding properties if present. The example object is mutually exclusive of the examples object. Furthermore, if referencing a schema which contains an example, the example value SHALL override the example provided by the schema. To represent examples of media types that cannot naturally be represented in JSON or YAML, a string value can contain the example with escaping where necessary.
         example: Any
 
         /// Examples of the media type. Each example SHOULD contain a value in the correct format as specified in the parameter encoding. The examples object is mutually exclusive of the example object. Furthermore, if referencing a schema which contains an example, the examples value SHALL override the example provided by the schema.
-        examples: {String: Example | Reference}
+        examples: {String: Referenceable<Example>}
     }
 
     /// For more complex scenarios, the content property can define the media type and schema of the parameter. A parameter MUST contain either a schema property, or a content property, but not both. When example or examples are provided in conjunction with the schema object, the example MUST follow the prescribed serialization strategy for the parameter.

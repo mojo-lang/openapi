@@ -1,10 +1,10 @@
 /// Defines a security scheme that can be used by the operations. Supported schemes are HTTP authentication, an API key (either as a header or as a query parameter), OAuth2's common flows (implicit, password, application and access code) as defined in RFC6749, and OpenID Connect Discovery.
 type SecurityScheme {
     enum Type {
-        apiKey
+        api_key
         http
         oauth2
-        openIdConnect
+        open_id_connect
     }
 
     /// The type of the security scheme. 
@@ -13,7 +13,7 @@ type SecurityScheme {
     /// A short description for security scheme. CommonMark syntax MAY be used for rich text representation.
     description: String
 
-    @skip(type != apiKey) {
+    @skip(type != Type.api_key) {
         /// The name of the header, query or cookie parameter to be used.
         name: String @required
 
@@ -21,7 +21,7 @@ type SecurityScheme {
         in: String @required
     }
     
-    @skip(type != http) {
+    @skip(type != Type.http) {
         /// The name of the HTTP Authorization scheme to be used in the Authorization header as defined in RFC7235.
         scheme: String @required
 
@@ -30,8 +30,8 @@ type SecurityScheme {
     }
 
     /// An object containing configuration information for the flow types supported.
-    flows: OAuthFlows @required @skip(type != oauth2)
+    flows: OAuthFlows @required @skip(type != Type.oauth2)
 
     /// OpenId Connect URL to discover OAuth2 configuration values. This MUST be in the form of a URL.
-    open_id_connect_url: Uri @required @skip(type != openIdConnect)
+    open_id_connect_url: Url @required @skip(type != Type.open_id_connect)
 }

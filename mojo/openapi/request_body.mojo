@@ -2,7 +2,7 @@
 type RequestBody {
     /// A brief description of the request body.
     /// This could contain examples of use. CommonMark syntax MAY be used for rich text representation.
-    description: String | doc.Document
+    description: Cached<Document>
 
     /// The content of the request body.
     /// The key is a media type or media type range and the value describes it.

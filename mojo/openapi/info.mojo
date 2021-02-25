@@ -4,11 +4,11 @@ type Info {
     title: String @required
 
     /// A short description of the application.
-    /// GFM syntax can be used for rich text representation.
-    description: doc.Document
+    /// CommonMark syntax syntax MAY be used for rich text representation.
+    description: Cached<Document>
 
     /// A URL to the Terms of Service for the API.
-    terms_of_service: Uri
+    terms_of_service: Url
 
     /// The contact information for the exposed API.
     contact: Contact

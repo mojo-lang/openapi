@@ -5,7 +5,7 @@ type Contact {
     name: String @1
 
     /// The URL pointing to the contact information.
-    url: Uri @2
+    url: Url @2
 
     /// The email address of the contact person/organization.
     email: EmailAddress @3

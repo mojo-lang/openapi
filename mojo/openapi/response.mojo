@@ -6,7 +6,7 @@ type Response {
     /// Maps a header name to its definition.
     /// RFC7230 states header names are case insensitive.
     /// If a response header is defined with the name "Content-Type", it SHALL be ignored.
-    headers: {String: Header | Reference}
+    headers: {String: Referenceable<Header>}
 
     /// A map containing descriptions of potential response payloads.
     /// The key is a media type or media type range and the value describes it.
@@ -17,5 +17,5 @@ type Response {
     /// A map of operations links that can be followed from the response.
     /// The key of the map is a short name for the link,
     /// following the naming constraints of the names for Component Objects.
-    links: {String: Link | Reference}
+    links: {String: Referenceable<Link>}
 }

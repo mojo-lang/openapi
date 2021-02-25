@@ -5,7 +5,7 @@ type Tag {
     name: String @1 @required
 
     /// A short description for the tag.
-    description: String @2 | doc.Document @3
+    description: Cached<Document> @3
 
     /// Additional external documentation for this tag.
     external_docs: ExternalDocument @4

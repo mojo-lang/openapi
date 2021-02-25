@@ -8,7 +8,7 @@ type Operation {
     summary: String @max_length(120)
 
     /// A verbose explanation of the operation behavior. GFM syntax can be used for rich text representation.
-    description: String
+    description: Cached<Document>
 
     /// Additional external documentation for this operation.
     external_docs: ExternalDocument
@@ -20,10 +20,10 @@ type Operation {
     operation_id: String
 
     /// A list of parameters that are applicable for this operation. If a parameter is already defined at the Path Item, the new definition will override it but can never remove it. The list MUST NOT include duplicated parameters. A unique parameter is defined by a combination of a name and location. The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object's components/parameters.
-    parameters: [Parameter | Reference]
+    parameters: [Referenceable<Parameter>]
 
     /// The request body applicable for this operation. The requestBody is only supported in HTTP methods where the HTTP 1.1 specification RFC7231 has explicitly defined semantics for request bodies. In other cases where the HTTP spec is vague, requestBody SHALL be ignored by consumers.
-    request_body: RequestBody | Reference
+    request_body: Referenceable<RequestBody>
 
     /// The list of possible responses as they are returned from executing this operation.
     responses: Responses @required
@@ -34,11 +34,11 @@ type Operation {
     /// that may be initiated by the API provider and the expected responses.
     /// The key value used to identify the callback object is an expression,
     /// evaluated at runtime, that identifies a URL to use for the callback operation.
-    callbacks: {String: Callback | Reference}
+    callbacks: {String: Referenceable<Callback>}
 
     /// Declares this operation to be deprecated.
     /// Consumers SHOULD refrain from usage of the declared operation.
-    deprecated: Bool = false
+    deprecated: Bool
 
     /// A declaration of which security mechanisms can be used for this operation.
     /// The list of values includes alternative security requirement objects that can be used.

@@ -3,29 +3,29 @@ type Components {
     type Key : String @template
 
     /// An object to hold reusable Schema Objects.
-    schemas:{Key: Schema | Reference} @1
+    schemas: {Key: Referenceable<Schema>} @1
 
     /// An object to hold reusable Response Objects.
-    responses:{Key: Response | Reference} @2
+    responses:{Key: Referenceable<Response>} @2
 
     /// An object to hold reusable Parameter Objects.
-    parameters:{Key: Parameter | Reference} @3
+    parameters:{Key: Referenceable<Parameter>} @3
 
     /// An object to hold reusable Example Objects.
-    examples:{Key: Example | Reference} @4
+    examples:{Key: Referenceable<Example>} @4
 
     /// An object to hold reusable Request Body Objects.
-    request_bodies:{Key: RequestBody | Reference } @5
+    request_bodies:{Key: Referenceable<RequestBody>} @5
 
     /// An object to hold reusable Header Objects.
-    headers:{Key: Header | Reference} @6
+    headers:{Key: Referenceable<Header>} @6
 
     /// An object to hold reusable Security Scheme Objects.
-    security_schemes:{Key: SecurityScheme | Reference} @7
+    security_schemes:{Key: Referenceable<SecurityScheme>} @7
 
     /// An object to hold reusable Link Objects.
-    links:{Key: Link | Reference} @8
+    links:{Key: Referenceable<Link>} @8
 
     /// An object to hold reusable Callback Objects.
-    callbacks:{Key: Callback | Reference} @9
+    callbacks:{Key: Referenceable<Callback>} @9
 }
