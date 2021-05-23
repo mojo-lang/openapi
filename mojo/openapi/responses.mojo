@@ -5,7 +5,7 @@
 /// The default MAY be used as a default response object for all HTTP codes that are not covered individually by the specification.
 ///
 /// The Responses Object MUST contain at least one response code, and it SHOULD be the response for a successful operation call.
-type Responses = {String @in(HttpStatusCode.code_200, "default"): Referenceable<Response> }
+type Responses : {String: Referenceable<Response> }
 
 enum HttpStatusCode {
     default

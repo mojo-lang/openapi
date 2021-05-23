@@ -12,8 +12,8 @@ type Xml {
     prefix: String @3
 
     /// Declares whether the property definition translates to an attribute instead of an element.
-    attribute: Bool = false @10
+    attribute: Bool @10 = false
 
     /// MAY be used only for an array definition. Signifies whether the array is wrapped (for example, `<books><book/><book/></books>`) or unwrapped (<book/><book/>). Default value is false. The definition takes effect only when defined alongside type being array (outside the items).
-    wrapped: Bool = false @11
+    wrapped: Bool @11 = false
 }

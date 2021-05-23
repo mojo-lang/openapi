@@ -9,5 +9,5 @@ type ServerVariable {
 
     /// An optional description for the server variable.
     /// CommonMark syntax MAY be used for rich text representation.
-    description: Cached<Document> @4
+    description: Cached<document.Document> @4
 }
