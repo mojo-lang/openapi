@@ -9,8 +9,14 @@ syntax = "proto3";
 
 package mojo.openapi;
 
+import "mojo/core/any.proto";
+import "mojo/core/url.proto";
+
+option go_package = "github.com/mojo-lang/openapi/go/pkg/mojo/openapi;openapi";
 
 message Example {
-string summary = 1;
-string description = 2;
+    string summary = 1;
+    string description = 2;
+    mojo.core.Any value = 3;
+    mojo.core.Url external_value = 4;
 }
