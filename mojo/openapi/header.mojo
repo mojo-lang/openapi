@@ -8,4 +8,4 @@
 ///        type: integer
 ///    }
 ///})
-type Header : Parameter @skip_fields('name', 'in')
+type Header : Parameter @ignore_fields('name', 'in')

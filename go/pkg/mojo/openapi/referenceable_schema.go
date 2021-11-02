@@ -96,6 +96,19 @@ func (m *ReferenceableSchema) GetFormat(index map[string]*Schema) string {
 	return ""
 }
 
+func (m *ReferenceableSchema) GetSummary(components *Components) string {
+	if summary := m.GetReference().GetSummary(); len(summary) > 0 {
+		return summary
+	}
+
+	ref := m.GetReferenceUrl()
+	if ref != nil {
+		return components.GetSchema(ref).GetTitle()
+	}
+
+	return m.GetSchema().GetTitle()
+}
+
 func (m *ReferenceableSchema) GetDescription(components *Components) *document.Document {
 	if document := m.GetReference().GetDescription(); document != nil {
 		return document.GetDocument()

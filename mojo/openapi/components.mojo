@@ -1,6 +1,6 @@
 /// Holds a set of reusable objects for different aspects of the OAS. All objects defined within the components object will have no effect on the API unless they are explicitly referenced from properties outside the components object.
 type Components {
-    type Key = String @template
+    type Key = String @format
 
     /// An object to hold reusable Schema Objects.
     schemas: {Key: Schema} @1
