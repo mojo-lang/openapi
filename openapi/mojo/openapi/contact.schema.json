@@ -1,1 +1,1 @@
-{"title":"mojo.openapi.Contact","type":"object","properties":{"url":{"type":"string","format":"url"},"email":{"$ref":"#/components/schemas/mojo.core.EmailAddress"},"name":{"type":"string"}}}
+{"title":"mojo.openapi.Contact","description":"Contact information for the exposed API.","type":"object","properties":{"name":{"description":"The identifying name of the contact person/organization.","type":"string"},"url":{"description":"The URL pointing to the contact information.","type":"string","format":"url"},"email":{"$ref":"#/components/schemas/mojo.core.EmailAddress"}}}

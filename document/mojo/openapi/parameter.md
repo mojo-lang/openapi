@@ -1,15 +1,15 @@
 | 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
 |---|---|---|---|---|---|
-| description |  |  |  |  |
-| required |  |  |  |  |
-| deprecated |  |  |  |  |
-| examples |  |  |  |  |
-| content |  |  |  |  |
-| example | mojo.core.Any |  |  |  |
-| name |  |  |  |  |
-| in |  |  |  |  |
-| allowEmptyValue |  |  |  |  |
-| style |  |  |  |  |
-| explode |  |  |  |  |
-| allowReserved |  |  |  |  |
-| schema |  |  |  |  |
+| `schema` | `0` | `` | 否 |  | The schema defining the type used for the parameter. |
+| `content` | `` | `` | 否 |  | A map containing the representations for the parameter. The key is the media type and the value describes it. The map MUST only contain one entry. |
+| `in` | `string` | `` | 是 |  | The location of the parameter. |
+| `description` | `string` | `` | 否 |  | A brief description of the parameter.This could contain examples of use. GFM syntax can be used for rich text representation. |
+| `required` | `boolean` | `` | 否 |  | Determines whether this parameter is mandatory.If the parameter is in "path", this property is required and its value MUST be true.Otherwise, the property MAY be included and its default value is false. |
+| `allowEmptyValue` | `boolean` | `` | 否 |  | Sets the ability to pass empty-valued parameters. This is valid only for query parameters and allows sending a parameter with an empty value. Default value is false. If style is used, and if behavior is n/a (cannot be serialized), the value of allowEmptyValue SHALL be ignored. |
+| `style` | `string` | `` | 否 |  | Describes how the parameter value will be serialized depending on the type of the parameter value. Default values (based on value of in): for query - form; for path - simple; for header - simple; for cookie - form. |
+| `allowReserved` | `boolean` | `` | 否 |  | Determines whether the parameter value SHOULD allow reserved characters, as defined by RFC3986 :/?#[]@!$&'()*+,;= to be included without percent-encoding. This property only applies to parameters with an in value of query. The default value is false. |
+| `name` | `string` | `` | 是 |  | The name of the parameter. Parameter names are case sensitive.<br>-	If in is "path", the name field MUST correspond to the associated path segment from the path field in the Paths Object. See Path Templating for further information.-	If in is "header" and the name field is "Accept", "Content-Type" or "Authorization", the parameter definition SHALL be ignored.-	For all other cases, the name corresponds to the parameter name used by the in property. |
+| `deprecated` | `boolean` | `` | 否 |  | Specifies that a parameter is deprecated and SHOULD be transitioned out of usage. |
+| `explode` | `boolean` | `` | 否 |  | When this is true, parameter values of type array or object generate separate parameters for each value of the array or key-value pair of the map. For other types of parameters this property has no effect. When style is form, the default value is true. For all other styles, the default value is false. |
+| `example` | `mojo.core.Any` | `` | 否 |  | Example of the media type. The example SHOULD match the specified schema and encoding properties if present. The example object is mutually exclusive of the examples object. Furthermore, if referencing a schema which contains an example, the example value SHALL override the example provided by the schema. To represent examples of media types that cannot naturally be represented in JSON or YAML, a string value can contain the example with escaping where necessary. |
+| `examples` | `` | `` | 否 |  | Examples of the media type. Each example SHOULD contain a value in the correct format as specified in the parameter encoding. The examples object is mutually exclusive of the example object. Furthermore, if referencing a schema which contains an example, the examples value SHALL override the example provided by the schema. |

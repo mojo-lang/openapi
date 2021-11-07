@@ -30,7 +30,7 @@ func (codec *ReferenceCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream)
 	if reference != nil && reference.Ref != nil {
 		stream.WriteObjectStart()
 		stream.WriteObjectField("$ref")
-		stream.WriteString(reference.Ref.Encode())
+		stream.WriteString(reference.Ref.Format())
 
 		if len(reference.Summary) > 0 {
 			stream.WriteMore()
