@@ -19,7 +19,7 @@ message SecurityScheme {
         TYPE_UNSPECIFIED=0;
         TYPE_API_KEY=1;
         TYPE_HTTP=2;
-        TYPE_OAUTH_2=3;
+        TYPE_OAUTH2=3;
         TYPE_OPEN_ID_CONNECT=4;
     }
     Type type = 1;

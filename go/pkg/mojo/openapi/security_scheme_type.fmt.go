@@ -31,7 +31,7 @@ var SecuritySchemeTypeNames = map[int32]string{
 var SecuritySchemeTypeValues = map[string]SecurityScheme_Type{
 	"api_key":         SecurityScheme_TYPE_API_KEY,
 	"http":            SecurityScheme_TYPE_HTTP,
-	"oauth2":          SecurityScheme_TYPE_OAUTH_2,
+	"oauth2":          SecurityScheme_TYPE_OAUTH2,
 	"open_id_connect": SecurityScheme_TYPE_OPEN_ID_CONNECT,
 }
 

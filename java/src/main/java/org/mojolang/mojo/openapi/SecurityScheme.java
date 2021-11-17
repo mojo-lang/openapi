@@ -172,9 +172,9 @@ private static final long serialVersionUID = 0L;
      */
     TYPE_HTTP(2),
     /**
-     * <code>TYPE_OAUTH_2 = 3;</code>
+     * <code>TYPE_OAUTH2 = 3;</code>
      */
-    TYPE_OAUTH_2(3),
+    TYPE_OAUTH2(3),
     /**
      * <code>TYPE_OPEN_ID_CONNECT = 4;</code>
      */
@@ -195,9 +195,9 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TYPE_HTTP_VALUE = 2;
     /**
-     * <code>TYPE_OAUTH_2 = 3;</code>
+     * <code>TYPE_OAUTH2 = 3;</code>
      */
-    public static final int TYPE_OAUTH_2_VALUE = 3;
+    public static final int TYPE_OAUTH2_VALUE = 3;
     /**
      * <code>TYPE_OPEN_ID_CONNECT = 4;</code>
      */
@@ -231,7 +231,7 @@ private static final long serialVersionUID = 0L;
         case 0: return TYPE_UNSPECIFIED;
         case 1: return TYPE_API_KEY;
         case 2: return TYPE_HTTP;
-        case 3: return TYPE_OAUTH_2;
+        case 3: return TYPE_OAUTH2;
         case 4: return TYPE_OPEN_ID_CONNECT;
         default: return null;
       }

@@ -8,22 +8,22 @@
 | `description` | `mojo.openapi.CachedDocument` | `` | 否 |  | support GFM |
 | `type` | `string` | `` | 否 |  | Value MUST be a string. Multiple types via an array are not supported. |
 | `format` | `string` | `` | 否 |  | format is an open string-valued property,and can have any value. Formats such as "Email", "Uuid", and so on,MAY be used even though undefined by this specification.Types that are not accompanied by a format property follow the type definition in the JSON Schema.Tools that do not recognize a specific format MAY default back to the type alone, as if the format is not specified. |
-| `multipleOf` | `integer` | `int` | 否 |  | The value of "multipleOf" MUST be a number, strictly greater than 0.<br>A numeric instance is valid only if division by this keyword's value results in an integer. |
+| `multipleOf` | `integer` | `int64` | 否 |  | The value of "multipleOf" MUST be a number, strictly greater than 0.<br>A numeric instance is valid only if division by this keyword's value results in an integer. |
 | `maximum` | `number` | `` | 否 |  |
 | `exclusiveMaximum` | `number` | `` | 否 |  |
 | `minimum` | `number` | `` | 否 |  |
 | `exclusiveMinimum` | `number` | `` | 否 |  |
-| `maxLength` | `integer` | `uint` | 否 |  |
-| `minLength` | `integer` | `uint` | 否 |  | A string instance is valid against this keyword if its length is greater than, or equal to, the value of this keyword.The length of a string instance is defined as the number of its characters as defined by RFC 7159.Omitting this keyword has the same behavior as a value of 0. |
+| `maxLength` | `integer` | `uint64` | 否 |  |
+| `minLength` | `integer` | `uint64` | 否 |  | A string instance is valid against this keyword if its length is greater than, or equal to, the value of this keyword.The length of a string instance is defined as the number of its characters as defined by RFC 7159.Omitting this keyword has the same behavior as a value of 0. |
 | `pattern` | `mojo.core.Regex` | `` | 否 |  |
 | `items` | `unspecified` | `` | 否 |  | Value MUST be an object and not an array. Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema. items MUST be present if the type is array. |
-| `maxItems` | `integer` | `uint` | 否 |  |
-| `minItems` | `integer` | `uint` | 否 |  |
+| `maxItems` | `integer` | `uint64` | 否 |  |
+| `minItems` | `integer` | `uint64` | 否 |  |
 | `uniqueItems` | `boolean` | `` | 否 |  |
 | `properties` | `Map<string, unspecified>` | `` | 否 |  |
 | `additionalProperties` | `unspecified` | `` | 否 |  |
-| `maxProperties` | `integer` | `uint` | 否 |  |
-| `minProperties` | `integer` | `uint` | 否 |  |
+| `maxProperties` | `integer` | `uint64` | 否 |  |
+| `minProperties` | `integer` | `uint64` | 否 |  |
 | `required` | `Array<string>` | `` | 否 |  |
 | `enum` | `Array<unspecified>` | `` | 否 |  |
 | `allOf` | `Array<unspecified>` | `` | 否 |  | Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.validates the value against all the sub-schemas |
