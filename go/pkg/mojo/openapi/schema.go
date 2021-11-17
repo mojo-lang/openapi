@@ -17,6 +17,9 @@ func (m *Schema) GetTypeName(index map[string]*Schema) string {
 		case Schema_TYPE_ARRAY:
 			return "Array<" + m.Items.GetTypeName(index) + ">"
 		case Schema_TYPE_OBJECT:
+			if m.AdditionalProperties != nil {
+				return "Map<string, " + m.AdditionalProperties.GetTypeName(index) + ">"
+			}
 			return m.Title
 		default:
 			return m.Type.Format()
@@ -80,7 +83,7 @@ func (m *Schema) dependencies(index map[string]*Schema) []*Schema {
 	if m.Type == Schema_TYPE_ARRAY {
 		dependencies = append(dependencies, m.appendSchema(m.Items, index)...)
 	} else if m.Type == Schema_TYPE_OBJECT {
-		if m.AdditionalProperties != nil { // dictionary
+		if m.AdditionalProperties != nil { // map
 			dependencies = append(dependencies, m.appendSchema(m.AdditionalProperties, index)...)
 		} else {
 			for _, property := range m.Properties {

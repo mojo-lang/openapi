@@ -31,19 +31,19 @@ public final class SecuritySchemeProto {
       "\n\"mojo/openapi/security_scheme.proto\022\014mo" +
       "jo.openapi\032\023mojo/core/url.proto\032\"mojo/op" +
       "enapi/cached_document.proto\032\036mojo/openap" +
-      "i/oauth_flows.proto\"\340\002\n\016SecurityScheme\022/" +
+      "i/oauth_flows.proto\"\366\002\n\016SecurityScheme\022/" +
       "\n\004type\030\001 \001(\0162!.mojo.openapi.SecuritySche" +
       "me.Type\0221\n\013description\030\002 \001(\0132\034.mojo.open" +
       "api.CachedDocument\022\014\n\004name\030\005 \001(\t\022\n\n\002in\030\006" +
       " \001(\t\022\016\n\006scheme\030\n \001(\t\022\025\n\rbearer_format\030\013 " +
       "\001(\t\022\'\n\005flows\030\017 \001(\0132\030.mojo.openapi.OAuthF" +
       "lows\022+\n\023open_id_connect_url\030\024 \001(\0132\016.mojo" +
-      ".core.Url\"S\n\004Type\022\020\n\014TYPE_API_KEY\020\000\022\r\n\tT" +
-      "YPE_HTTP\020\001\022\020\n\014TYPE_OAUTH_2\020\002\022\030\n\024TYPE_OPE" +
-      "N_ID_CONNECT\020\003Bl\n\031org.mojolang.mojo.open" +
-      "apiB\023SecuritySchemeProtoP\001Z8github.com/m" +
-      "ojo-lang/openapi/go/pkg/mojo/openapi;ope" +
-      "napib\006proto3"
+      ".core.Url\"i\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022" +
+      "\020\n\014TYPE_API_KEY\020\001\022\r\n\tTYPE_HTTP\020\002\022\020\n\014TYPE" +
+      "_OAUTH_2\020\003\022\030\n\024TYPE_OPEN_ID_CONNECT\020\004Bl\n\031" +
+      "org.mojolang.mojo.openapiB\023SecuritySchem" +
+      "eProtoP\001Z8github.com/mojo-lang/openapi/g" +
+      "o/pkg/mojo/openapi;openapib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

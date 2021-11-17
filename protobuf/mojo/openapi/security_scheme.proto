@@ -16,10 +16,11 @@ option java_package = "org.mojolang.mojo.openapi";
 message SecurityScheme {
     
     enum Type {
-        TYPE_API_KEY=0;
-        TYPE_HTTP=1;
-        TYPE_OAUTH_2=2;
-        TYPE_OPEN_ID_CONNECT=3;
+        TYPE_UNSPECIFIED=0;
+        TYPE_API_KEY=1;
+        TYPE_HTTP=2;
+        TYPE_OAUTH_2=3;
+        TYPE_OPEN_ID_CONNECT=4;
     }
     Type type = 1;
     CachedDocument description = 2;

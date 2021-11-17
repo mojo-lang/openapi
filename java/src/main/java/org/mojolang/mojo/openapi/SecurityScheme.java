@@ -160,40 +160,48 @@ private static final long serialVersionUID = 0L;
   public enum Type
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>TYPE_API_KEY = 0;</code>
+     * <code>TYPE_UNSPECIFIED = 0;</code>
      */
-    TYPE_API_KEY(0),
+    TYPE_UNSPECIFIED(0),
     /**
-     * <code>TYPE_HTTP = 1;</code>
+     * <code>TYPE_API_KEY = 1;</code>
      */
-    TYPE_HTTP(1),
+    TYPE_API_KEY(1),
     /**
-     * <code>TYPE_OAUTH_2 = 2;</code>
+     * <code>TYPE_HTTP = 2;</code>
      */
-    TYPE_OAUTH_2(2),
+    TYPE_HTTP(2),
     /**
-     * <code>TYPE_OPEN_ID_CONNECT = 3;</code>
+     * <code>TYPE_OAUTH_2 = 3;</code>
      */
-    TYPE_OPEN_ID_CONNECT(3),
+    TYPE_OAUTH_2(3),
+    /**
+     * <code>TYPE_OPEN_ID_CONNECT = 4;</code>
+     */
+    TYPE_OPEN_ID_CONNECT(4),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>TYPE_API_KEY = 0;</code>
+     * <code>TYPE_UNSPECIFIED = 0;</code>
      */
-    public static final int TYPE_API_KEY_VALUE = 0;
+    public static final int TYPE_UNSPECIFIED_VALUE = 0;
     /**
-     * <code>TYPE_HTTP = 1;</code>
+     * <code>TYPE_API_KEY = 1;</code>
      */
-    public static final int TYPE_HTTP_VALUE = 1;
+    public static final int TYPE_API_KEY_VALUE = 1;
     /**
-     * <code>TYPE_OAUTH_2 = 2;</code>
+     * <code>TYPE_HTTP = 2;</code>
      */
-    public static final int TYPE_OAUTH_2_VALUE = 2;
+    public static final int TYPE_HTTP_VALUE = 2;
     /**
-     * <code>TYPE_OPEN_ID_CONNECT = 3;</code>
+     * <code>TYPE_OAUTH_2 = 3;</code>
      */
-    public static final int TYPE_OPEN_ID_CONNECT_VALUE = 3;
+    public static final int TYPE_OAUTH_2_VALUE = 3;
+    /**
+     * <code>TYPE_OPEN_ID_CONNECT = 4;</code>
+     */
+    public static final int TYPE_OPEN_ID_CONNECT_VALUE = 4;
 
 
     public final int getNumber() {
@@ -220,10 +228,11 @@ private static final long serialVersionUID = 0L;
      */
     public static Type forNumber(int value) {
       switch (value) {
-        case 0: return TYPE_API_KEY;
-        case 1: return TYPE_HTTP;
-        case 2: return TYPE_OAUTH_2;
-        case 3: return TYPE_OPEN_ID_CONNECT;
+        case 0: return TYPE_UNSPECIFIED;
+        case 1: return TYPE_API_KEY;
+        case 2: return TYPE_HTTP;
+        case 3: return TYPE_OAUTH_2;
+        case 4: return TYPE_OPEN_ID_CONNECT;
         default: return null;
       }
     }
@@ -543,7 +552,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (type_ != org.mojolang.mojo.openapi.SecurityScheme.Type.TYPE_API_KEY.getNumber()) {
+    if (type_ != org.mojolang.mojo.openapi.SecurityScheme.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
     if (description_ != null) {
@@ -576,7 +585,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (type_ != org.mojolang.mojo.openapi.SecurityScheme.Type.TYPE_API_KEY.getNumber()) {
+    if (type_ != org.mojolang.mojo.openapi.SecurityScheme.Type.TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, type_);
     }

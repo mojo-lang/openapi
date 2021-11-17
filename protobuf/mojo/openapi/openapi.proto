@@ -183,8 +183,8 @@ message Schema {
         TYPE_NUMBER=3;
         TYPE_STRING=4;
         TYPE_BOOLEAN=5;
-        TYPE_ARRAY=6;
-        TYPE_OBJECT=7;
+        TYPE_ARRAY=10;
+        TYPE_OBJECT=11;
     }
     Discriminator discriminator = 1;
     Xml xml = 2;

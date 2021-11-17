@@ -23,32 +23,32 @@ import (
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("openapi.Parameter_Location", &ParameterLocationCodec{})
-	jsoniter.RegisterTypeEncoder("openapi.Parameter_Location", &ParameterLocationCodec{})
+	jsoniter.RegisterTypeDecoder("openapi.Parameter_Style", &ParameterStyleCodec{})
+	jsoniter.RegisterTypeEncoder("openapi.Parameter_Style", &ParameterStyleCodec{})
 }
 
-type ParameterLocationCodec struct {
+type ParameterStyleCodec struct {
 }
 
-func (codec *ParameterLocationCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+func (codec *ParameterStyleCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
 	any := iter.ReadAny()
-	e := (*Parameter_Location)(ptr)
+	e := (*Parameter_Style)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
 		e.Parse(any.ToString())
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
-		if _, ok := ParameterLocationNames[value]; ok {
-			*e = Parameter_Location(value)
+		if _, ok := ParameterStyleNames[value]; ok {
+			*e = Parameter_Style(value)
 		}
 	}
 }
 
-func (codec *ParameterLocationCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
-	e := (*Parameter_Location)(ptr)
+func (codec *ParameterStyleCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	e := (*Parameter_Style)(ptr)
 	stream.WriteString(e.Format())
 }
 
-func (codec *ParameterLocationCodec) IsEmpty(ptr unsafe.Pointer) bool {
-	e := (*Parameter_Location)(ptr)
+func (codec *ParameterStyleCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	e := (*Parameter_Style)(ptr)
 	return e == nil || *e == 0
 }

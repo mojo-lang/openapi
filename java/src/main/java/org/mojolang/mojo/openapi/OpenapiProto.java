@@ -454,8 +454,8 @@ public final class OpenapiProto {
       "nceableSchema:\0028\001\"\222\001\n\004Type\022\024\n\020TYPE_UNSPE" +
       "CIFIED\020\000\022\r\n\tTYPE_NULL\020\001\022\020\n\014TYPE_INTEGER\020" +
       "\002\022\017\n\013TYPE_NUMBER\020\003\022\017\n\013TYPE_STRING\020\004\022\020\n\014T" +
-      "YPE_BOOLEAN\020\005\022\016\n\nTYPE_ARRAY\020\006\022\017\n\013TYPE_OB" +
-      "JECT\020\007\"\213\001\n\025ReferenceableResponse\022,\n\trefe" +
+      "YPE_BOOLEAN\020\005\022\016\n\nTYPE_ARRAY\020\n\022\017\n\013TYPE_OB" +
+      "JECT\020\013\"\213\001\n\025ReferenceableResponse\022,\n\trefe" +
       "rence\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000\022*" +
       "\n\010response\030\002 \001(\0132\026.mojo.openapi.Response" +
       "H\000B\030\n\026referenceable_response\"\217\001\n\026Referen" +

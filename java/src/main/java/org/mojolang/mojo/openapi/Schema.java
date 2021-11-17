@@ -432,13 +432,13 @@ private static final long serialVersionUID = 0L;
      */
     TYPE_BOOLEAN(5),
     /**
-     * <code>TYPE_ARRAY = 6;</code>
+     * <code>TYPE_ARRAY = 10;</code>
      */
-    TYPE_ARRAY(6),
+    TYPE_ARRAY(10),
     /**
-     * <code>TYPE_OBJECT = 7;</code>
+     * <code>TYPE_OBJECT = 11;</code>
      */
-    TYPE_OBJECT(7),
+    TYPE_OBJECT(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -467,13 +467,13 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TYPE_BOOLEAN_VALUE = 5;
     /**
-     * <code>TYPE_ARRAY = 6;</code>
+     * <code>TYPE_ARRAY = 10;</code>
      */
-    public static final int TYPE_ARRAY_VALUE = 6;
+    public static final int TYPE_ARRAY_VALUE = 10;
     /**
-     * <code>TYPE_OBJECT = 7;</code>
+     * <code>TYPE_OBJECT = 11;</code>
      */
-    public static final int TYPE_OBJECT_VALUE = 7;
+    public static final int TYPE_OBJECT_VALUE = 11;
 
 
     public final int getNumber() {
@@ -506,8 +506,8 @@ private static final long serialVersionUID = 0L;
         case 3: return TYPE_NUMBER;
         case 4: return TYPE_STRING;
         case 5: return TYPE_BOOLEAN;
-        case 6: return TYPE_ARRAY;
-        case 7: return TYPE_OBJECT;
+        case 10: return TYPE_ARRAY;
+        case 11: return TYPE_OBJECT;
         default: return null;
       }
     }

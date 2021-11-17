@@ -15,6 +15,7 @@
 /// Defines a security scheme that can be used by the operations. Supported schemes are HTTP authentication, an API key (either as a header or as a query parameter), OAuth2's common flows (implicit, password, application and access code) as defined in RFC6749, and OpenID Connect Discovery.
 type SecurityScheme {
     enum Type {
+        unspecified @0
         api_key @1
         http    @2
         oauth2  @3

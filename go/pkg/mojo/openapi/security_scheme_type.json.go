@@ -23,32 +23,32 @@ import (
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("openapi.Parameter_Location", &ParameterLocationCodec{})
-	jsoniter.RegisterTypeEncoder("openapi.Parameter_Location", &ParameterLocationCodec{})
+	jsoniter.RegisterTypeDecoder("openapi.SecurityScheme_Type", &SecuritySchemeTypeCodec{})
+	jsoniter.RegisterTypeEncoder("openapi.SecurityScheme_Type", &SecuritySchemeTypeCodec{})
 }
 
-type ParameterLocationCodec struct {
+type SecuritySchemeTypeCodec struct {
 }
 
-func (codec *ParameterLocationCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+func (codec *SecuritySchemeTypeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
 	any := iter.ReadAny()
-	e := (*Parameter_Location)(ptr)
+	e := (*SecurityScheme_Type)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
 		e.Parse(any.ToString())
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
-		if _, ok := ParameterLocationNames[value]; ok {
-			*e = Parameter_Location(value)
+		if _, ok := SecuritySchemeTypeNames[value]; ok {
+			*e = SecurityScheme_Type(value)
 		}
 	}
 }
 
-func (codec *ParameterLocationCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
-	e := (*Parameter_Location)(ptr)
+func (codec *SecuritySchemeTypeCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	e := (*SecurityScheme_Type)(ptr)
 	stream.WriteString(e.Format())
 }
 
-func (codec *ParameterLocationCodec) IsEmpty(ptr unsafe.Pointer) bool {
-	e := (*Parameter_Location)(ptr)
+func (codec *SecuritySchemeTypeCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	e := (*SecurityScheme_Type)(ptr)
 	return e == nil || *e == 0
 }

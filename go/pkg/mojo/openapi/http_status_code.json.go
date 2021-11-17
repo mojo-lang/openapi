@@ -23,32 +23,32 @@ import (
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("openapi.Parameter_Location", &ParameterLocationCodec{})
-	jsoniter.RegisterTypeEncoder("openapi.Parameter_Location", &ParameterLocationCodec{})
+	jsoniter.RegisterTypeDecoder("openapi.HttpStatusCode", &HttpStatusCodeCodec{})
+	jsoniter.RegisterTypeEncoder("openapi.HttpStatusCode", &HttpStatusCodeCodec{})
 }
 
-type ParameterLocationCodec struct {
+type HttpStatusCodeCodec struct {
 }
 
-func (codec *ParameterLocationCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
+func (codec *HttpStatusCodeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
 	any := iter.ReadAny()
-	e := (*Parameter_Location)(ptr)
+	e := (*HttpStatusCode)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
 		e.Parse(any.ToString())
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
-		if _, ok := ParameterLocationNames[value]; ok {
-			*e = Parameter_Location(value)
+		if _, ok := HttpStatusCodeNames[value]; ok {
+			*e = HttpStatusCode(value)
 		}
 	}
 }
 
-func (codec *ParameterLocationCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
-	e := (*Parameter_Location)(ptr)
+func (codec *HttpStatusCodeCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
+	e := (*HttpStatusCode)(ptr)
 	stream.WriteString(e.Format())
 }
 
-func (codec *ParameterLocationCodec) IsEmpty(ptr unsafe.Pointer) bool {
-	e := (*Parameter_Location)(ptr)
+func (codec *HttpStatusCodeCodec) IsEmpty(ptr unsafe.Pointer) bool {
+	e := (*HttpStatusCode)(ptr)
 	return e == nil || *e == 0
 }
