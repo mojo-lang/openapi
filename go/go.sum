@@ -177,6 +177,7 @@ github.com/mojo-lang/core/go v0.0.0-20211117011141-4ab29472fc29/go.mod h1:SbUGVb
 github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918 h1:66kArgQdu6RbAHzyHtDl9Ip1Z30uQ5+tp6tvQlvdAto=
 github.com/mojo-lang/core/go v0.0.0-20211121055316-dc6cb21cb918/go.mod h1:SbUGVbcq9wVDkQrM2HKwI2mrp3xOsfs2tODfoIVukpE=
 github.com/mojo-lang/core/go v0.0.0-20211123010202-03f9f6e22fd2/go.mod h1:wxoQGiRDiWUOr780A65MRvGpgRvOMswKGMzHFtgVGI8=
+github.com/mojo-lang/core/go v0.0.0-20211126004149-a6ec5e569d52/go.mod h1:wxoQGiRDiWUOr780A65MRvGpgRvOMswKGMzHFtgVGI8=
 github.com/mojo-lang/document/go v0.0.0-20211106131928-67b6b04572d3 h1:NdSw9BWwOifCu0LjSbMq0bGqH7V2dtWPEkW1JbVj1ns=
 github.com/mojo-lang/document/go v0.0.0-20211106131928-67b6b04572d3/go.mod h1:B8FLoQtR5NieYcldXtsFpEiSmu9CTxkLSIJ5X8mDVTM=
 github.com/mojo-lang/document/go v0.0.0-20211107045651-9076e258cfc9 h1:5b1Ber/scI564EfnwJIBLAS6l4agcLNv1CvpPo5ZM1o=
@@ -187,6 +188,8 @@ github.com/mojo-lang/document/go v0.0.0-20211120065328-ad33b3c38ee1 h1:oASH/ffbS
 github.com/mojo-lang/document/go v0.0.0-20211120065328-ad33b3c38ee1/go.mod h1:UvN11oZksSczoJcxCR8CSsEhxt/rNbTtWq89Qlh6oMM=
 github.com/mojo-lang/document/go v0.0.0-20211123010423-4d1131c8a392 h1:UNOp9WDxQ6QQ7mwydx4yiwQMvS4s5oUiPM4daclZogo=
 github.com/mojo-lang/document/go v0.0.0-20211123010423-4d1131c8a392/go.mod h1:qqzKQt3lxSBuYMUrUDjN+S6ipl4PlbdLM6HY9tQFrK8=
+github.com/mojo-lang/document/go v0.0.0-20211126004316-126384672b9f h1:Cosr1d5DlUVAYNXSXWBJAQbvjLF6/OrNSL2TzWd0b/g=
+github.com/mojo-lang/document/go v0.0.0-20211126004316-126384672b9f/go.mod h1:eTWRwK5n4ZR6dfie9CCOqNqNjqt+Z/zu1Zbo44XTTeA=
 github.com/pascaldekloe/name v0.0.0-20180628100202-0fd16699aae1/go.mod h1:eD5JxqMiuNYyFNmyY9rkJ/slN8y59oEu4Ei7F8OoKWQ=
 github.com/phpdave11/gofpdf v1.4.2 h1:KPKiIbfwbvC/wOncwhrpRdXVj2CZTCFlw4wnoyjtHfQ=
 github.com/phpdave11/gofpdf v1.4.2/go.mod h1:zpO6xFn9yxo3YLyMvW8HcKWVdbNqgIfOOp2dXMnm1mY=

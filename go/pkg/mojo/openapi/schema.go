@@ -11,6 +11,26 @@ func (m *Schema) IsPropertyRequired(property string) bool {
 	return false
 }
 
+func (m *Schema) FieldNames(index map[string]*Schema) []string {
+	var fieldNames []string
+	if m == nil {
+		return fieldNames
+	}
+
+	if len(m.AllOf) > 0 {
+		for _, s := range m.AllOf {
+			names := s.GetSchemaOf(index).FieldNames(index)
+			fieldNames = append(fieldNames, names...)
+		}
+		return fieldNames
+	}
+
+	for key, _ := range m.Properties {
+		fieldNames = append(fieldNames, key)
+	}
+	return fieldNames
+}
+
 func (m *Schema) GetTypeName(index map[string]*Schema) string {
 	if m != nil {
 		switch m.Type {
