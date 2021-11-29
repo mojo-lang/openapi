@@ -8,8 +8,8 @@ import (
 
 func (m *CachedDocument) GetDocument() *document.Document {
 	if m != nil {
-		if m.Value != nil {
-			return m.Value
+		if m.Val != nil {
+			return m.Val
 		} else {
 			md := markdown.New()
 			doc, err := md.Parse(m.Cache)
@@ -17,7 +17,7 @@ func (m *CachedDocument) GetDocument() *document.Document {
 				logs.Warnw("failed to parse markdown from document")
 				return nil
 			}
-			m.Value = doc
+			m.Val = doc
 			return doc
 		}
 	}
@@ -26,9 +26,9 @@ func (m *CachedDocument) GetDocument() *document.Document {
 
 func (m *CachedDocument) GetStringDocument() string {
 	if m != nil {
-		if m.Value != nil {
+		if m.Val != nil {
 			md := markdown.New()
-			str, err := md.RenderToString(m.Value)
+			str, err := md.RenderToString(m.Val)
 			if err != nil {
 				logs.Warnw("failed to render markdown to string document")
 				return ""

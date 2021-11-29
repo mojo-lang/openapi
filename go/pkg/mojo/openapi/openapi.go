@@ -10,7 +10,7 @@ func NewOpenApi() *OpenAPI {
 			Patch: 3,
 		},
 		Info:       &Info{},
-		Paths:      &Paths{Values: map[string]*PathItem{}},
+		Paths:      &Paths{Vals: map[string]*PathItem{}},
 		Components: &Components{Schemas: map[string]*Schema{}},
 	}
 }

@@ -57,7 +57,7 @@ message OpenAPI {
 }
 
 message Callback {
-    map<string, PathItem> values = 1;
+    map<string, PathItem> vals = 1;
 }
 
 message Encoding {
@@ -171,7 +171,7 @@ message Response {
 }
 
 message Responses {
-    map<string, ReferenceableResponse> values = 1;
+    map<string, ReferenceableResponse> vals = 1;
 }
 
 message Schema {
@@ -266,7 +266,7 @@ message ReferenceableSchema {
 }
 
 message Paths {
-    map<string, PathItem> values = 1;
+    map<string, PathItem> vals = 1;
 }
 
 message ReferenceablePathItem {

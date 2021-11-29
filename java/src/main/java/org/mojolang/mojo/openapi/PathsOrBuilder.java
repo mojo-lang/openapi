@@ -8,36 +8,36 @@ public interface PathsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>map&lt;string, .mojo.openapi.PathItem&gt; values = 1;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
-  int getValuesCount();
+  int getValsCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.PathItem&gt; values = 1;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
-  boolean containsValues(
+  boolean containsVals(
       java.lang.String key);
   /**
-   * Use {@link #getValuesMap()} instead.
+   * Use {@link #getValsMap()} instead.
    */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, org.mojolang.mojo.openapi.PathItem>
-  getValues();
+  getVals();
   /**
-   * <code>map&lt;string, .mojo.openapi.PathItem&gt; values = 1;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
   java.util.Map<java.lang.String, org.mojolang.mojo.openapi.PathItem>
-  getValuesMap();
+  getValsMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.PathItem&gt; values = 1;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
 
-  org.mojolang.mojo.openapi.PathItem getValuesOrDefault(
+  org.mojolang.mojo.openapi.PathItem getValsOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.PathItem defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.PathItem&gt; values = 1;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
 
-  org.mojolang.mojo.openapi.PathItem getValuesOrThrow(
+  org.mojolang.mojo.openapi.PathItem getValsOrThrow(
       java.lang.String key);
 }

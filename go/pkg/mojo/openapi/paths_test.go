@@ -7,7 +7,7 @@ import (
 )
 
 func TestPathsCodec_Decode(t *testing.T) {
-	paths := &Paths{Values: map[string]*PathItem{
+	paths := &Paths{Vals: map[string]*PathItem{
 		"/foo/bar": {Get: &Operation{Summary: "foo.bar"}},
 	}}
 
@@ -17,5 +17,5 @@ func TestPathsCodec_Decode(t *testing.T) {
 	ps := &Paths{}
 	err = jsoniter.UnmarshalFromString(str, ps)
 	assert.NoError(t, err)
-	assert.Equal(t, paths.Values["/foo/bar"].Get.Summary, ps.Values["/foo/bar"].Get.Summary)
+	assert.Equal(t, paths.Vals["/foo/bar"].Get.Summary, ps.Vals["/foo/bar"].Get.Summary)
 }

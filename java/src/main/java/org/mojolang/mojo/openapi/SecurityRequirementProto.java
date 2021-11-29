@@ -20,10 +20,10 @@ public final class SecurityRequirementProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mojo_openapi_SecurityRequirement_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mojo_openapi_SecurityRequirement_ValuesEntry_descriptor;
+    internal_static_mojo_openapi_SecurityRequirement_ValsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mojo_openapi_SecurityRequirement_ValuesEntry_fieldAccessorTable;
+      internal_static_mojo_openapi_SecurityRequirement_ValsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -34,14 +34,14 @@ public final class SecurityRequirementProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'mojo/openapi/security_requirement.prot" +
-      "o\022\014mojo.openapi\032\025mojo/core/boxed.proto\"\227" +
-      "\001\n\023SecurityRequirement\022=\n\006values\030\001 \003(\0132-" +
-      ".mojo.openapi.SecurityRequirement.Values" +
-      "Entry\032A\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022!\n\005val" +
-      "ue\030\002 \001(\0132\022.mojo.core.Strings:\0028\001Bq\n\031org." +
-      "mojolang.mojo.openapiB\030SecurityRequireme" +
-      "ntProtoP\001Z8github.com/mojo-lang/openapi/" +
-      "go/pkg/mojo/openapi;openapib\006proto3"
+      "o\022\014mojo.openapi\032\025mojo/core/boxed.proto\"\221" +
+      "\001\n\023SecurityRequirement\0229\n\004vals\030\001 \003(\0132+.m" +
+      "ojo.openapi.SecurityRequirement.ValsEntr" +
+      "y\032?\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022!\n\005value\030\002 \001" +
+      "(\0132\022.mojo.core.Strings:\0028\001Bq\n\031org.mojola" +
+      "ng.mojo.openapiB\030SecurityRequirementProt" +
+      "oP\001Z8github.com/mojo-lang/openapi/go/pkg" +
+      "/mojo/openapi;openapib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53,12 +53,12 @@ public final class SecurityRequirementProto {
     internal_static_mojo_openapi_SecurityRequirement_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_openapi_SecurityRequirement_descriptor,
-        new java.lang.String[] { "Values", });
-    internal_static_mojo_openapi_SecurityRequirement_ValuesEntry_descriptor =
+        new java.lang.String[] { "Vals", });
+    internal_static_mojo_openapi_SecurityRequirement_ValsEntry_descriptor =
       internal_static_mojo_openapi_SecurityRequirement_descriptor.getNestedTypes().get(0);
-    internal_static_mojo_openapi_SecurityRequirement_ValuesEntry_fieldAccessorTable = new
+    internal_static_mojo_openapi_SecurityRequirement_ValsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mojo_openapi_SecurityRequirement_ValuesEntry_descriptor,
+        internal_static_mojo_openapi_SecurityRequirement_ValsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     org.mojolang.mojo.core.BoxedProto.getDescriptor();
   }

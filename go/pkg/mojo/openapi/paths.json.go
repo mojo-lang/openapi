@@ -17,22 +17,22 @@ func (codec *PathsCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator) {
 	any := iter.ReadAny()
 	paths := (*Paths)(ptr)
 	if any.ValueType() == jsoniter.ObjectValue {
-		if paths.Values == nil {
-			paths.Values = make(map[string]*PathItem)
+		if paths.Vals == nil {
+			paths.Vals = make(map[string]*PathItem)
 		}
-		any.ToVal(&paths.Values)
+		any.ToVal(&paths.Vals)
 	}
 }
 
 func (codec *PathsCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
 	paths := (*Paths)(ptr)
 
-	if paths != nil && len(paths.Values) > 0 {
-		stream.WriteVal(paths.Values)
+	if paths != nil && len(paths.Vals) > 0 {
+		stream.WriteVal(paths.Vals)
 	}
 }
 
 func (codec *PathsCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	paths := (*Paths)(ptr)
-	return paths == nil || len(paths.Values) == 0
+	return paths == nil || len(paths.Vals) == 0
 }

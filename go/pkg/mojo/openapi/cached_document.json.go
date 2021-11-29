@@ -18,8 +18,8 @@ func (codec *CachedDocumentCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iter
 	any := iter.ReadAny()
 	doc := (*CachedDocument)(ptr)
 	if any.ValueType() == jsoniter.ObjectValue {
-		doc.Value = &document.Document{}
-		any.ToVal(doc.Value)
+		doc.Val = &document.Document{}
+		any.ToVal(doc.Val)
 	} else if any.ValueType() == jsoniter.StringValue {
 		doc.Cache = any.ToString()
 	}
@@ -32,5 +32,5 @@ func (codec *CachedDocumentCodec) Encode(ptr unsafe.Pointer, stream *jsoniter.St
 
 func (codec *CachedDocumentCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	doc := (*CachedDocument)(ptr)
-	return doc == nil || (len(doc.Cache) == 0 && doc.Value == nil)
+	return doc == nil || (len(doc.Cache) == 0 && doc.Val == nil)
 }
