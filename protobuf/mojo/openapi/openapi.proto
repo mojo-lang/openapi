@@ -11,13 +11,15 @@ import "mojo/core/version.proto";
 import "mojo/mojo.proto";
 import "mojo/openapi/cached_document.proto";
 import "mojo/openapi/discriminator.proto";
+import "mojo/openapi/example.proto";
 import "mojo/openapi/external_document.proto";
 import "mojo/openapi/info.proto";
+import "mojo/openapi/link.proto";
 import "mojo/openapi/reference.proto";
 import "mojo/openapi/referenceable_example.proto";
 import "mojo/openapi/referenceable_link.proto";
-import "mojo/openapi/referenceable_security_scheme.proto";
 import "mojo/openapi/security_requirement.proto";
+import "mojo/openapi/security_scheme.proto";
 import "mojo/openapi/server.proto";
 import "mojo/openapi/tag.proto";
 import "mojo/openapi/xml.proto";
@@ -34,15 +36,15 @@ enum HttpStatusCode {
 
 message Components {
     map<string, Schema> schemas = 1;
-    map<string, ReferenceableResponse> responses = 2;
-    map<string, ReferenceableParameter> parameters = 3;
-    map<string, ReferenceableExample> examples = 4;
-    map<string, ReferenceableRequestBody> request_bodies = 5;
-    map<string, ReferenceableHeader> headers = 6;
-    map<string, ReferenceableSecurityScheme> security_schemes = 7;
-    map<string, ReferenceableLink> links = 8;
-    map<string, ReferenceableCallback> callbacks = 9;
-    map<string, ReferenceablePathItem> path_items = 10;
+    map<string, Response> responses = 2;
+    map<string, Parameter> parameters = 3;
+    map<string, Example> examples = 4;
+    map<string, RequestBody> request_bodies = 5;
+    map<string, Header> headers = 6;
+    map<string, SecurityScheme> security_schemes = 7;
+    map<string, Link> links = 8;
+    map<string, Callback> callbacks = 9;
+    map<string, PathItem> path_items = 10;
 }
 
 message OpenAPI {
@@ -223,10 +225,17 @@ message Schema {
     bool deprecated = 53;
 }
 
-message ReferenceableResponse {
-    oneof referenceable_response {
+message ReferenceableHeader {
+    oneof referenceable_header {
         Reference reference = 1;
-        Response response = 2;
+        Header header = 2;
+    }
+}
+
+message ReferenceableSchema {
+    oneof referenceable_schema {
+        Reference reference = 1;
+        Schema schema = 2;
     }
 }
 
@@ -244,13 +253,6 @@ message ReferenceableRequestBody {
     }
 }
 
-message ReferenceableHeader {
-    oneof referenceable_header {
-        Reference reference = 1;
-        Header header = 2;
-    }
-}
-
 message ReferenceableCallback {
     oneof referenceable_callback {
         Reference reference = 1;
@@ -258,20 +260,13 @@ message ReferenceableCallback {
     }
 }
 
-message ReferenceableSchema {
-    oneof referenceable_schema {
+message ReferenceableResponse {
+    oneof referenceable_response {
         Reference reference = 1;
-        Schema schema = 2;
+        Response response = 2;
     }
 }
 
 message Paths {
     map<string, PathItem> vals = 1;
-}
-
-message ReferenceablePathItem {
-    oneof referenceable_path_item {
-        Reference reference = 1;
-        PathItem path_item = 2;
-    }
 }

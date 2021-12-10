@@ -42,11 +42,11 @@ public interface ComponentsOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; responses = 2;</code>
+   * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
   int getResponsesCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; responses = 2;</code>
+   * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
   boolean containsResponses(
       java.lang.String key);
@@ -54,33 +54,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getResponsesMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableResponse>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Response>
   getResponses();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; responses = 2;</code>
+   * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableResponse>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Response>
   getResponsesMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; responses = 2;</code>
+   * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableResponse getResponsesOrDefault(
+  org.mojolang.mojo.openapi.Response getResponsesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableResponse defaultValue);
+      org.mojolang.mojo.openapi.Response defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; responses = 2;</code>
+   * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableResponse getResponsesOrThrow(
+  org.mojolang.mojo.openapi.Response getResponsesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableParameter&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
   int getParametersCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableParameter&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
   boolean containsParameters(
       java.lang.String key);
@@ -88,33 +88,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getParametersMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableParameter>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Parameter>
   getParameters();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableParameter&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableParameter>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Parameter>
   getParametersMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableParameter&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableParameter getParametersOrDefault(
+  org.mojolang.mojo.openapi.Parameter getParametersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableParameter defaultValue);
+      org.mojolang.mojo.openapi.Parameter defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableParameter&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableParameter getParametersOrThrow(
+  org.mojolang.mojo.openapi.Parameter getParametersOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 4;</code>
+   * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
   int getExamplesCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 4;</code>
+   * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
   boolean containsExamples(
       java.lang.String key);
@@ -122,33 +122,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getExamplesMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableExample>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Example>
   getExamples();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 4;</code>
+   * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableExample>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Example>
   getExamplesMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 4;</code>
+   * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
+  org.mojolang.mojo.openapi.Example getExamplesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableExample defaultValue);
+      org.mojolang.mojo.openapi.Example defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 4;</code>
+   * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrThrow(
+  org.mojolang.mojo.openapi.Example getExamplesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableRequestBody&gt; request_bodies = 5;</code>
+   * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
   int getRequestBodiesCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableRequestBody&gt; request_bodies = 5;</code>
+   * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
   boolean containsRequestBodies(
       java.lang.String key);
@@ -156,33 +156,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getRequestBodiesMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableRequestBody>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.RequestBody>
   getRequestBodies();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableRequestBody&gt; request_bodies = 5;</code>
+   * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableRequestBody>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.RequestBody>
   getRequestBodiesMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableRequestBody&gt; request_bodies = 5;</code>
+   * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableRequestBody getRequestBodiesOrDefault(
+  org.mojolang.mojo.openapi.RequestBody getRequestBodiesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableRequestBody defaultValue);
+      org.mojolang.mojo.openapi.RequestBody defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableRequestBody&gt; request_bodies = 5;</code>
+   * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableRequestBody getRequestBodiesOrThrow(
+  org.mojolang.mojo.openapi.RequestBody getRequestBodiesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 6;</code>
+   * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
   int getHeadersCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 6;</code>
+   * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
   boolean containsHeaders(
       java.lang.String key);
@@ -190,33 +190,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getHeadersMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Header>
   getHeaders();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 6;</code>
+   * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Header>
   getHeadersMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 6;</code>
+   * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
+  org.mojolang.mojo.openapi.Header getHeadersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableHeader defaultValue);
+      org.mojolang.mojo.openapi.Header defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 6;</code>
+   * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrThrow(
+  org.mojolang.mojo.openapi.Header getHeadersOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableSecurityScheme&gt; security_schemes = 7;</code>
+   * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
   int getSecuritySchemesCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableSecurityScheme&gt; security_schemes = 7;</code>
+   * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
   boolean containsSecuritySchemes(
       java.lang.String key);
@@ -224,33 +224,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getSecuritySchemesMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableSecurityScheme>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.SecurityScheme>
   getSecuritySchemes();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableSecurityScheme&gt; security_schemes = 7;</code>
+   * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableSecurityScheme>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.SecurityScheme>
   getSecuritySchemesMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableSecurityScheme&gt; security_schemes = 7;</code>
+   * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableSecurityScheme getSecuritySchemesOrDefault(
+  org.mojolang.mojo.openapi.SecurityScheme getSecuritySchemesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableSecurityScheme defaultValue);
+      org.mojolang.mojo.openapi.SecurityScheme defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableSecurityScheme&gt; security_schemes = 7;</code>
+   * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableSecurityScheme getSecuritySchemesOrThrow(
+  org.mojolang.mojo.openapi.SecurityScheme getSecuritySchemesOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 8;</code>
+   * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
   int getLinksCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 8;</code>
+   * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
   boolean containsLinks(
       java.lang.String key);
@@ -258,33 +258,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getLinksMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableLink>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Link>
   getLinks();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 8;</code>
+   * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableLink>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Link>
   getLinksMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 8;</code>
+   * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableLink getLinksOrDefault(
+  org.mojolang.mojo.openapi.Link getLinksOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableLink defaultValue);
+      org.mojolang.mojo.openapi.Link defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 8;</code>
+   * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableLink getLinksOrThrow(
+  org.mojolang.mojo.openapi.Link getLinksOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 9;</code>
+   * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
   int getCallbacksCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 9;</code>
+   * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
   boolean containsCallbacks(
       java.lang.String key);
@@ -292,33 +292,33 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getCallbacksMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableCallback>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Callback>
   getCallbacks();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 9;</code>
+   * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableCallback>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Callback>
   getCallbacksMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 9;</code>
+   * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrDefault(
+  org.mojolang.mojo.openapi.Callback getCallbacksOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableCallback defaultValue);
+      org.mojolang.mojo.openapi.Callback defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 9;</code>
+   * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrThrow(
+  org.mojolang.mojo.openapi.Callback getCallbacksOrThrow(
       java.lang.String key);
 
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceablePathItem&gt; path_items = 10;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
   int getPathItemsCount();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceablePathItem&gt; path_items = 10;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
   boolean containsPathItems(
       java.lang.String key);
@@ -326,24 +326,24 @@ public interface ComponentsOrBuilder extends
    * Use {@link #getPathItemsMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceablePathItem>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.PathItem>
   getPathItems();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceablePathItem&gt; path_items = 10;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceablePathItem>
+  java.util.Map<java.lang.String, org.mojolang.mojo.openapi.PathItem>
   getPathItemsMap();
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceablePathItem&gt; path_items = 10;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceablePathItem getPathItemsOrDefault(
+  org.mojolang.mojo.openapi.PathItem getPathItemsOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceablePathItem defaultValue);
+      org.mojolang.mojo.openapi.PathItem defaultValue);
   /**
-   * <code>map&lt;string, .mojo.openapi.ReferenceablePathItem&gt; path_items = 10;</code>
+   * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
 
-  org.mojolang.mojo.openapi.ReferenceablePathItem getPathItemsOrThrow(
+  org.mojolang.mojo.openapi.PathItem getPathItemsOrThrow(
       java.lang.String key);
 }

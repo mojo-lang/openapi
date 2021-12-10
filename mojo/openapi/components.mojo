@@ -20,29 +20,29 @@ type Components {
     schemas: {Key: Schema} @1
 
     /// An object to hold reusable Response Objects.
-    responses: {Key: Referenceable<Response>} @2
+    responses: {Key: Response} @2
 
     /// An object to hold reusable Parameter Objects.
-    parameters: {Key: Referenceable<Parameter>} @3
+    parameters: {Key: Parameter} @3
 
     /// An object to hold reusable Example Objects.
-    examples: {Key: Referenceable<Example>} @4
+    examples: {Key: Example} @4
 
     /// An object to hold reusable Request Body Objects.
-    request_bodies: {Key: Referenceable<RequestBody>} @5
+    request_bodies: {Key: RequestBody} @5
 
     /// An object to hold reusable Header Objects.
-    headers: {Key: Referenceable<Header>} @6
+    headers: {Key: Header} @6
 
     /// An object to hold reusable Security Scheme Objects.
-    security_schemes: {Key: Referenceable<SecurityScheme>} @7
+    security_schemes: {Key: SecurityScheme} @7
 
     /// An object to hold reusable Link Objects.
-    links: {Key: Referenceable<Link>} @8
+    links: {Key: Link} @8
 
     /// An object to hold reusable Callback Objects.
-    callbacks: {Key: Referenceable<Callback>} @9
+    callbacks: {Key: Callback} @9
 
     /// An object to hold reusable Path Item Object.
-    path_items: {Key: Referenceable<PathItem>} @10
+    path_items: {Key: PathItem} @10
 }

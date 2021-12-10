@@ -5,6 +5,21 @@ import (
 	"strings"
 )
 
+func NewComponents() *Components {
+	return &Components{
+		Schemas:         make(map[string]*Schema),
+		Responses:       nil,
+		Parameters:      nil,
+		Examples:        nil,
+		RequestBodies:   nil,
+		Headers:         nil,
+		SecuritySchemes: nil,
+		Links:           nil,
+		Callbacks:       nil,
+		PathItems:       nil,
+	}
+}
+
 func (m *Components) GetSchema(url *core.Url) *Schema {
 	if m == nil {
 		return nil
