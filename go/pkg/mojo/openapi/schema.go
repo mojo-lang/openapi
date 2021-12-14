@@ -57,7 +57,8 @@ func (m *Schema) IsScalar() bool {
 }
 
 func (m *Schema) Dependencies(index map[string]*Schema) []*Schema {
-	dependencies := m.dependencies(index)
+	duplicates := make(map[string]bool)
+	dependencies := m.dependencies(index, duplicates)
 
 	mask := make(map[string]bool)
 	var cleanDeps []*Schema
@@ -74,26 +75,34 @@ func (m *Schema) Dependencies(index map[string]*Schema) []*Schema {
 	return cleanDeps
 }
 
-func (m *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Schema) []*Schema {
+func (m *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Schema, duplicates map[string]bool) []*Schema {
 	var dependencies []*Schema
 	s := schema.GetSchemaOf(index)
 
+	if duplicates[s.Title] {
+		return dependencies
+	}
+
 	if s.Items != nil {
-		return m.appendSchema(s.Items, index)
+		return m.appendSchema(s.Items, index, duplicates)
 	}
 
 	if !s.IsScalar() {
 		dependencies = append(dependencies, s)
+		duplicates[s.Title] = true
 
-		ds := s.dependencies(index)
+		ds := s.dependencies(index, duplicates)
 		if len(ds) > 0 {
 			dependencies = append(dependencies, ds...)
+		}
+		for _, dep := range ds {
+			duplicates[dep.Title] = true
 		}
 	}
 	return dependencies
 }
 
-func (m *Schema) dependencies(index map[string]*Schema) []*Schema {
+func (m *Schema) dependencies(index map[string]*Schema, duplicates map[string]bool) []*Schema {
 	var dependencies []*Schema
 
 	if m == nil {
@@ -101,20 +110,20 @@ func (m *Schema) dependencies(index map[string]*Schema) []*Schema {
 	}
 
 	if m.Type == Schema_TYPE_ARRAY {
-		dependencies = append(dependencies, m.appendSchema(m.Items, index)...)
+		dependencies = append(dependencies, m.appendSchema(m.Items, index, duplicates)...)
 	} else if m.Type == Schema_TYPE_OBJECT {
 		if m.AdditionalProperties != nil { // map
-			dependencies = append(dependencies, m.appendSchema(m.AdditionalProperties, index)...)
+			dependencies = append(dependencies, m.appendSchema(m.AdditionalProperties, index, duplicates)...)
 		} else {
 			for _, property := range m.Properties {
-				dependencies = append(dependencies, m.appendSchema(property, index)...)
+				dependencies = append(dependencies, m.appendSchema(property, index, duplicates)...)
 			}
 		}
 	} else if len(m.AllOf) > 0 {
 		for _, item := range m.AllOf {
 			schema := item.GetSchemaOf(index)
 			if !schema.IsScalar() {
-				ds := schema.dependencies(index)
+				ds := schema.dependencies(index, duplicates)
 				if len(ds) > 0 {
 					dependencies = append(dependencies, ds...)
 				}
@@ -122,7 +131,7 @@ func (m *Schema) dependencies(index map[string]*Schema) []*Schema {
 		}
 	} else if len(m.OneOf) > 0 {
 		for _, s := range m.OneOf {
-			dependencies = append(dependencies, m.appendSchema(s, index)...)
+			dependencies = append(dependencies, m.appendSchema(s, index, duplicates)...)
 		}
 	}
 
