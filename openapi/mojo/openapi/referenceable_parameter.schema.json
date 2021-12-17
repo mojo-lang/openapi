@@ -1,1 +1,1 @@
-{"oneOf":[{"$ref":"#/components/schemas/mojo.openapi.Reference"},{"$ref":"#/components/schemas/mojo.openapi.Parameter"}]}
+{"title":"mojo.openapi.ReferenceableParameter","oneOf":[{"$ref":"#/components/schemas/mojo.openapi.Reference"},{"$ref":"#/components/schemas/mojo.openapi.Parameter"}]}

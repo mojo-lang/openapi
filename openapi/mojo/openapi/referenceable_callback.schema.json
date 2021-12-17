@@ -1,1 +1,1 @@
-{"oneOf":[{"$ref":"#/components/schemas/mojo.openapi.Reference"},{"$ref":"#/components/schemas/mojo.openapi.Callback"}]}
+{"title":"mojo.openapi.ReferenceableCallback","oneOf":[{"$ref":"#/components/schemas/mojo.openapi.Reference"},{"$ref":"#/components/schemas/mojo.openapi.Callback"}]}

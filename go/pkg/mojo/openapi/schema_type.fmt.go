@@ -52,7 +52,7 @@ func (x Schema_Type) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *Schema_Type) Parse(value string) {
+func (x *Schema_Type) Parse(value string) error {
 	if x != nil {
 		s, ok := SchemaTypeValues[value]
 		if ok {
@@ -63,4 +63,5 @@ func (x *Schema_Type) Parse(value string) {
 	} else {
 		*x = Schema_TYPE_NULL
 	}
+	return nil
 }

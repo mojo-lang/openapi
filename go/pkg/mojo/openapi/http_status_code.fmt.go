@@ -42,7 +42,7 @@ func (x HttpStatusCode) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *HttpStatusCode) Parse(value string) {
+func (x *HttpStatusCode) Parse(value string) error {
 	if x != nil {
 		s, ok := HttpStatusCodeValues[value]
 		if ok {
@@ -53,4 +53,5 @@ func (x *HttpStatusCode) Parse(value string) {
 	} else {
 		*x = HttpStatusCode_HTTP_STATUS_CODE_DEFAULT
 	}
+	return nil
 }

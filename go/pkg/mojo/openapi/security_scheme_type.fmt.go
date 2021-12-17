@@ -46,7 +46,7 @@ func (x SecurityScheme_Type) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *SecurityScheme_Type) Parse(value string) {
+func (x *SecurityScheme_Type) Parse(value string) error {
 	if x != nil {
 		s, ok := SecuritySchemeTypeValues[value]
 		if ok {
@@ -57,4 +57,5 @@ func (x *SecurityScheme_Type) Parse(value string) {
 	} else {
 		*x = SecurityScheme_TYPE_API_KEY
 	}
+	return nil
 }

@@ -1,5 +1,7 @@
 package openapi
 
+import "bytes"
+
 func (m *Schema) IsPropertyRequired(property string) bool {
 	if m != nil {
 		for _, r := range m.Required {
@@ -40,7 +42,26 @@ func (m *Schema) GetTypeName(index map[string]*Schema) string {
 			if m.AdditionalProperties != nil {
 				return "Map<string, " + m.AdditionalProperties.GetTypeName(index) + ">"
 			}
-			return m.Title
+			if len(m.Title) > 0 {
+				return m.Title
+			}
+			return m.Type.Format()
+		case Schema_TYPE_UNSPECIFIED:
+			if len(m.Title) > 0 {
+				return m.Title
+			}
+			if len(m.OneOf) > 0 { // union type
+				buffer := bytes.NewBuffer(make([]byte, 0, 64))
+				buffer.WriteString("Union<")
+				for i, one := range m.OneOf {
+					if i > 0 {
+						buffer.WriteByte(',')
+					}
+					buffer.WriteString(one.GetTypeName(index))
+				}
+				buffer.WriteString(">")
+				return buffer.String()
+			}
 		default:
 			return m.Type.Format()
 		}

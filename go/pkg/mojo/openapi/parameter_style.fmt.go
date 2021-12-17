@@ -52,7 +52,7 @@ func (x Parameter_Style) Format() string {
 	return strconv.Itoa(int(x))
 }
 
-func (x *Parameter_Style) Parse(value string) {
+func (x *Parameter_Style) Parse(value string) error {
 	if x != nil {
 		s, ok := ParameterStyleValues[value]
 		if ok {
@@ -63,4 +63,5 @@ func (x *Parameter_Style) Parse(value string) {
 	} else {
 		*x = Parameter_STYLE_MATRIX
 	}
+	return nil
 }
