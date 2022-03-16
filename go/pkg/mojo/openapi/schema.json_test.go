@@ -8,7 +8,7 @@ import (
 
 func TestSchemaPropertiesEncoder_Encode(t *testing.T) {
 	schema := &Schema{
-		Title:                "Test",
+		Title: "Test",
 		Properties: map[string]*ReferenceableSchema{
 			"bcd": NewReferenceableSchema(&Schema{Type: Schema_TYPE_STRING}),
 			"efg": NewReferenceableSchema(&Schema{Type: Schema_TYPE_STRING}),

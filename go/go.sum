@@ -81,7 +81,6 @@ github.com/go-gl/glfw/v3.3/glfw v0.0.0-20191125211704-12ad95a8df72/go.mod h1:tQ2
 github.com/go-gl/glfw/v3.3/glfw v0.0.0-20200222043503-6f7a984d4dc4/go.mod h1:tQ2UAYgL5IevRw8kRxooKSPJfGvJ9fJQFa0TUsXzTg8=
 github.com/go-swiss/fonts v0.0.0-20210417170609-5d357d615b8f h1:8xTPqp2aMscGdQ3yAzRyxk2REUSNR2x8ak4WzbjRfHo=
 github.com/go-swiss/fonts v0.0.0-20210417170609-5d357d615b8f/go.mod h1:kDru5pqfnVEL7+5tYsZOuWRGeWpDJHveRKxRJe5y0hE=
-github.com/gogo/protobuf v1.3.2 h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=
 github.com/gogo/protobuf v1.3.2/go.mod h1:P1XiOD3dCwIKUDQYPy72D8LYyHL2YPYrpS2s69NZV8Q=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
 github.com/golang/groupcache v0.0.0-20190702054246-869f871628b6/go.mod h1:cIg4eruTrX1D+g88fzRXU5OdNfaM+9IcxsU14FzY7Hc=
@@ -150,7 +149,6 @@ github.com/googleapis/gax-go/v2 v2.0.4/go.mod h1:0Wqv26UfaUD9n4G6kQubkQ+KchISgw+
 github.com/googleapis/gax-go/v2 v2.0.5/go.mod h1:DWXyrwAJ9X0FpwwEdw+IPEYBICEFu5mhpdKc/us6bOk=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
-github.com/iancoleman/strcase v0.2.0 h1:05I4QRnGpI0m37iZQRuskXh+w77mr6Z41lwQzuHLwW0=
 github.com/iancoleman/strcase v0.2.0/go.mod h1:iwCmte+B7n89clKwxIoIXy/HfoL7AsD47ZCWhYzw7ho=
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
@@ -174,11 +172,9 @@ github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 h1:ZqeYNhU3OH
 github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421/go.mod h1:6dJC0mAP4ikYIbvyc7fijjWJddQyLn8Ig3JB5CqoB9Q=
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
-github.com/mojo-lang/core/go v0.0.0-20211210011915-b1eb7bdf1cb3 h1:8uW6QG+e/AlijNa/2NsfG0gVH9cvxmEClVoAp2RqUr4=
-github.com/mojo-lang/core/go v0.0.0-20211210011915-b1eb7bdf1cb3/go.mod h1:/OxRlMkDnfHCVDWGTVW+ZD7OUgV3AMfuH5rhdSxpzCM=
 github.com/mojo-lang/core/go v0.0.0-20211217054003-aa2685cde731/go.mod h1:/OxRlMkDnfHCVDWGTVW+ZD7OUgV3AMfuH5rhdSxpzCM=
-github.com/mojo-lang/document/go v0.0.0-20211210013335-fcd578ecb1ad h1:p9zc4pWl+fYuAovd0+Uyv2ZpYCHoKrf63/SxQV9UWPQ=
-github.com/mojo-lang/document/go v0.0.0-20211210013335-fcd578ecb1ad/go.mod h1:ykkysfwfzZtBo4yylMb8X7osP+o5bcJLpEhpMmL9Tfo=
+github.com/mojo-lang/core/go v0.0.0-20220316072623-f4cf14310a3a h1:3Lu340RZF1GWq4ovufTdd1wijTCdv2VjkDIRH5YYAmQ=
+github.com/mojo-lang/core/go v0.0.0-20220316072623-f4cf14310a3a/go.mod h1:iLzR5Qo24QD/iTD65j/J6ANEWCptD0wf3KsiGnX/Vd8=
 github.com/mojo-lang/document/go v0.0.0-20211217054243-5f99395f7054 h1:/XgfKtgJXKMD8rOwaZVAoBXkXxdtddyx3uqqOLycGnQ=
 github.com/mojo-lang/document/go v0.0.0-20211217054243-5f99395f7054/go.mod h1:VQ10MLbKXbWYRhiSAbVQjb4Dv4ZGUSoApPo0OpuNcmU=
 github.com/pascaldekloe/name v0.0.0-20180628100202-0fd16699aae1/go.mod h1:eD5JxqMiuNYyFNmyY9rkJ/slN8y59oEu4Ei7F8OoKWQ=

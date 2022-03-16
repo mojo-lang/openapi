@@ -36,4 +36,3 @@ func (codec *ResponsesCodec) IsEmpty(ptr unsafe.Pointer) bool {
 	responses := (*Responses)(ptr)
 	return responses == nil || len(responses.Vals) == 0
 }
-

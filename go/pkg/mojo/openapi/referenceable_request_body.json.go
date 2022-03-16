@@ -1,6 +1,5 @@
 package openapi
 
-
 import (
 	jsoniter "github.com/json-iterator/go"
 	"unsafe"
