@@ -1,40 +1,40 @@
 package openapi
 
 import (
-	jsoniter "github.com/json-iterator/go"
-	"sort"
-	"unsafe"
+    jsoniter "github.com/json-iterator/go"
+    "sort"
+    "unsafe"
 )
 
 func init() {
-	jsoniter.RegisterFieldEncoder("openapi.Schema", "Properties", &SchemaPropertiesEncoder{})
+    jsoniter.RegisterFieldEncoder("openapi.Schema", "Properties", &SchemaPropertiesEncoder{})
 }
 
 type SchemaPropertiesEncoder struct {
 }
 
 func (codec *SchemaPropertiesEncoder) Encode(ptr unsafe.Pointer, stream *jsoniter.Stream) {
-	properties := (*map[string]*ReferenceableSchema)(ptr)
+    properties := (*map[string]*ReferenceableSchema)(ptr)
 
-	var keys []string
-	for key, _ := range *properties {
-		keys = append(keys, key)
-	}
-	sort.Strings(keys)
+    var keys []string
+    for key := range *properties {
+        keys = append(keys, key)
+    }
+    sort.Strings(keys)
 
-	stream.WriteObjectStart()
-	for i, key := range keys {
-		if i > 0 {
-			stream.WriteMore()
-		}
+    stream.WriteObjectStart()
+    for i, key := range keys {
+        if i > 0 {
+            stream.WriteMore()
+        }
 
-		stream.WriteObjectField(key)
-		stream.WriteVal((*properties)[key])
-	}
-	stream.WriteObjectEnd()
+        stream.WriteObjectField(key)
+        stream.WriteVal((*properties)[key])
+    }
+    stream.WriteObjectEnd()
 }
 
 func (codec *SchemaPropertiesEncoder) IsEmpty(ptr unsafe.Pointer) bool {
-	properties := (*map[string]*ReferenceableSchema)(ptr)
-	return properties == nil || len(*properties) == 0
+    properties := (*map[string]*ReferenceableSchema)(ptr)
+    return properties == nil || len(*properties) == 0
 }
