@@ -20,25 +20,25 @@ func NewReferencedSchema(reference *Reference) *ReferenceableSchema {
     return s
 }
 
-func (m *ReferenceableSchema) SetSchema(schema *Schema) {
-    if m != nil {
-        m.ReferenceableSchema = &ReferenceableSchema_Schema{
+func (x *ReferenceableSchema) SetSchema(schema *Schema) {
+    if x != nil {
+        x.ReferenceableSchema = &ReferenceableSchema_Schema{
             Schema: schema,
         }
     }
 }
 
-func (m *ReferenceableSchema) SetReference(reference *Reference) {
-    if m != nil {
-        m.ReferenceableSchema = &ReferenceableSchema_Reference{
+func (x *ReferenceableSchema) SetReference(reference *Reference) {
+    if x != nil {
+        x.ReferenceableSchema = &ReferenceableSchema_Reference{
             Reference: reference,
         }
     }
 }
 
-func (m *ReferenceableSchema) SetReferenceUrl(reference string) {
-    if m != nil {
-        m.ReferenceableSchema = &ReferenceableSchema_Reference{
+func (x *ReferenceableSchema) SetReferenceUrl(reference string) {
+    if x != nil {
+        x.ReferenceableSchema = &ReferenceableSchema_Reference{
             Reference: &Reference{
                 Ref: core.NewUrl(reference),
             },
@@ -46,17 +46,17 @@ func (m *ReferenceableSchema) SetReferenceUrl(reference string) {
     }
 }
 
-func (m *ReferenceableSchema) GetReferenceUrl() *core.Url {
-    return m.GetReference().GetRef()
+func (x *ReferenceableSchema) GetReferenceUrl() *core.Url {
+    return x.GetReference().GetRef()
 }
 
-func (m *ReferenceableSchema) GetSchemaName() string {
-    reference := m.GetReference()
+func (x *ReferenceableSchema) GetSchemaName() string {
+    reference := x.GetReference()
     if reference != nil {
         return reference.GetSchemaName()
     }
 
-    schema := m.GetSchema()
+    schema := x.GetSchema()
     if schema != nil {
         return schema.Title
     }
@@ -64,9 +64,9 @@ func (m *ReferenceableSchema) GetSchemaName() string {
     return ""
 }
 
-func (m *ReferenceableSchema) GetSchemaOf(index map[string]*Schema) *Schema {
-    if m != nil {
-        reference := m.GetReference()
+func (x *ReferenceableSchema) GetSchemaOf(index map[string]*Schema) *Schema {
+    if x != nil {
+        reference := x.GetReference()
         if reference != nil {
             fragment := reference.GetRef().GetFragment()
             key := strings.TrimPrefix(fragment, ReferenceRoot)
@@ -75,51 +75,51 @@ func (m *ReferenceableSchema) GetSchemaOf(index map[string]*Schema) *Schema {
             }
             return nil
         }
-        return m.GetSchema()
+        return x.GetSchema()
     }
     return nil
 }
 
-func (m *ReferenceableSchema) GetTypeName(index map[string]*Schema) string {
-    s := m.GetSchemaOf(index)
+func (x *ReferenceableSchema) GetTypeName(index map[string]*Schema) string {
+    s := x.GetSchemaOf(index)
     if s != nil {
         return s.GetTypeName(index)
     }
     return ""
 }
 
-func (m *ReferenceableSchema) GetFormat(index map[string]*Schema) string {
-    s := m.GetSchemaOf(index)
+func (x *ReferenceableSchema) GetFormat(index map[string]*Schema) string {
+    s := x.GetSchemaOf(index)
     if s != nil {
         return s.Format
     }
     return ""
 }
 
-func (m *ReferenceableSchema) GetSummary(components *Components) string {
-    if summary := m.GetReference().GetSummary(); len(summary) > 0 {
+func (x *ReferenceableSchema) GetSummary(components *Components) string {
+    if summary := x.GetReference().GetSummary(); len(summary) > 0 {
         return summary
     }
 
-    ref := m.GetReferenceUrl()
+    ref := x.GetReferenceUrl()
     if ref != nil {
         return components.GetSchema(ref).GetTitle()
     }
 
-    return m.GetSchema().GetTitle()
+    return x.GetSchema().GetTitle()
 }
 
-func (m *ReferenceableSchema) GetDescription(components *Components) *document.Document {
-    if document := m.GetReference().GetDescription(); document != nil {
+func (x *ReferenceableSchema) GetDescription(components *Components) *document.Document {
+    if document := x.GetReference().GetDescription(); document != nil {
         return document.GetDocument()
     }
 
-    ref := m.GetReferenceUrl()
+    ref := x.GetReferenceUrl()
     if ref != nil {
         return components.GetSchema(ref).GetDescription().GetDocument()
     }
 
-    return m.GetSchema().GetDescription().GetDocument()
+    return x.GetSchema().GetDescription().GetDocument()
 }
 
 func (m *Reference) GetSchemaName() string {
@@ -127,14 +127,14 @@ func (m *Reference) GetSchemaName() string {
     return strings.TrimPrefix(fragment, ReferenceRoot)
 }
 
-func (m *ReferenceableSchema) SetDescription(doc *CachedDocument) {
-    if m != nil {
-        reference := m.GetReference()
+func (x *ReferenceableSchema) SetDescription(doc *CachedDocument) {
+    if x != nil {
+        reference := x.GetReference()
         if reference != nil {
             reference.Description = doc
         }
 
-        schema := m.GetSchema()
+        schema := x.GetSchema()
         if schema != nil {
             schema.Description = doc
         }

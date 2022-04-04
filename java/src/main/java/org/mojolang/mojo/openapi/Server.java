@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsVariables(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetVariables().getMap().containsKey(key);
   }
   /**
@@ -244,7 +244,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.openapi.ServerVariable getVariablesOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.ServerVariable defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ServerVariable> map =
         internalGetVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.openapi.ServerVariable getVariablesOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ServerVariable> map =
         internalGetVariables().getMap();
     if (!map.containsKey(key)) {
@@ -932,7 +932,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsVariables(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetVariables().getMap().containsKey(key);
     }
     /**
@@ -959,7 +959,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.openapi.ServerVariable getVariablesOrDefault(
         java.lang.String key,
         org.mojolang.mojo.openapi.ServerVariable defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ServerVariable> map =
           internalGetVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.openapi.ServerVariable getVariablesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ServerVariable> map =
           internalGetVariables().getMap();
       if (!map.containsKey(key)) {
@@ -991,7 +991,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeVariables(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableVariables().getMutableMap()
           .remove(key);
       return this;
@@ -1010,8 +1010,11 @@ private static final long serialVersionUID = 0L;
     public Builder putVariables(
         java.lang.String key,
         org.mojolang.mojo.openapi.ServerVariable value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableVariables().getMutableMap()
           .put(key, value);
       return this;

@@ -18,13 +18,15 @@
 package openapi
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("openapi.Schema_Type", &SchemaTypeCodec{})
-	jsoniter.RegisterTypeEncoder("openapi.Schema_Type", &SchemaTypeCodec{})
+	core.RegisterJSONTypeDecoder("openapi.Schema_Type", &SchemaTypeCodec{})
+	core.RegisterJSONTypeEncoder("openapi.Schema_Type", &SchemaTypeCodec{})
 }
 
 type SchemaTypeCodec struct {

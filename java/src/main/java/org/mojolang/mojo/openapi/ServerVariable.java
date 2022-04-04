@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < enum_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, enum_.getRaw(i));
     }
-    if (!getDefaultBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(default_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, default_);
     }
     if (description_ != null) {
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getEnumList().size();
     }
-    if (!getDefaultBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(default_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, default_);
     }
     if (description_ != null) {

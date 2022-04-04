@@ -517,7 +517,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsCallbacks(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetCallbacks().getMap().containsKey(key);
   }
   /**
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.ReferenceableCallback defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableCallback> map =
         internalGetCallbacks().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -556,7 +556,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableCallback> map =
         internalGetCallbacks().getMap();
     if (!map.containsKey(key)) {
@@ -659,7 +659,7 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tags_.getRaw(i));
     }
-    if (!getSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, summary_);
     }
     if (description_ != null) {
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
     if (externalDocs_ != null) {
       output.writeMessage(4, getExternalDocs());
     }
-    if (!getOperationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, operationId_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getTagsList().size();
     }
-    if (!getSummaryBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summary_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, summary_);
     }
     if (description_ != null) {
@@ -723,7 +723,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getExternalDocs());
     }
-    if (!getOperationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, operationId_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
@@ -2335,7 +2335,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsCallbacks(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetCallbacks().getMap().containsKey(key);
     }
     /**
@@ -2362,7 +2362,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrDefault(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableCallback defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableCallback> map =
           internalGetCallbacks().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2374,7 +2374,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableCallback> map =
           internalGetCallbacks().getMap();
       if (!map.containsKey(key)) {
@@ -2394,7 +2394,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeCallbacks(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableCallbacks().getMutableMap()
           .remove(key);
       return this;
@@ -2413,8 +2413,11 @@ private static final long serialVersionUID = 0L;
     public Builder putCallbacks(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableCallback value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableCallbacks().getMutableMap()
           .put(key, value);
       return this;

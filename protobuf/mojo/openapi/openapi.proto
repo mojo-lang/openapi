@@ -129,12 +129,12 @@ message Parameter {
         STYLE_DEEP_OBJECT=7;
     }
     string name = 1;
-    Parameter.Location in = 2;
+    Location in = 2;
     string description = 3;
     bool required = 4;
     bool deprecated = 5;
     bool allow_empty_value = 6;
-    Parameter.Style style = 10;
+    Style style = 10;
     bool explode = 11;
     bool allow_reserved = 12;
     ReferenceableSchema schema = 13;

@@ -3,7 +3,7 @@
 | `discriminator` | `mojo.openapi.Discriminator` |  | 否 |  | Adds support for polymorphism. The discriminator is an object name that is used to differentiate between other schemas which may satisfy the payload description. See Composition and Inheritance for more details. |
 | `xml` | `mojo.openapi.Xml` |  | 否 |  | This MAY be used only on properties schemas. It has no effect on root schemas. Adds additional metadata to describe the XML representation of this property. |
 | `externalDocs` | `mojo.openapi.ExternalDocument` |  | 否 |  | Additional external documentation for this schema. |
-| `example` | `mojo.core.Any` |  | 否 |  | A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary. |
+| `example` | `Any` |  | 否 |  | A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary. |
 | `title` | `string` |  | 否 |  |
 | `description` | `mojo.openapi.CachedDocument` |  | 否 |  | support GFM |
 | `type` | `string` |  | 否 |  | Value MUST be a string. Multiple types via an array are not supported. |
@@ -25,12 +25,12 @@
 | `maxProperties` | `integer` | `uint64` | 否 |  |
 | `minProperties` | `integer` | `uint64` | 否 |  |
 | `required` | `Array<string>` |  | 否 |  |
-| `enum` | `Array<mojo.core.Value>` |  | 否 |  |
+| `enum` | `Array<Value>` |  | 否 |  |
 | `allOf` | `Array<mojo.openapi.ReferenceableSchema>` |  | 否 |  | Inline or referenced schema MUST be of a Schema Object and not a standard JSON Schema.validates the value against all the sub-schemas |
 | `oneOf` | `Array<mojo.openapi.ReferenceableSchema>` |  | 否 |  | validates the value against exactly one of the sub-schemas |
 | `anyOf` | `Array<mojo.openapi.ReferenceableSchema>` |  | 否 |  | validates the value against any (one or more) of the sub-schemas |
 | `not` | `mojo.openapi.ReferenceableSchema` |  | 否 |  | make sure the value is not valid against the specified schema. |
-| `default` | `mojo.core.Any` |  | 否 |  |
+| `default` | `Any` |  | 否 |  |
 | `nullable` | `boolean` |  | 否 |  | Allows sending a null value for the defined schema. Default value is false. |
 | `readOnly` | `boolean` |  | 否 |  | Relevant only for Schema "properties" definitions. Declares the property as "read only". This means that it MAY be sent as part of a response but SHOULD NOT be sent as part of the request. If the property is marked as readOnly being true and is in the required list, the required will take effect on the response only. A property MUST NOT be marked as both readOnly and writeOnly being true. Default value is false. |
 | `writeOnly` | `boolean` |  | 否 |  | Relevant only for Schema "properties" definitions. Declares the property as "write only". Therefore, it MAY be sent as part of a request but SHOULD NOT be sent as part of the response. If the property is marked as writeOnly being true and is in the required list, the required will take effect on the request only. A property MUST NOT be marked as both readOnly and writeOnly being true. Default value is false. |

@@ -262,7 +262,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsParameters(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetParameters().getMap().containsKey(key);
   }
   /**
@@ -289,7 +289,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.core.Any getParametersOrDefault(
       java.lang.String key,
       org.mojolang.mojo.core.Any defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
         internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -301,7 +301,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.core.Any getParametersOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
         internalGetParameters().getMap();
     if (!map.containsKey(key)) {
@@ -414,10 +414,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getOperationRefBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationRef_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, operationRef_);
     }
-    if (!getOperationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, operationId_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -429,7 +429,7 @@ private static final long serialVersionUID = 0L;
     if (requestBody_ != null) {
       output.writeMessage(4, getRequestBody());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
     }
     if (server_ != null) {
@@ -444,10 +444,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getOperationRefBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationRef_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, operationRef_);
     }
-    if (!getOperationIdBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, operationId_);
     }
     for (java.util.Map.Entry<java.lang.String, org.mojolang.mojo.core.Any> entry
@@ -464,7 +464,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getRequestBody());
     }
-    if (!getDescriptionBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
     }
     if (server_ != null) {
@@ -1032,7 +1032,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsParameters(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetParameters().getMap().containsKey(key);
     }
     /**
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.core.Any getParametersOrDefault(
         java.lang.String key,
         org.mojolang.mojo.core.Any defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
           internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1071,7 +1071,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.core.Any getParametersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
           internalGetParameters().getMap();
       if (!map.containsKey(key)) {
@@ -1091,7 +1091,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeParameters(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableParameters().getMutableMap()
           .remove(key);
       return this;
@@ -1110,8 +1110,11 @@ private static final long serialVersionUID = 0L;
     public Builder putParameters(
         java.lang.String key,
         org.mojolang.mojo.core.Any value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableParameters().getMutableMap()
           .put(key, value);
       return this;

@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsExamples(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetExamples().getMap().containsKey(key);
   }
   /**
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.ReferenceableExample defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableExample> map =
         internalGetExamples().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -271,7 +271,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableExample> map =
         internalGetExamples().getMap();
     if (!map.containsKey(key)) {
@@ -313,7 +313,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsEncoding(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetEncoding().getMap().containsKey(key);
   }
   /**
@@ -340,7 +340,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.openapi.Encoding getEncodingOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.Encoding defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Encoding> map =
         internalGetEncoding().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -352,7 +352,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.openapi.Encoding getEncodingOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Encoding> map =
         internalGetEncoding().getMap();
     if (!map.containsKey(key)) {
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsExamples(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetExamples().getMap().containsKey(key);
     }
     /**
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableExample defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableExample> map =
           internalGetExamples().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1098,7 +1098,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableExample> map =
           internalGetExamples().getMap();
       if (!map.containsKey(key)) {
@@ -1118,7 +1118,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeExamples(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableExamples().getMutableMap()
           .remove(key);
       return this;
@@ -1137,8 +1137,11 @@ private static final long serialVersionUID = 0L;
     public Builder putExamples(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableExample value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableExamples().getMutableMap()
           .put(key, value);
       return this;
@@ -1187,7 +1190,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsEncoding(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetEncoding().getMap().containsKey(key);
     }
     /**
@@ -1214,7 +1217,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.openapi.Encoding getEncodingOrDefault(
         java.lang.String key,
         org.mojolang.mojo.openapi.Encoding defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Encoding> map =
           internalGetEncoding().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1226,7 +1229,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.openapi.Encoding getEncodingOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.Encoding> map =
           internalGetEncoding().getMap();
       if (!map.containsKey(key)) {
@@ -1246,7 +1249,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeEncoding(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableEncoding().getMutableMap()
           .remove(key);
       return this;
@@ -1265,8 +1268,11 @@ private static final long serialVersionUID = 0L;
     public Builder putEncoding(
         java.lang.String key,
         org.mojolang.mojo.openapi.Encoding value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableEncoding().getMutableMap()
           .put(key, value);
       return this;

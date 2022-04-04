@@ -12,17 +12,17 @@ func NewReferencedParameter(reference *Reference) *ReferenceableParameter {
     return s
 }
 
-func (m *ReferenceableParameter) SetParameter(parameter *Parameter) {
-    if m != nil {
-        m.ReferenceableParameter = &ReferenceableParameter_Parameter{
+func (x *ReferenceableParameter) SetParameter(parameter *Parameter) {
+    if x != nil {
+        x.ReferenceableParameter = &ReferenceableParameter_Parameter{
             Parameter: parameter,
         }
     }
 }
 
-func (m *ReferenceableParameter) SetReference(reference *Reference) {
-    if m != nil {
-        m.ReferenceableParameter = &ReferenceableParameter_Reference{
+func (x *ReferenceableParameter) SetReference(reference *Reference) {
+    if x != nil {
+        x.ReferenceableParameter = &ReferenceableParameter_Reference{
             Reference: reference,
         }
     }

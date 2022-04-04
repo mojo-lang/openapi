@@ -18,13 +18,15 @@
 package openapi
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("openapi.HttpStatusCode", &HttpStatusCodeCodec{})
-	jsoniter.RegisterTypeEncoder("openapi.HttpStatusCode", &HttpStatusCodeCodec{})
+	core.RegisterJSONTypeDecoder("openapi.HttpStatusCode", &HttpStatusCodeCodec{})
+	core.RegisterJSONTypeEncoder("openapi.HttpStatusCode", &HttpStatusCodeCodec{})
 }
 
 type HttpStatusCodeCodec struct {

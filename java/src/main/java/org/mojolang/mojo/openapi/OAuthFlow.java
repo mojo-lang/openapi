@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsScopes(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetScopes().getMap().containsKey(key);
   }
   /**
@@ -283,7 +283,7 @@ private static final long serialVersionUID = 0L;
   public java.lang.String getScopesOrDefault(
       java.lang.String key,
       java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetScopes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -295,7 +295,7 @@ private static final long serialVersionUID = 0L;
 
   public java.lang.String getScopesOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetScopes().getMap();
     if (!map.containsKey(key)) {
@@ -1120,7 +1120,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsScopes(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetScopes().getMap().containsKey(key);
     }
     /**
@@ -1147,7 +1147,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getScopesOrDefault(
         java.lang.String key,
         java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetScopes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1159,7 +1159,7 @@ private static final long serialVersionUID = 0L;
 
     public java.lang.String getScopesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetScopes().getMap();
       if (!map.containsKey(key)) {
@@ -1179,7 +1179,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeScopes(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableScopes().getMutableMap()
           .remove(key);
       return this;
@@ -1198,8 +1198,11 @@ private static final long serialVersionUID = 0L;
     public Builder putScopes(
         java.lang.String key,
         java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableScopes().getMutableMap()
           .put(key, value);
       return this;

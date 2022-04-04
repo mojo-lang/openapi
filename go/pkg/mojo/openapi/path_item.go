@@ -5,72 +5,72 @@ import (
     "strings"
 )
 
-func (m *PathItem) SetOperation(name string, operation *Operation) {
+func (x *PathItem) SetOperation(name string, operation *Operation) {
     switch strings.ToLower(name) {
     case "get":
-        m.Get = operation
+        x.Get = operation
     case "post":
-        m.Post = operation
+        x.Post = operation
     case "put":
-        m.Put = operation
+        x.Put = operation
     case "patch":
-        m.Patch = operation
+        x.Patch = operation
     case "delete":
-        m.Delete = operation
+        x.Delete = operation
     case "options":
-        m.Options = operation
+        x.Options = operation
     case "head":
-        m.Head = operation
+        x.Head = operation
     case "trace":
-        m.Trace = operation
+        x.Trace = operation
     }
 }
 
-func (m *PathItem) Merge(item *PathItem) *PathItem {
-    if m == nil {
+func (x *PathItem) Merge(item *PathItem) *PathItem {
+    if x == nil {
         return item
     }
 
     if len(item.Ref) > 0 {
-        m.Ref = item.Ref
+        x.Ref = item.Ref
     }
     if len(item.Summary) > 0 {
-        m.Summary = item.Summary
+        x.Summary = item.Summary
     }
     if item.Description != nil {
-        m.Description = item.Description
+        x.Description = item.Description
     }
     if item.Get != nil {
-        m.Get = item.Get
+        x.Get = item.Get
     }
     if item.Put != nil {
-        m.Put = item.Put
+        x.Put = item.Put
     }
     if item.Post != nil {
-        m.Post = item.Post
+        x.Post = item.Post
     }
     if item.Delete != nil {
-        m.Delete = item.Delete
+        x.Delete = item.Delete
     }
     if item.Options != nil {
-        m.Options = item.Options
+        x.Options = item.Options
     }
     if item.Head != nil {
-        m.Head = item.Head
+        x.Head = item.Head
     }
     if item.Patch != nil {
-        m.Patch = item.Patch
+        x.Patch = item.Patch
     }
     if item.Trace != nil {
-        m.Trace = item.Trace
+        x.Trace = item.Trace
     }
     if len(item.Servers) > 0 {
-        m.Servers = append(m.Servers, item.Servers...)
+        x.Servers = append(x.Servers, item.Servers...)
     }
     if len(item.Parameters) > 0 {
-        m.Parameters = append(m.Parameters, item.Parameters...)
+        x.Parameters = append(x.Parameters, item.Parameters...)
     }
-    return m
+    return x
 }
 
 func OrderedPathItemIterator(m map[string]*PathItem, onKey func(key string, value *PathItem) error) error {

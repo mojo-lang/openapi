@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsProperties(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetProperties().getMap().containsKey(key);
   }
   /**
@@ -1011,7 +1011,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableSchema> map =
         internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1023,7 +1023,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableSchema> map =
         internalGetProperties().getMap();
     if (!map.containsKey(key)) {
@@ -1397,7 +1397,7 @@ private static final long serialVersionUID = 0L;
     if (example_ != null) {
       output.writeMessage(4, getExample());
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, title_);
     }
     if (description_ != null) {
@@ -1406,22 +1406,22 @@ private static final long serialVersionUID = 0L;
     if (type_ != org.mojolang.mojo.openapi.Schema.Type.TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(12, type_);
     }
-    if (!getFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, format_);
     }
     if (multipleOf_ != 0L) {
       output.writeInt64(14, multipleOf_);
     }
-    if (maximum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
       output.writeDouble(15, maximum_);
     }
-    if (exclusiveMaximum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(exclusiveMaximum_) != 0) {
       output.writeDouble(16, exclusiveMaximum_);
     }
-    if (minimum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
       output.writeDouble(17, minimum_);
     }
-    if (exclusiveMinimum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(exclusiveMinimum_) != 0) {
       output.writeDouble(18, exclusiveMinimum_);
     }
     if (maxLength_ != 0L) {
@@ -1518,7 +1518,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getExample());
     }
-    if (!getTitleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, title_);
     }
     if (description_ != null) {
@@ -1529,26 +1529,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(12, type_);
     }
-    if (!getFormatBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, format_);
     }
     if (multipleOf_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(14, multipleOf_);
     }
-    if (maximum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(15, maximum_);
     }
-    if (exclusiveMaximum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(exclusiveMaximum_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(16, exclusiveMaximum_);
     }
-    if (minimum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(17, minimum_);
     }
-    if (exclusiveMinimum_ != 0D) {
+    if (java.lang.Double.doubleToRawLongBits(exclusiveMinimum_) != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(18, exclusiveMinimum_);
     }
@@ -3985,7 +3985,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsProperties(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetProperties().getMap().containsKey(key);
     }
     /**
@@ -4012,7 +4012,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrDefault(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableSchema> map =
           internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -4024,7 +4024,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableSchema> map =
           internalGetProperties().getMap();
       if (!map.containsKey(key)) {
@@ -4044,7 +4044,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeProperties(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableProperties().getMutableMap()
           .remove(key);
       return this;
@@ -4063,8 +4063,11 @@ private static final long serialVersionUID = 0L;
     public Builder putProperties(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableSchema value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableProperties().getMutableMap()
           .put(key, value);
       return this;

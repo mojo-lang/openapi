@@ -2,9 +2,9 @@ package openapi
 
 import "bytes"
 
-func (m *Schema) IsPropertyRequired(property string) bool {
-    if m != nil {
-        for _, r := range m.Required {
+func (x *Schema) IsPropertyRequired(property string) bool {
+    if x != nil {
+        for _, r := range x.Required {
             if r == property {
                 return true
             }
@@ -13,50 +13,50 @@ func (m *Schema) IsPropertyRequired(property string) bool {
     return false
 }
 
-func (m *Schema) FieldNames(index map[string]*Schema) []string {
+func (x *Schema) FieldNames(index map[string]*Schema) []string {
     var fieldNames []string
-    if m == nil {
+    if x == nil {
         return fieldNames
     }
 
-    if len(m.AllOf) > 0 {
-        for _, s := range m.AllOf {
+    if len(x.AllOf) > 0 {
+        for _, s := range x.AllOf {
             names := s.GetSchemaOf(index).FieldNames(index)
             fieldNames = append(fieldNames, names...)
         }
         return fieldNames
     }
 
-    for key := range m.Properties {
+    for key := range x.Properties {
         fieldNames = append(fieldNames, key)
     }
     return fieldNames
 }
 
-func (m *Schema) GetTypeName(index map[string]*Schema) string {
-    if m != nil {
-        switch m.Type {
+func (x *Schema) GetTypeName(index map[string]*Schema) string {
+    if x != nil {
+        switch x.Type {
         case Schema_TYPE_ARRAY:
-            if m.Items == nil { // array<Value> type
+            if x.Items == nil { // array<Value> type
                 return "array"
             }
-            return "Array<" + m.Items.GetTypeName(index) + ">"
+            return "Array<" + x.Items.GetTypeName(index) + ">"
         case Schema_TYPE_OBJECT:
-            if m.AdditionalProperties != nil {
-                return "Map<string, " + m.AdditionalProperties.GetTypeName(index) + ">"
+            if x.AdditionalProperties != nil {
+                return "Map<string, " + x.AdditionalProperties.GetTypeName(index) + ">"
             }
-            if len(m.Title) > 0 {
-                return m.Title
+            if len(x.Title) > 0 {
+                return x.Title
             }
-            return m.Type.Format()
+            return x.Type.Format()
         case Schema_TYPE_UNSPECIFIED:
-            if len(m.Title) > 0 {
-                return m.Title
+            if len(x.Title) > 0 {
+                return x.Title
             }
-            if len(m.OneOf) > 0 { // union type
+            if len(x.OneOf) > 0 { // union type
                 buffer := bytes.NewBuffer(make([]byte, 0, 64))
                 buffer.WriteString("Union<")
-                for i, one := range m.OneOf {
+                for i, one := range x.OneOf {
                     if i > 0 {
                         buffer.WriteByte(',')
                     }
@@ -66,15 +66,15 @@ func (m *Schema) GetTypeName(index map[string]*Schema) string {
                 return buffer.String()
             }
         default:
-            return m.Type.Format()
+            return x.Type.Format()
         }
     }
     return ""
 }
 
-func (m *Schema) IsScalar() bool {
-    if m != nil {
-        switch m.Type {
+func (x *Schema) IsScalar() bool {
+    if x != nil {
+        switch x.Type {
         case Schema_TYPE_BOOLEAN, Schema_TYPE_NUMBER, Schema_TYPE_INTEGER, Schema_TYPE_NULL, Schema_TYPE_STRING:
             return true
         }
@@ -83,18 +83,18 @@ func (m *Schema) IsScalar() bool {
     return false
 }
 
-func (m *Schema) IsEmpty() bool {
-    return m != nil && (m.Type == Schema_TYPE_UNSPECIFIED &&
-        len(m.Enum) == 0 &&
-        len(m.AllOf) == 0 &&
-        len(m.OneOf) == 0 &&
-        len(m.AnyOf) == 0 &&
-        m.Not == nil)
+func (x *Schema) IsEmpty() bool {
+    return x != nil && (x.Type == Schema_TYPE_UNSPECIFIED &&
+        len(x.Enum) == 0 &&
+        len(x.AllOf) == 0 &&
+        len(x.OneOf) == 0 &&
+        len(x.AnyOf) == 0 &&
+        x.Not == nil)
 }
 
-func (m *Schema) Dependencies(index map[string]*Schema) []*Schema {
+func (x *Schema) Dependencies(index map[string]*Schema) []*Schema {
     duplicates := make(map[string]bool)
-    dependencies := m.dependencies(index, duplicates)
+    dependencies := x.dependencies(index, duplicates)
 
     mask := make(map[string]bool)
     var cleanDeps []*Schema
@@ -111,7 +111,7 @@ func (m *Schema) Dependencies(index map[string]*Schema) []*Schema {
     return cleanDeps
 }
 
-func (m *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Schema, duplicates map[string]bool) []*Schema {
+func (x *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Schema, duplicates map[string]bool) []*Schema {
     var dependencies []*Schema
     s := schema.GetSchemaOf(index)
 
@@ -120,7 +120,7 @@ func (m *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Sch
     }
 
     if s.Items != nil {
-        return m.appendSchema(s.Items, index, duplicates)
+        return x.appendSchema(s.Items, index, duplicates)
     }
 
     if !s.IsScalar() {
@@ -138,25 +138,25 @@ func (m *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Sch
     return dependencies
 }
 
-func (m *Schema) dependencies(index map[string]*Schema, duplicates map[string]bool) []*Schema {
+func (x *Schema) dependencies(index map[string]*Schema, duplicates map[string]bool) []*Schema {
     var dependencies []*Schema
 
-    if m == nil {
+    if x == nil {
         return dependencies
     }
 
-    if m.Type == Schema_TYPE_ARRAY {
-        dependencies = append(dependencies, m.appendSchema(m.Items, index, duplicates)...)
-    } else if m.Type == Schema_TYPE_OBJECT {
-        if m.AdditionalProperties != nil { // map
-            dependencies = append(dependencies, m.appendSchema(m.AdditionalProperties, index, duplicates)...)
+    if x.Type == Schema_TYPE_ARRAY {
+        dependencies = append(dependencies, x.appendSchema(x.Items, index, duplicates)...)
+    } else if x.Type == Schema_TYPE_OBJECT {
+        if x.AdditionalProperties != nil { // map
+            dependencies = append(dependencies, x.appendSchema(x.AdditionalProperties, index, duplicates)...)
         } else {
-            for _, property := range m.Properties {
-                dependencies = append(dependencies, m.appendSchema(property, index, duplicates)...)
+            for _, property := range x.Properties {
+                dependencies = append(dependencies, x.appendSchema(property, index, duplicates)...)
             }
         }
-    } else if len(m.AllOf) > 0 {
-        for _, item := range m.AllOf {
+    } else if len(x.AllOf) > 0 {
+        for _, item := range x.AllOf {
             schema := item.GetSchemaOf(index)
             if !schema.IsScalar() {
                 ds := schema.dependencies(index, duplicates)
@@ -165,9 +165,9 @@ func (m *Schema) dependencies(index map[string]*Schema, duplicates map[string]bo
                 }
             }
         }
-    } else if len(m.OneOf) > 0 {
-        for _, s := range m.OneOf {
-            dependencies = append(dependencies, m.appendSchema(s, index, duplicates)...)
+    } else if len(x.OneOf) > 0 {
+        for _, s := range x.OneOf {
+            dependencies = append(dependencies, x.appendSchema(s, index, duplicates)...)
         }
     }
 

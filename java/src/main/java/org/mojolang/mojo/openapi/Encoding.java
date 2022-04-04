@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsHeaders(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     return internalGetHeaders().getMap().containsKey(key);
   }
   /**
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
   public org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
       java.lang.String key,
       org.mojolang.mojo.openapi.ReferenceableHeader defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader> map =
         internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
 
   public org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader> map =
         internalGetHeaders().getMap();
     if (!map.containsKey(key)) {
@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getContentTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contentType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contentType_);
     }
     com.google.protobuf.GeneratedMessageV3
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
         internalGetHeaders(),
         HeadersDefaultEntryHolder.defaultEntry,
         2);
-    if (!getStyleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(style_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, style_);
     }
     if (explode_ != false) {
@@ -350,7 +350,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getContentTypeBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contentType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contentType_);
     }
     for (java.util.Map.Entry<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader> entry
@@ -363,7 +363,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, headers__);
     }
-    if (!getStyleBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(style_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, style_);
     }
     if (explode_ != false) {
@@ -824,7 +824,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsHeaders(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       return internalGetHeaders().getMap().containsKey(key);
     }
     /**
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
     public org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableHeader defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader> map =
           internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
 
     public org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.openapi.ReferenceableHeader> map =
           internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeHeaders(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
       internalGetMutableHeaders().getMutableMap()
           .remove(key);
       return this;
@@ -902,8 +902,11 @@ private static final long serialVersionUID = 0L;
     public Builder putHeaders(
         java.lang.String key,
         org.mojolang.mojo.openapi.ReferenceableHeader value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) {
+  throw new NullPointerException("map value");
+}
+
       internalGetMutableHeaders().getMutableMap()
           .put(key, value);
       return this;

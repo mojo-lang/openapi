@@ -12,17 +12,17 @@ func NewReferencedResponse(reference *Reference) *ReferenceableResponse {
     return s
 }
 
-func (m *ReferenceableResponse) SetResponse(response *Response) {
-    if m != nil {
-        m.ReferenceableResponse = &ReferenceableResponse_Response{
+func (x *ReferenceableResponse) SetResponse(response *Response) {
+    if x != nil {
+        x.ReferenceableResponse = &ReferenceableResponse_Response{
             Response: response,
         }
     }
 }
 
-func (m *ReferenceableResponse) SetReference(reference *Reference) {
-    if m != nil {
-        m.ReferenceableResponse = &ReferenceableResponse_Reference{
+func (x *ReferenceableResponse) SetReference(reference *Reference) {
+    if x != nil {
+        x.ReferenceableResponse = &ReferenceableResponse_Reference{
             Reference: reference,
         }
     }

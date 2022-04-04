@@ -12,17 +12,17 @@ func NewReferencedRequestBody(reference *Reference) *ReferenceableRequestBody {
     return s
 }
 
-func (m *ReferenceableRequestBody) SetRequestBody(requestBody *RequestBody) {
-    if m != nil {
-        m.ReferenceableRequestBody = &ReferenceableRequestBody_RequestBody{
+func (x *ReferenceableRequestBody) SetRequestBody(requestBody *RequestBody) {
+    if x != nil {
+        x.ReferenceableRequestBody = &ReferenceableRequestBody_RequestBody{
             RequestBody: requestBody,
         }
     }
 }
 
-func (m *ReferenceableRequestBody) SetReference(reference *Reference) {
-    if m != nil {
-        m.ReferenceableRequestBody = &ReferenceableRequestBody_Reference{
+func (x *ReferenceableRequestBody) SetReference(reference *Reference) {
+    if x != nil {
+        x.ReferenceableRequestBody = &ReferenceableRequestBody_Reference{
             Reference: reference,
         }
     }

@@ -18,13 +18,15 @@
 package openapi
 
 import (
-	jsoniter "github.com/json-iterator/go"
 	"unsafe"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 func init() {
-	jsoniter.RegisterTypeDecoder("openapi.Parameter_Location", &ParameterLocationCodec{})
-	jsoniter.RegisterTypeEncoder("openapi.Parameter_Location", &ParameterLocationCodec{})
+	core.RegisterJSONTypeDecoder("openapi.Parameter_Location", &ParameterLocationCodec{})
+	core.RegisterJSONTypeEncoder("openapi.Parameter_Location", &ParameterLocationCodec{})
 }
 
 type ParameterLocationCodec struct {

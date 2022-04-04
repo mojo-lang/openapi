@@ -20,15 +20,15 @@ func NewComponents() *Components {
     }
 }
 
-func (m *Components) GetSchema(url *core.Url) *Schema {
-    if m == nil {
+func (x *Components) GetSchema(url *core.Url) *Schema {
+    if x == nil {
         return nil
     }
 
     segments := strings.Split(url.GetFragment(), "/")
     if len(segments) > 2 && segments[0] == "components" && segments[1] == "schemas" {
         object := segments[len(segments)-1]
-        return m.Schemas[object]
+        return x.Schemas[object]
     }
     return nil
 }

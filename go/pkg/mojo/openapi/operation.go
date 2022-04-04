@@ -1,8 +1,8 @@
 package openapi
 
-func (m *Operation) GetLocationParameters() map[Parameter_Location][]*Parameter {
+func (x *Operation) GetLocationParameters() map[Parameter_Location][]*Parameter {
     ps := make(map[Parameter_Location][]*Parameter)
-    parameters := m.GetParameters()
+    parameters := x.GetParameters()
     for _, parameter := range parameters {
         p := parameter.GetParameter()
         if p != nil {
