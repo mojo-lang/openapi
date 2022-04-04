@@ -5,7 +5,7 @@ go 1.16
 require (
 	github.com/json-iterator/go v1.1.12
 	github.com/mojo-lang/core/go v0.0.0-20220404102621-f4cf5ec599a6
-	github.com/mojo-lang/document/go v0.0.0-20211217054243-5f99395f7054
+	github.com/mojo-lang/document/go v0.0.0-20220404103159-b9c7564d0f13
 	github.com/stretchr/testify v1.7.0
 	google.golang.org/protobuf v1.28.0
 )
