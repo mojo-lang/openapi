@@ -1,6 +1,9 @@
 package openapi
 
-import "bytes"
+import (
+    "bytes"
+    "sort"
+)
 
 func (x *Schema) IsPropertyRequired(property string) bool {
     if x != nil {
@@ -108,6 +111,7 @@ func (x *Schema) Dependencies(index map[string]*Schema) []*Schema {
         cleanDeps = append(cleanDeps, schema)
     }
 
+    sort.Sort(Schemas(cleanDeps))
     return cleanDeps
 }
 
