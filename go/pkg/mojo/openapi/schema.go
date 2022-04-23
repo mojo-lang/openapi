@@ -2,6 +2,7 @@ package openapi
 
 import (
     "bytes"
+    "github.com/mojo-lang/core/go/pkg/mojo/core"
     "sort"
 )
 
@@ -150,7 +151,9 @@ func (x *Schema) dependencies(index map[string]*Schema, duplicates map[string]bo
     }
 
     if x.Type == Schema_TYPE_ARRAY {
-        dependencies = append(dependencies, x.appendSchema(x.Items, index, duplicates)...)
+        if x.Title != core.ValuesTypeName {
+            dependencies = append(dependencies, x.appendSchema(x.Items, index, duplicates)...)
+        }
     } else if x.Type == Schema_TYPE_OBJECT {
         if x.AdditionalProperties != nil { // map
             dependencies = append(dependencies, x.appendSchema(x.AdditionalProperties, index, duplicates)...)
