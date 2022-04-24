@@ -34,14 +34,14 @@ public final class SecurityRequirementProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\'mojo/openapi/security_requirement.prot" +
-      "o\022\014mojo.openapi\032\025mojo/core/boxed.proto\"\221" +
+      "o\022\014mojo.openapi\032\025mojo/core/boxed.proto\"\226" +
       "\001\n\023SecurityRequirement\0229\n\004vals\030\001 \003(\0132+.m" +
       "ojo.openapi.SecurityRequirement.ValsEntr" +
-      "y\032?\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022!\n\005value\030\002 \001" +
-      "(\0132\022.mojo.core.Strings:\0028\001Bq\n\031org.mojola" +
-      "ng.mojo.openapiB\030SecurityRequirementProt" +
-      "oP\001Z8github.com/mojo-lang/openapi/go/pkg" +
-      "/mojo/openapi;openapib\006proto3"
+      "y\032D\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001" +
+      "(\0132\027.mojo.core.StringValues:\0028\001Bq\n\031org.m" +
+      "ojolang.mojo.openapiB\030SecurityRequiremen" +
+      "tProtoP\001Z8github.com/mojo-lang/openapi/g" +
+      "o/pkg/mojo/openapi;openapib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

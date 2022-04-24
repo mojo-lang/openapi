@@ -1859,9 +1859,9 @@ func (*ReferenceableSchema) Descriptor() ([]byte, []int) {
 	return file_mojo_openapi_openapi_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *ReferenceableSchema) GetReferenceableSchema() isReferenceableSchema_ReferenceableSchema {
-	if x != nil {
-		return x.ReferenceableSchema
+func (m *ReferenceableSchema) GetReferenceableSchema() isReferenceableSchema_ReferenceableSchema {
+	if m != nil {
+		return m.ReferenceableSchema
 	}
 	return nil
 }
@@ -1939,9 +1939,9 @@ func (*ReferenceableParameter) Descriptor() ([]byte, []int) {
 	return file_mojo_openapi_openapi_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *ReferenceableParameter) GetReferenceableParameter() isReferenceableParameter_ReferenceableParameter {
-	if x != nil {
-		return x.ReferenceableParameter
+func (m *ReferenceableParameter) GetReferenceableParameter() isReferenceableParameter_ReferenceableParameter {
+	if m != nil {
+		return m.ReferenceableParameter
 	}
 	return nil
 }
@@ -2019,9 +2019,9 @@ func (*ReferenceableRequestBody) Descriptor() ([]byte, []int) {
 	return file_mojo_openapi_openapi_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *ReferenceableRequestBody) GetReferenceableRequestBody() isReferenceableRequestBody_ReferenceableRequestBody {
-	if x != nil {
-		return x.ReferenceableRequestBody
+func (m *ReferenceableRequestBody) GetReferenceableRequestBody() isReferenceableRequestBody_ReferenceableRequestBody {
+	if m != nil {
+		return m.ReferenceableRequestBody
 	}
 	return nil
 }
@@ -2179,9 +2179,9 @@ func (*ReferenceableResponse) Descriptor() ([]byte, []int) {
 	return file_mojo_openapi_openapi_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *ReferenceableResponse) GetReferenceableResponse() isReferenceableResponse_ReferenceableResponse {
-	if x != nil {
-		return x.ReferenceableResponse
+func (m *ReferenceableResponse) GetReferenceableResponse() isReferenceableResponse_ReferenceableResponse {
+	if m != nil {
+		return m.ReferenceableResponse
 	}
 	return nil
 }

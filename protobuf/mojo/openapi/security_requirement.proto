@@ -12,5 +12,5 @@ option java_outer_classname = "SecurityRequirementProto";
 option java_package = "org.mojolang.mojo.openapi";
 
 message SecurityRequirement {
-    map<string, mojo.core.Strings> vals = 1;
+    map<string, mojo.core.StringValues> vals = 1;
 }

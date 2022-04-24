@@ -3,6 +3,7 @@ package openapi
 import (
     "bytes"
     "github.com/mojo-lang/core/go/pkg/mojo/core"
+    "google.golang.org/protobuf/proto"
     "sort"
 )
 
@@ -94,6 +95,10 @@ func (x *Schema) IsEmpty() bool {
         len(x.OneOf) == 0 &&
         len(x.AnyOf) == 0 &&
         x.Not == nil)
+}
+
+func (x *Schema) Clone() *Schema {
+    return proto.Clone(x).(*Schema)
 }
 
 func (x *Schema) Dependencies(index map[string]*Schema) []*Schema {
