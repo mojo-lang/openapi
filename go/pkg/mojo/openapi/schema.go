@@ -151,12 +151,8 @@ func (x *Schema) appendSchema(schema *ReferenceableSchema, index map[string]*Sch
 func (x *Schema) dependencies(index map[string]*Schema, duplicates map[string]bool) []*Schema {
     var dependencies []*Schema
 
-    if x == nil {
-        return dependencies
-    }
-
     if x.Type == Schema_TYPE_ARRAY {
-        if x.Title != core.ValuesTypeName {
+        if x.Title != core.ValuesTypeFullName {
             dependencies = append(dependencies, x.appendSchema(x.Items, index, duplicates)...)
         }
     } else if x.Type == Schema_TYPE_OBJECT {
