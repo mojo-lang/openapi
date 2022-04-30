@@ -2,6 +2,7 @@ package openapi
 
 import (
     "github.com/mojo-lang/core/go/pkg/mojo/core"
+    "github.com/mojo-lang/document/go/pkg/markdown"
     "github.com/mojo-lang/document/go/pkg/mojo/document"
     "strings"
 )
@@ -20,30 +21,37 @@ func NewReferencedSchema(reference *Reference) *ReferenceableSchema {
     return s
 }
 
-func (x *ReferenceableSchema) SetSchema(schema *Schema) {
+func (x *ReferenceableSchema) SetSchema(schema *Schema) *ReferenceableSchema {
     if x != nil {
         x.ReferenceableSchema = &ReferenceableSchema_Schema{
             Schema: schema,
         }
     }
+    return x
 }
 
-func (x *ReferenceableSchema) SetReference(reference *Reference) {
+func (x *ReferenceableSchema) SetReference(reference *Reference) *ReferenceableSchema {
     if x != nil {
         x.ReferenceableSchema = &ReferenceableSchema_Reference{
             Reference: reference,
         }
     }
+    return x
 }
 
-func (x *ReferenceableSchema) SetReferenceUrl(reference string) {
+func (x *ReferenceableSchema) SetReferenceUrl(reference string) error {
     if x != nil {
+        url, err := core.NewUrl(reference)
+        if err != nil {
+            return err
+        }
         x.ReferenceableSchema = &ReferenceableSchema_Reference{
             Reference: &Reference{
-                Ref: core.NewUrl(reference),
+                Ref: url,
             },
         }
     }
+    return nil
 }
 
 func (x *ReferenceableSchema) GetReferenceUrl() *core.Url {
@@ -96,35 +104,42 @@ func (x *ReferenceableSchema) GetFormat(index map[string]*Schema) string {
     return ""
 }
 
-func (x *ReferenceableSchema) GetSummary(components *Components) string {
+func (x *ReferenceableSchema) GetSummary(index map[string]*Schema) string {
     if summary := x.GetReference().GetSummary(); len(summary) > 0 {
         return summary
     }
 
-    ref := x.GetReferenceUrl()
-    if ref != nil {
-        return components.GetSchema(ref).GetTitle()
+    s := x.GetSchemaOf(index)
+    if s != nil {
+        doc := s.GetDescription().GetDocument()
+        if doc != nil && len(doc.Blocks) > 0 {
+            str, _ := markdown.RenderToString(&document.Document{Blocks: doc.Blocks[0:1]})
+            return str
+        }
     }
 
-    return x.GetSchema().GetTitle()
+    return ""
 }
 
-func (x *ReferenceableSchema) GetDescription(components *Components) *document.Document {
+func (x *ReferenceableSchema) GetTitle(index map[string]*Schema) string {
+    s := x.GetSchemaOf(index)
+    if s != nil {
+        return s.Title
+    }
+    return ""
+}
+
+func (x *ReferenceableSchema) GetDescription(index map[string]*Schema) *document.Document {
     if document := x.GetReference().GetDescription(); document != nil {
         return document.GetDocument()
     }
 
-    ref := x.GetReferenceUrl()
-    if ref != nil {
-        return components.GetSchema(ref).GetDescription().GetDocument()
+    s := x.GetSchemaOf(index)
+    if s != nil {
+        return s.GetDescription().GetDocument()
     }
 
-    return x.GetSchema().GetDescription().GetDocument()
-}
-
-func (m *Reference) GetSchemaName() string {
-    fragment := m.GetRef().GetFragment()
-    return strings.TrimPrefix(fragment, ReferenceRoot)
+    return nil
 }
 
 func (x *ReferenceableSchema) SetDescription(doc *CachedDocument) {
@@ -139,4 +154,9 @@ func (x *ReferenceableSchema) SetDescription(doc *CachedDocument) {
             schema.Description = doc
         }
     }
+}
+
+func (m *Reference) GetSchemaName() string {
+    fragment := m.GetRef().GetFragment()
+    return strings.TrimPrefix(fragment, ReferenceRoot)
 }
