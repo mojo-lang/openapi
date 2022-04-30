@@ -27,10 +27,8 @@ func (x *CachedDocument) GetDocument() *document.Document {
 func (x *CachedDocument) GetStringDocument() string {
     if x != nil {
         if x.Val != nil {
-            md := markdown.New()
-            str, err := md.RenderToString(x.Val)
+            str, err := markdown.RenderToString(x.Val)
             if err != nil {
-                logs.Warnw("failed to render markdown to string document")
                 return ""
             }
             x.Cache = str
