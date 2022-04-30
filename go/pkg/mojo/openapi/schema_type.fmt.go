@@ -52,6 +52,10 @@ func (x Schema_Type) Format() string {
 	return strconv.Itoa(int(x))
 }
 
+func (x Schema_Type) ToString() string {
+	return x.Format()
+}
+
 func (x *Schema_Type) Parse(value string) error {
 	if x != nil {
 		s, ok := SchemaTypeValues[value]

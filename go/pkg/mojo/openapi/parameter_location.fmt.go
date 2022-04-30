@@ -46,6 +46,10 @@ func (x Parameter_Location) Format() string {
 	return strconv.Itoa(int(x))
 }
 
+func (x Parameter_Location) ToString() string {
+	return x.Format()
+}
+
 func (x *Parameter_Location) Parse(value string) error {
 	if x != nil {
 		s, ok := ParameterLocationValues[value]
