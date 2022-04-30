@@ -1,4 +1,4 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `description` | `mojo.openapi.CachedDocument` |  | 否 |  | A short description of the target documentation. |
-| `url` | `string` | `Url` | 否 |  | The URL for the target documentation. |
+| `description` | `mojo.openapi.CachedDocument` |  | N |  | A short description of the target documentation. |
+| `url` | `string` | `Url` | N |  | The URL for the target documentation. |

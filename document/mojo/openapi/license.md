@@ -1,4 +1,4 @@
-| 字段 | 类型 | 格式类型 | 是否必须 | 默认值 | 说明 |
+| field | type | format | required | default | description |
 |---|---|---|---|---|---|
-| `name` | `string` |  | 是 |  | The license name used for the API. |
-| `url` | `string` | `Url` | 否 |  | A URL to the license used for the API. |
+| `name` | `string` |  | Y |  | The license name used for the API. |
+| `url` | `string` | `Url` | N |  | A URL to the license used for the API. |
