@@ -20,7 +20,11 @@ func (codec *ReferenceCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator)
     r := (*Reference)(ptr)
     if any.ValueType() == jsoniter.ObjectValue {
         ref := any.Get("$ref").ToString()
-        r.Ref = core.NewUrl(ref)
+        if url, err := core.NewUrl(ref); err != nil {
+            iter.ReportError("ReferenceCodec.Decode", err.Error())
+        } else {
+            r.Ref = url
+        }
     }
 }
 
