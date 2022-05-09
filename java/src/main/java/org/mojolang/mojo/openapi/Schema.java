@@ -416,21 +416,21 @@ private static final long serialVersionUID = 0L;
      */
     TYPE_NULL(1),
     /**
-     * <code>TYPE_INTEGER = 2;</code>
+     * <code>TYPE_BOOLEAN = 2;</code>
      */
-    TYPE_INTEGER(2),
+    TYPE_BOOLEAN(2),
     /**
-     * <code>TYPE_NUMBER = 3;</code>
+     * <code>TYPE_INTEGER = 3;</code>
      */
-    TYPE_NUMBER(3),
+    TYPE_INTEGER(3),
     /**
-     * <code>TYPE_STRING = 4;</code>
+     * <code>TYPE_NUMBER = 4;</code>
      */
-    TYPE_STRING(4),
+    TYPE_NUMBER(4),
     /**
-     * <code>TYPE_BOOLEAN = 5;</code>
+     * <code>TYPE_STRING = 5;</code>
      */
-    TYPE_BOOLEAN(5),
+    TYPE_STRING(5),
     /**
      * <code>TYPE_ARRAY = 10;</code>
      */
@@ -451,21 +451,21 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TYPE_NULL_VALUE = 1;
     /**
-     * <code>TYPE_INTEGER = 2;</code>
+     * <code>TYPE_BOOLEAN = 2;</code>
      */
-    public static final int TYPE_INTEGER_VALUE = 2;
+    public static final int TYPE_BOOLEAN_VALUE = 2;
     /**
-     * <code>TYPE_NUMBER = 3;</code>
+     * <code>TYPE_INTEGER = 3;</code>
      */
-    public static final int TYPE_NUMBER_VALUE = 3;
+    public static final int TYPE_INTEGER_VALUE = 3;
     /**
-     * <code>TYPE_STRING = 4;</code>
+     * <code>TYPE_NUMBER = 4;</code>
      */
-    public static final int TYPE_STRING_VALUE = 4;
+    public static final int TYPE_NUMBER_VALUE = 4;
     /**
-     * <code>TYPE_BOOLEAN = 5;</code>
+     * <code>TYPE_STRING = 5;</code>
      */
-    public static final int TYPE_BOOLEAN_VALUE = 5;
+    public static final int TYPE_STRING_VALUE = 5;
     /**
      * <code>TYPE_ARRAY = 10;</code>
      */
@@ -502,10 +502,10 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return TYPE_UNSPECIFIED;
         case 1: return TYPE_NULL;
-        case 2: return TYPE_INTEGER;
-        case 3: return TYPE_NUMBER;
-        case 4: return TYPE_STRING;
-        case 5: return TYPE_BOOLEAN;
+        case 2: return TYPE_BOOLEAN;
+        case 3: return TYPE_INTEGER;
+        case 4: return TYPE_NUMBER;
+        case 5: return TYPE_STRING;
         case 10: return TYPE_ARRAY;
         case 11: return TYPE_OBJECT;
         default: return null;

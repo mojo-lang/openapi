@@ -63,3 +63,11 @@ func (x *SecurityScheme_Type) Parse(value string) error {
 	}
 	return nil
 }
+
+func ParseSecurityScheme_Type(value string) (SecurityScheme_Type, error) {
+	var v SecurityScheme_Type
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
+}

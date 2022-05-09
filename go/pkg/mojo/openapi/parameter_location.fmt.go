@@ -63,3 +63,11 @@ func (x *Parameter_Location) Parse(value string) error {
 	}
 	return nil
 }
+
+func ParseParameter_Location(value string) (Parameter_Location, error) {
+	var v Parameter_Location
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
+}

@@ -19,11 +19,11 @@ type Schema {
     enum Type {
         unspecified @0
         null    @1
-        integer @2
-        number  @3
-        string  @4
-        boolean @5
-
+        boolean @2
+        integer @3
+        number  @4
+        string  @5
+        
         array   @10 //<  An ordered list of instances, from the JSON "array" production
         object  @11 //< An unordered set of properties mapping a string to an instance, from the JSON "object" production
     }

@@ -69,3 +69,11 @@ func (x *Parameter_Style) Parse(value string) error {
 	}
 	return nil
 }
+
+func ParseParameter_Style(value string) (Parameter_Style, error) {
+	var v Parameter_Style
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
+}

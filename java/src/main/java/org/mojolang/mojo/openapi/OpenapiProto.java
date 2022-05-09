@@ -445,8 +445,8 @@ public final class OpenapiProto {
       "\032T\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\0220\n\005valu" +
       "e\030\002 \001(\0132!.mojo.openapi.ReferenceableSche" +
       "ma:\0028\001\"\222\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n" +
-      "\tTYPE_NULL\020\001\022\020\n\014TYPE_INTEGER\020\002\022\017\n\013TYPE_N" +
-      "UMBER\020\003\022\017\n\013TYPE_STRING\020\004\022\020\n\014TYPE_BOOLEAN" +
+      "\tTYPE_NULL\020\001\022\020\n\014TYPE_BOOLEAN\020\002\022\020\n\014TYPE_I" +
+      "NTEGER\020\003\022\017\n\013TYPE_NUMBER\020\004\022\017\n\013TYPE_STRING" +
       "\020\005\022\016\n\nTYPE_ARRAY\020\n\022\017\n\013TYPE_OBJECT\020\013\"\203\001\n\023" +
       "ReferenceableHeader\022,\n\treference\030\001 \001(\0132\027" +
       ".mojo.openapi.ReferenceH\000\022&\n\006header\030\002 \001(" +

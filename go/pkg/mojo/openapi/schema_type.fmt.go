@@ -23,20 +23,20 @@ import (
 
 var SchemaTypeNames = map[int32]string{
 	1:  "null",
-	2:  "integer",
-	3:  "number",
-	4:  "string",
-	5:  "boolean",
+	2:  "boolean",
+	3:  "integer",
+	4:  "number",
+	5:  "string",
 	10: "array",
 	11: "object",
 }
 
 var SchemaTypeValues = map[string]Schema_Type{
 	"null":    Schema_TYPE_NULL,
+	"boolean": Schema_TYPE_BOOLEAN,
 	"integer": Schema_TYPE_INTEGER,
 	"number":  Schema_TYPE_NUMBER,
 	"string":  Schema_TYPE_STRING,
-	"boolean": Schema_TYPE_BOOLEAN,
 	"array":   Schema_TYPE_ARRAY,
 	"object":  Schema_TYPE_OBJECT,
 }
@@ -68,4 +68,12 @@ func (x *Schema_Type) Parse(value string) error {
 		*x = Schema_TYPE_NULL
 	}
 	return nil
+}
+
+func ParseSchema_Type(value string) (Schema_Type, error) {
+	var v Schema_Type
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
 }

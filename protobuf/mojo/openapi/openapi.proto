@@ -181,10 +181,10 @@ message Schema {
     enum Type {
         TYPE_UNSPECIFIED=0;
         TYPE_NULL=1;
-        TYPE_INTEGER=2;
-        TYPE_NUMBER=3;
-        TYPE_STRING=4;
-        TYPE_BOOLEAN=5;
+        TYPE_BOOLEAN=2;
+        TYPE_INTEGER=3;
+        TYPE_NUMBER=4;
+        TYPE_STRING=5;
         TYPE_ARRAY=10;
         TYPE_OBJECT=11;
     }

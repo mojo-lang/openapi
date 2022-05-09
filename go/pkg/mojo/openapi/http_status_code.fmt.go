@@ -59,3 +59,11 @@ func (x *HttpStatusCode) Parse(value string) error {
 	}
 	return nil
 }
+
+func ParseHttpStatusCode(value string) (HttpStatusCode, error) {
+	var v HttpStatusCode
+	if err := (&v).Parse(value); err != nil {
+		return v, err
+	}
+	return v, nil
+}
