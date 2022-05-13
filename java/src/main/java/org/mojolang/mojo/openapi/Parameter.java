@@ -116,11 +116,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 114: {
-            org.mojolang.mojo.core.Any.Builder subBuilder = null;
+            org.mojolang.mojo.core.Value.Builder subBuilder = null;
             if (example_ != null) {
               subBuilder = example_.toBuilder();
             }
-            example_ = input.readMessage(org.mojolang.mojo.core.Any.parser(), extensionRegistry);
+            example_ = input.readMessage(org.mojolang.mojo.core.Value.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(example_);
               example_ = subBuilder.buildPartial();
@@ -693,9 +693,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EXAMPLE_FIELD_NUMBER = 14;
-  private org.mojolang.mojo.core.Any example_;
+  private org.mojolang.mojo.core.Value example_;
   /**
-   * <code>.mojo.core.Any example = 14;</code>
+   * <code>.mojo.core.Value example = 14;</code>
    * @return Whether the example field is set.
    */
   @java.lang.Override
@@ -703,18 +703,18 @@ private static final long serialVersionUID = 0L;
     return example_ != null;
   }
   /**
-   * <code>.mojo.core.Any example = 14;</code>
+   * <code>.mojo.core.Value example = 14;</code>
    * @return The example.
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.Any getExample() {
-    return example_ == null ? org.mojolang.mojo.core.Any.getDefaultInstance() : example_;
+  public org.mojolang.mojo.core.Value getExample() {
+    return example_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : example_;
   }
   /**
-   * <code>.mojo.core.Any example = 14;</code>
+   * <code>.mojo.core.Value example = 14;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.AnyOrBuilder getExampleOrBuilder() {
+  public org.mojolang.mojo.core.ValueOrBuilder getExampleOrBuilder() {
     return getExample();
   }
 
@@ -1997,31 +1997,31 @@ private static final long serialVersionUID = 0L;
       return schemaBuilder_;
     }
 
-    private org.mojolang.mojo.core.Any example_;
+    private org.mojolang.mojo.core.Value example_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder> exampleBuilder_;
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> exampleBuilder_;
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      * @return Whether the example field is set.
      */
     public boolean hasExample() {
       return exampleBuilder_ != null || example_ != null;
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      * @return The example.
      */
-    public org.mojolang.mojo.core.Any getExample() {
+    public org.mojolang.mojo.core.Value getExample() {
       if (exampleBuilder_ == null) {
-        return example_ == null ? org.mojolang.mojo.core.Any.getDefaultInstance() : example_;
+        return example_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : example_;
       } else {
         return exampleBuilder_.getMessage();
       }
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
-    public Builder setExample(org.mojolang.mojo.core.Any value) {
+    public Builder setExample(org.mojolang.mojo.core.Value value) {
       if (exampleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2035,10 +2035,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
     public Builder setExample(
-        org.mojolang.mojo.core.Any.Builder builderForValue) {
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
       if (exampleBuilder_ == null) {
         example_ = builderForValue.build();
         onChanged();
@@ -2049,13 +2049,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
-    public Builder mergeExample(org.mojolang.mojo.core.Any value) {
+    public Builder mergeExample(org.mojolang.mojo.core.Value value) {
       if (exampleBuilder_ == null) {
         if (example_ != null) {
           example_ =
-            org.mojolang.mojo.core.Any.newBuilder(example_).mergeFrom(value).buildPartial();
+            org.mojolang.mojo.core.Value.newBuilder(example_).mergeFrom(value).buildPartial();
         } else {
           example_ = value;
         }
@@ -2067,7 +2067,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
     public Builder clearExample() {
       if (exampleBuilder_ == null) {
@@ -2081,33 +2081,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
-    public org.mojolang.mojo.core.Any.Builder getExampleBuilder() {
+    public org.mojolang.mojo.core.Value.Builder getExampleBuilder() {
       
       onChanged();
       return getExampleFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
-    public org.mojolang.mojo.core.AnyOrBuilder getExampleOrBuilder() {
+    public org.mojolang.mojo.core.ValueOrBuilder getExampleOrBuilder() {
       if (exampleBuilder_ != null) {
         return exampleBuilder_.getMessageOrBuilder();
       } else {
         return example_ == null ?
-            org.mojolang.mojo.core.Any.getDefaultInstance() : example_;
+            org.mojolang.mojo.core.Value.getDefaultInstance() : example_;
       }
     }
     /**
-     * <code>.mojo.core.Any example = 14;</code>
+     * <code>.mojo.core.Value example = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder> 
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
         getExampleFieldBuilder() {
       if (exampleBuilder_ == null) {
         exampleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder>(
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
                 getExample(),
                 getParentForChildren(),
                 isClean());

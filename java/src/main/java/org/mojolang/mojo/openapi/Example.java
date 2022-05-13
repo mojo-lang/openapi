@@ -63,11 +63,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            org.mojolang.mojo.core.Any.Builder subBuilder = null;
+            org.mojolang.mojo.core.Value.Builder subBuilder = null;
             if (value_ != null) {
               subBuilder = value_.toBuilder();
             }
-            value_ = input.readMessage(org.mojolang.mojo.core.Any.parser(), extensionRegistry);
+            value_ = input.readMessage(org.mojolang.mojo.core.Value.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(value_);
               value_ = subBuilder.buildPartial();
@@ -197,9 +197,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VALUE_FIELD_NUMBER = 3;
-  private org.mojolang.mojo.core.Any value_;
+  private org.mojolang.mojo.core.Value value_;
   /**
-   * <code>.mojo.core.Any value = 3;</code>
+   * <code>.mojo.core.Value value = 3;</code>
    * @return Whether the value field is set.
    */
   @java.lang.Override
@@ -207,18 +207,18 @@ private static final long serialVersionUID = 0L;
     return value_ != null;
   }
   /**
-   * <code>.mojo.core.Any value = 3;</code>
+   * <code>.mojo.core.Value value = 3;</code>
    * @return The value.
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.Any getValue() {
-    return value_ == null ? org.mojolang.mojo.core.Any.getDefaultInstance() : value_;
+  public org.mojolang.mojo.core.Value getValue() {
+    return value_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : value_;
   }
   /**
-   * <code>.mojo.core.Any value = 3;</code>
+   * <code>.mojo.core.Value value = 3;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.AnyOrBuilder getValueOrBuilder() {
+  public org.mojolang.mojo.core.ValueOrBuilder getValueOrBuilder() {
     return getValue();
   }
 
@@ -779,31 +779,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private org.mojolang.mojo.core.Any value_;
+    private org.mojolang.mojo.core.Value value_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder> valueBuilder_;
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> valueBuilder_;
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      * @return Whether the value field is set.
      */
     public boolean hasValue() {
       return valueBuilder_ != null || value_ != null;
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      * @return The value.
      */
-    public org.mojolang.mojo.core.Any getValue() {
+    public org.mojolang.mojo.core.Value getValue() {
       if (valueBuilder_ == null) {
-        return value_ == null ? org.mojolang.mojo.core.Any.getDefaultInstance() : value_;
+        return value_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : value_;
       } else {
         return valueBuilder_.getMessage();
       }
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
-    public Builder setValue(org.mojolang.mojo.core.Any value) {
+    public Builder setValue(org.mojolang.mojo.core.Value value) {
       if (valueBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -817,10 +817,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
     public Builder setValue(
-        org.mojolang.mojo.core.Any.Builder builderForValue) {
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
       if (valueBuilder_ == null) {
         value_ = builderForValue.build();
         onChanged();
@@ -831,13 +831,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
-    public Builder mergeValue(org.mojolang.mojo.core.Any value) {
+    public Builder mergeValue(org.mojolang.mojo.core.Value value) {
       if (valueBuilder_ == null) {
         if (value_ != null) {
           value_ =
-            org.mojolang.mojo.core.Any.newBuilder(value_).mergeFrom(value).buildPartial();
+            org.mojolang.mojo.core.Value.newBuilder(value_).mergeFrom(value).buildPartial();
         } else {
           value_ = value;
         }
@@ -849,7 +849,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
     public Builder clearValue() {
       if (valueBuilder_ == null) {
@@ -863,33 +863,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
-    public org.mojolang.mojo.core.Any.Builder getValueBuilder() {
+    public org.mojolang.mojo.core.Value.Builder getValueBuilder() {
       
       onChanged();
       return getValueFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
-    public org.mojolang.mojo.core.AnyOrBuilder getValueOrBuilder() {
+    public org.mojolang.mojo.core.ValueOrBuilder getValueOrBuilder() {
       if (valueBuilder_ != null) {
         return valueBuilder_.getMessageOrBuilder();
       } else {
         return value_ == null ?
-            org.mojolang.mojo.core.Any.getDefaultInstance() : value_;
+            org.mojolang.mojo.core.Value.getDefaultInstance() : value_;
       }
     }
     /**
-     * <code>.mojo.core.Any value = 3;</code>
+     * <code>.mojo.core.Value value = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder> 
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
         getValueFieldBuilder() {
       if (valueBuilder_ == null) {
         valueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder>(
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
                 getValue(),
                 getParentForChildren(),
                 isClean());

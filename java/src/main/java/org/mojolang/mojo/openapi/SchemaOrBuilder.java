@@ -53,19 +53,19 @@ public interface SchemaOrBuilder extends
   org.mojolang.mojo.openapi.ExternalDocumentOrBuilder getExternalDocsOrBuilder();
 
   /**
-   * <code>.mojo.core.Any example = 4;</code>
+   * <code>.mojo.core.Value example = 4;</code>
    * @return Whether the example field is set.
    */
   boolean hasExample();
   /**
-   * <code>.mojo.core.Any example = 4;</code>
+   * <code>.mojo.core.Value example = 4;</code>
    * @return The example.
    */
-  org.mojolang.mojo.core.Any getExample();
+  org.mojolang.mojo.core.Value getExample();
   /**
-   * <code>.mojo.core.Any example = 4;</code>
+   * <code>.mojo.core.Value example = 4;</code>
    */
-  org.mojolang.mojo.core.AnyOrBuilder getExampleOrBuilder();
+  org.mojolang.mojo.core.ValueOrBuilder getExampleOrBuilder();
 
   /**
    * <code>string title = 10;</code>
@@ -405,19 +405,19 @@ public interface SchemaOrBuilder extends
   org.mojolang.mojo.openapi.ReferenceableSchemaOrBuilder getNotOrBuilder();
 
   /**
-   * <code>.mojo.core.Any default = 40;</code>
+   * <code>.mojo.core.Value default = 40;</code>
    * @return Whether the default field is set.
    */
   boolean hasDefault();
   /**
-   * <code>.mojo.core.Any default = 40;</code>
+   * <code>.mojo.core.Value default = 40;</code>
    * @return The default.
    */
-  org.mojolang.mojo.core.Any getDefault();
+  org.mojolang.mojo.core.Value getDefault();
   /**
-   * <code>.mojo.core.Any default = 40;</code>
+   * <code>.mojo.core.Value default = 40;</code>
    */
-  org.mojolang.mojo.core.AnyOrBuilder getDefaultOrBuilder();
+  org.mojolang.mojo.core.ValueOrBuilder getDefaultOrBuilder();
 
   /**
    * <code>bool nullable = 50;</code>

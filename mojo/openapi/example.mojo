@@ -23,7 +23,7 @@ type Example {
     /// The value field and externalValue field are mutually exclusive.
     /// To represent examples of media types that cannot naturally represented in JSON or YAML,
     /// use a string value to contain the example, escaping where necessary.
-    value: Any @3
+    value: Value @3
 
     /// A URL that points to the literal example.
     /// This provides the capability to reference examples that cannot easily be included in JSON or YAML documents.

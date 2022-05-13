@@ -34,22 +34,22 @@ public final class LinkProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027mojo/openapi/link.proto\022\014mojo.openapi\032" +
-      "\023mojo/core/any.proto\032\031mojo/openapi/serve" +
-      "r.proto\"\217\002\n\004Link\022\025\n\roperation_ref\030\001 \001(\t\022" +
-      "\024\n\014operation_id\030\002 \001(\t\0226\n\nparameters\030\003 \003(" +
-      "\0132\".mojo.openapi.Link.ParametersEntry\022$\n" +
-      "\014request_body\030\004 \001(\0132\016.mojo.core.Any\022\023\n\013d" +
-      "escription\030\005 \001(\t\022$\n\006server\030\006 \001(\0132\024.mojo." +
-      "openapi.Server\032A\n\017ParametersEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\035\n\005value\030\002 \001(\0132\016.mojo.core.Any:\0028" +
-      "\001Bb\n\031org.mojolang.mojo.openapiB\tLinkProt" +
-      "oP\001Z8github.com/mojo-lang/openapi/go/pkg" +
-      "/mojo/openapi;openapib\006proto3"
+      "\025mojo/core/value.proto\032\031mojo/openapi/ser" +
+      "ver.proto\"\223\002\n\004Link\022\025\n\roperation_ref\030\001 \001(" +
+      "\t\022\024\n\014operation_id\030\002 \001(\t\0226\n\nparameters\030\003 " +
+      "\003(\0132\".mojo.openapi.Link.ParametersEntry\022" +
+      "&\n\014request_body\030\004 \001(\0132\020.mojo.core.Value\022" +
+      "\023\n\013description\030\005 \001(\t\022$\n\006server\030\006 \001(\0132\024.m" +
+      "ojo.openapi.Server\032C\n\017ParametersEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\037\n\005value\030\002 \001(\0132\020.mojo.core.Va" +
+      "lue:\0028\001Bb\n\031org.mojolang.mojo.openapiB\tLi" +
+      "nkProtoP\001Z8github.com/mojo-lang/openapi/" +
+      "go/pkg/mojo/openapi;openapib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.mojolang.mojo.core.AnyProto.getDescriptor(),
+          org.mojolang.mojo.core.ValueProto.getDescriptor(),
           org.mojolang.mojo.openapi.ServerProto.getDescriptor(),
         });
     internal_static_mojo_openapi_Link_descriptor =
@@ -64,7 +64,7 @@ public final class LinkProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_openapi_Link_ParametersEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    org.mojolang.mojo.core.AnyProto.getDescriptor();
+    org.mojolang.mojo.core.ValueProto.getDescriptor();
     org.mojolang.mojo.openapi.ServerProto.getDescriptor();
   }
 

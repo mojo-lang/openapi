@@ -22,7 +22,7 @@ type MediaType {
     /// The example object is mutually exclusive of the examples object.
     /// Furthermore, if referencing a schema which contains an example,
     /// the example value SHALL override the example provided by the schema.
-    example: Any @2
+    example: Value @2
 
     /// Examples of the media type.
     /// Each example object SHOULD match the media type and specified schema if present.

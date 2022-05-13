@@ -32,19 +32,19 @@ public interface ExampleOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>.mojo.core.Any value = 3;</code>
+   * <code>.mojo.core.Value value = 3;</code>
    * @return Whether the value field is set.
    */
   boolean hasValue();
   /**
-   * <code>.mojo.core.Any value = 3;</code>
+   * <code>.mojo.core.Value value = 3;</code>
    * @return The value.
    */
-  org.mojolang.mojo.core.Any getValue();
+  org.mojolang.mojo.core.Value getValue();
   /**
-   * <code>.mojo.core.Any value = 3;</code>
+   * <code>.mojo.core.Value value = 3;</code>
    */
-  org.mojolang.mojo.core.AnyOrBuilder getValueOrBuilder();
+  org.mojolang.mojo.core.ValueOrBuilder getValueOrBuilder();
 
   /**
    * <code>.mojo.core.Url external_value = 4;</code>

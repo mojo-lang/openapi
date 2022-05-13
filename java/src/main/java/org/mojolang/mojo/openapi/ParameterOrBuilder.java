@@ -99,19 +99,19 @@ public interface ParameterOrBuilder extends
   org.mojolang.mojo.openapi.ReferenceableSchemaOrBuilder getSchemaOrBuilder();
 
   /**
-   * <code>.mojo.core.Any example = 14;</code>
+   * <code>.mojo.core.Value example = 14;</code>
    * @return Whether the example field is set.
    */
   boolean hasExample();
   /**
-   * <code>.mojo.core.Any example = 14;</code>
+   * <code>.mojo.core.Value example = 14;</code>
    * @return The example.
    */
-  org.mojolang.mojo.core.Any getExample();
+  org.mojolang.mojo.core.Value getExample();
   /**
-   * <code>.mojo.core.Any example = 14;</code>
+   * <code>.mojo.core.Value example = 14;</code>
    */
-  org.mojolang.mojo.core.AnyOrBuilder getExampleOrBuilder();
+  org.mojolang.mojo.core.ValueOrBuilder getExampleOrBuilder();
 
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 15;</code>

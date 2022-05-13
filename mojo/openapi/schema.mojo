@@ -39,7 +39,7 @@ type Schema {
 
     /// A free-form property to include an example of an instance for this schema. To represent examples that cannot be naturally represented in JSON or YAML, a string value can be used to contain the example with escaping where necessary.
     @deprecated("The example property has been deprecated in favor of the JSON Schema examples keyword. Use of example is discouraged, and later versions of this specification may remove it.")
-    example: Any @4
+    example: Value @4
 
     // The following properties are taken directly from the JSON Schema definition and follow the same specifications
     //{
@@ -111,7 +111,7 @@ type Schema {
         /// make sure the value is not valid against the specified schema.
         not: Referenceable<Schema> @38
 
-        default: Any @40
+        default: Value @40
     //}
 
     /// Allows sending a null value for the defined schema. Default value is false.

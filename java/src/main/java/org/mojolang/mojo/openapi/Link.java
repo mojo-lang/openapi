@@ -70,7 +70,7 @@ private static final long serialVersionUID = 0L;
                   ParametersDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000001;
             }
-            com.google.protobuf.MapEntry<java.lang.String, org.mojolang.mojo.core.Any>
+            com.google.protobuf.MapEntry<java.lang.String, org.mojolang.mojo.core.Value>
             parameters__ = input.readMessage(
                 ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
             parameters_.getMutableMap().put(
@@ -78,11 +78,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
-            org.mojolang.mojo.core.Any.Builder subBuilder = null;
+            org.mojolang.mojo.core.Value.Builder subBuilder = null;
             if (requestBody_ != null) {
               subBuilder = requestBody_.toBuilder();
             }
-            requestBody_ = input.readMessage(org.mojolang.mojo.core.Any.parser(), extensionRegistry);
+            requestBody_ = input.readMessage(org.mojolang.mojo.core.Value.parser(), extensionRegistry);
             if (subBuilder != null) {
               subBuilder.mergeFrom(requestBody_);
               requestBody_ = subBuilder.buildPartial();
@@ -232,18 +232,18 @@ private static final long serialVersionUID = 0L;
   public static final int PARAMETERS_FIELD_NUMBER = 3;
   private static final class ParametersDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, org.mojolang.mojo.core.Any> defaultEntry =
+        java.lang.String, org.mojolang.mojo.core.Value> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, org.mojolang.mojo.core.Any>newDefaultInstance(
+            .<java.lang.String, org.mojolang.mojo.core.Value>newDefaultInstance(
                 org.mojolang.mojo.openapi.LinkProto.internal_static_mojo_openapi_Link_ParametersEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                org.mojolang.mojo.core.Any.getDefaultInstance());
+                org.mojolang.mojo.core.Value.getDefaultInstance());
   }
   private com.google.protobuf.MapField<
-      java.lang.String, org.mojolang.mojo.core.Any> parameters_;
-  private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Any>
+      java.lang.String, org.mojolang.mojo.core.Value> parameters_;
+  private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Value>
   internalGetParameters() {
     if (parameters_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
@@ -256,7 +256,7 @@ private static final long serialVersionUID = 0L;
     return internalGetParameters().getMap().size();
   }
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
 
   @java.lang.Override
@@ -270,39 +270,39 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> getParameters() {
+  public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> getParameters() {
     return getParametersMap();
   }
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   @java.lang.Override
 
-  public java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> getParametersMap() {
+  public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> getParametersMap() {
     return internalGetParameters().getMap();
   }
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   @java.lang.Override
 
-  public org.mojolang.mojo.core.Any getParametersOrDefault(
+  public org.mojolang.mojo.core.Value getParametersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.core.Any defaultValue) {
+      org.mojolang.mojo.core.Value defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
+    java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> map =
         internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   @java.lang.Override
 
-  public org.mojolang.mojo.core.Any getParametersOrThrow(
+  public org.mojolang.mojo.core.Value getParametersOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
-    java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
+    java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> map =
         internalGetParameters().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
@@ -311,9 +311,9 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REQUEST_BODY_FIELD_NUMBER = 4;
-  private org.mojolang.mojo.core.Any requestBody_;
+  private org.mojolang.mojo.core.Value requestBody_;
   /**
-   * <code>.mojo.core.Any request_body = 4;</code>
+   * <code>.mojo.core.Value request_body = 4;</code>
    * @return Whether the requestBody field is set.
    */
   @java.lang.Override
@@ -321,18 +321,18 @@ private static final long serialVersionUID = 0L;
     return requestBody_ != null;
   }
   /**
-   * <code>.mojo.core.Any request_body = 4;</code>
+   * <code>.mojo.core.Value request_body = 4;</code>
    * @return The requestBody.
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.Any getRequestBody() {
-    return requestBody_ == null ? org.mojolang.mojo.core.Any.getDefaultInstance() : requestBody_;
+  public org.mojolang.mojo.core.Value getRequestBody() {
+    return requestBody_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : requestBody_;
   }
   /**
-   * <code>.mojo.core.Any request_body = 4;</code>
+   * <code>.mojo.core.Value request_body = 4;</code>
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.AnyOrBuilder getRequestBodyOrBuilder() {
+  public org.mojolang.mojo.core.ValueOrBuilder getRequestBodyOrBuilder() {
     return getRequestBody();
   }
 
@@ -450,9 +450,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, operationId_);
     }
-    for (java.util.Map.Entry<java.lang.String, org.mojolang.mojo.core.Any> entry
+    for (java.util.Map.Entry<java.lang.String, org.mojolang.mojo.core.Value> entry
          : internalGetParameters().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, org.mojolang.mojo.core.Any>
+      com.google.protobuf.MapEntry<java.lang.String, org.mojolang.mojo.core.Value>
       parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
@@ -1000,8 +1000,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, org.mojolang.mojo.core.Any> parameters_;
-    private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Any>
+        java.lang.String, org.mojolang.mojo.core.Value> parameters_;
+    private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Value>
     internalGetParameters() {
       if (parameters_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -1009,7 +1009,7 @@ private static final long serialVersionUID = 0L;
       }
       return parameters_;
     }
-    private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Any>
+    private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Value>
     internalGetMutableParameters() {
       onChanged();;
       if (parameters_ == null) {
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       return internalGetParameters().getMap().size();
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
 
     @java.lang.Override
@@ -1040,39 +1040,39 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> getParameters() {
+    public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> getParameters() {
       return getParametersMap();
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     @java.lang.Override
 
-    public java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> getParametersMap() {
+    public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> getParametersMap() {
       return internalGetParameters().getMap();
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     @java.lang.Override
 
-    public org.mojolang.mojo.core.Any getParametersOrDefault(
+    public org.mojolang.mojo.core.Value getParametersOrDefault(
         java.lang.String key,
-        org.mojolang.mojo.core.Any defaultValue) {
+        org.mojolang.mojo.core.Value defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
+      java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> map =
           internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     @java.lang.Override
 
-    public org.mojolang.mojo.core.Any getParametersOrThrow(
+    public org.mojolang.mojo.core.Value getParametersOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> map =
+      java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> map =
           internalGetParameters().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
 
     public Builder removeParameters(
@@ -1100,16 +1100,16 @@ private static final long serialVersionUID = 0L;
      * Use alternate mutation accessors instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, org.mojolang.mojo.core.Any>
+    public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value>
     getMutableParameters() {
       return internalGetMutableParameters().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     public Builder putParameters(
         java.lang.String key,
-        org.mojolang.mojo.core.Any value) {
+        org.mojolang.mojo.core.Value value) {
       if (key == null) { throw new NullPointerException("map key"); }
       if (value == null) {
   throw new NullPointerException("map value");
@@ -1120,41 +1120,41 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+     * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
 
     public Builder putAllParameters(
-        java.util.Map<java.lang.String, org.mojolang.mojo.core.Any> values) {
+        java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> values) {
       internalGetMutableParameters().getMutableMap()
           .putAll(values);
       return this;
     }
 
-    private org.mojolang.mojo.core.Any requestBody_;
+    private org.mojolang.mojo.core.Value requestBody_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder> requestBodyBuilder_;
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> requestBodyBuilder_;
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      * @return Whether the requestBody field is set.
      */
     public boolean hasRequestBody() {
       return requestBodyBuilder_ != null || requestBody_ != null;
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      * @return The requestBody.
      */
-    public org.mojolang.mojo.core.Any getRequestBody() {
+    public org.mojolang.mojo.core.Value getRequestBody() {
       if (requestBodyBuilder_ == null) {
-        return requestBody_ == null ? org.mojolang.mojo.core.Any.getDefaultInstance() : requestBody_;
+        return requestBody_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : requestBody_;
       } else {
         return requestBodyBuilder_.getMessage();
       }
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
-    public Builder setRequestBody(org.mojolang.mojo.core.Any value) {
+    public Builder setRequestBody(org.mojolang.mojo.core.Value value) {
       if (requestBodyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1168,10 +1168,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
     public Builder setRequestBody(
-        org.mojolang.mojo.core.Any.Builder builderForValue) {
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
       if (requestBodyBuilder_ == null) {
         requestBody_ = builderForValue.build();
         onChanged();
@@ -1182,13 +1182,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
-    public Builder mergeRequestBody(org.mojolang.mojo.core.Any value) {
+    public Builder mergeRequestBody(org.mojolang.mojo.core.Value value) {
       if (requestBodyBuilder_ == null) {
         if (requestBody_ != null) {
           requestBody_ =
-            org.mojolang.mojo.core.Any.newBuilder(requestBody_).mergeFrom(value).buildPartial();
+            org.mojolang.mojo.core.Value.newBuilder(requestBody_).mergeFrom(value).buildPartial();
         } else {
           requestBody_ = value;
         }
@@ -1200,7 +1200,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
     public Builder clearRequestBody() {
       if (requestBodyBuilder_ == null) {
@@ -1214,33 +1214,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
-    public org.mojolang.mojo.core.Any.Builder getRequestBodyBuilder() {
+    public org.mojolang.mojo.core.Value.Builder getRequestBodyBuilder() {
       
       onChanged();
       return getRequestBodyFieldBuilder().getBuilder();
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
-    public org.mojolang.mojo.core.AnyOrBuilder getRequestBodyOrBuilder() {
+    public org.mojolang.mojo.core.ValueOrBuilder getRequestBodyOrBuilder() {
       if (requestBodyBuilder_ != null) {
         return requestBodyBuilder_.getMessageOrBuilder();
       } else {
         return requestBody_ == null ?
-            org.mojolang.mojo.core.Any.getDefaultInstance() : requestBody_;
+            org.mojolang.mojo.core.Value.getDefaultInstance() : requestBody_;
       }
     }
     /**
-     * <code>.mojo.core.Any request_body = 4;</code>
+     * <code>.mojo.core.Value request_body = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder> 
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
         getRequestBodyFieldBuilder() {
       if (requestBodyBuilder_ == null) {
         requestBodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojolang.mojo.core.Any, org.mojolang.mojo.core.Any.Builder, org.mojolang.mojo.core.AnyOrBuilder>(
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
                 getRequestBody(),
                 getParentForChildren(),
                 isClean());

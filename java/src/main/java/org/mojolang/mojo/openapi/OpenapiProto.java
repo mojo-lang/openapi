@@ -254,235 +254,233 @@ public final class OpenapiProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032mojo/openapi/openapi.proto\022\014mojo.opena" +
-      "pi\032\023mojo/core/any.proto\032\025mojo/core/regex" +
-      ".proto\032\025mojo/core/value.proto\032\027mojo/core" +
-      "/version.proto\032\017mojo/mojo.proto\032\"mojo/op" +
-      "enapi/cached_document.proto\032 mojo/openap" +
-      "i/discriminator.proto\032\032mojo/openapi/exam" +
-      "ple.proto\032$mojo/openapi/external_documen" +
-      "t.proto\032\027mojo/openapi/info.proto\032\027mojo/o" +
-      "penapi/link.proto\032\034mojo/openapi/referenc" +
-      "e.proto\032(mojo/openapi/referenceable_exam" +
-      "ple.proto\032%mojo/openapi/referenceable_li" +
-      "nk.proto\032\'mojo/openapi/security_requirem" +
-      "ent.proto\032\"mojo/openapi/security_scheme." +
-      "proto\032\031mojo/openapi/server.proto\032\026mojo/o" +
-      "penapi/tag.proto\032\026mojo/openapi/xml.proto" +
-      "\"\322\n\n\nComponents\0226\n\007schemas\030\001 \003(\0132%.mojo." +
-      "openapi.Components.SchemasEntry\022:\n\trespo" +
-      "nses\030\002 \003(\0132\'.mojo.openapi.Components.Res" +
-      "ponsesEntry\022<\n\nparameters\030\003 \003(\0132(.mojo.o" +
-      "penapi.Components.ParametersEntry\0228\n\010exa" +
-      "mples\030\004 \003(\0132&.mojo.openapi.Components.Ex" +
-      "amplesEntry\022C\n\016request_bodies\030\005 \003(\0132+.mo" +
-      "jo.openapi.Components.RequestBodiesEntry" +
-      "\0226\n\007headers\030\006 \003(\0132%.mojo.openapi.Compone" +
-      "nts.HeadersEntry\022G\n\020security_schemes\030\007 \003" +
-      "(\0132-.mojo.openapi.Components.SecuritySch" +
-      "emesEntry\0222\n\005links\030\010 \003(\0132#.mojo.openapi." +
-      "Components.LinksEntry\022:\n\tcallbacks\030\t \003(\013" +
-      "2\'.mojo.openapi.Components.CallbacksEntr" +
-      "y\022;\n\npath_items\030\n \003(\0132\'.mojo.openapi.Com" +
-      "ponents.PathItemsEntry\032D\n\014SchemasEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132\024.mojo.openap" +
-      "i.Schema:\0028\001\032H\n\016ResponsesEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022%\n\005value\030\002 \001(\0132\026.mojo.openapi.Respon" +
-      "se:\0028\001\032J\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022&" +
-      "\n\005value\030\002 \001(\0132\027.mojo.openapi.Parameter:\002" +
-      "8\001\032F\n\rExamplesEntry\022\013\n\003key\030\001 \001(\t\022$\n\005valu" +
-      "e\030\002 \001(\0132\025.mojo.openapi.Example:\0028\001\032O\n\022Re" +
-      "questBodiesEntry\022\013\n\003key\030\001 \001(\t\022(\n\005value\030\002" +
-      " \001(\0132\031.mojo.openapi.RequestBody:\0028\001\032D\n\014H" +
-      "eadersEntry\022\013\n\003key\030\001 \001(\t\022#\n\005value\030\002 \001(\0132" +
-      "\024.mojo.openapi.Header:\0028\001\032T\n\024SecuritySch" +
-      "emesEntry\022\013\n\003key\030\001 \001(\t\022+\n\005value\030\002 \001(\0132\034." +
-      "mojo.openapi.SecurityScheme:\0028\001\032@\n\nLinks" +
-      "Entry\022\013\n\003key\030\001 \001(\t\022!\n\005value\030\002 \001(\0132\022.mojo" +
-      ".openapi.Link:\0028\001\032H\n\016CallbacksEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.mojo.openapi.C" +
-      "allback:\0028\001\032H\n\016PathItemsEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022%\n\005value\030\002 \001(\0132\026.mojo.openapi.PathIte" +
-      "m:\0028\001\"\326\002\n\007OpenAPI\022#\n\007openapi\030\001 \001(\0132\022.moj" +
-      "o.core.Version\022 \n\004info\030\002 \001(\0132\022.mojo.open" +
-      "api.Info\022%\n\007servers\030\004 \003(\0132\024.mojo.openapi" +
-      ".Server\022\"\n\005paths\030\005 \001(\0132\023.mojo.openapi.Pa" +
-      "ths\022,\n\ncomponents\030\n \001(\0132\030.mojo.openapi.C" +
-      "omponents\0223\n\010security\030\013 \001(\0132!.mojo.opena" +
-      "pi.SecurityRequirement\022\037\n\004tags\030\014 \003(\0132\021.m" +
-      "ojo.openapi.Tag\0225\n\rexternal_docs\030\r \001(\0132\036" +
-      ".mojo.openapi.ExternalDocument\"\177\n\010Callba" +
-      "ck\022.\n\004vals\030\001 \003(\0132 .mojo.openapi.Callback" +
-      ".ValsEntry\032C\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005" +
-      "value\030\002 \001(\0132\026.mojo.openapi.PathItem:\0028\001\"" +
-      "\341\001\n\010Encoding\022\024\n\014content_type\030\001 \001(\t\0224\n\007he" +
-      "aders\030\002 \003(\0132#.mojo.openapi.Encoding.Head" +
-      "ersEntry\022\r\n\005style\030\003 \001(\t\022\017\n\007explode\030\004 \001(\010" +
-      "\022\026\n\016allow_reserved\030\005 \001(\010\032Q\n\014HeadersEntry" +
-      "\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.mojo.open" +
-      "api.ReferenceableHeader:\0028\001\"\315\004\n\006Header\022\014" +
-      "\n\004name\030\001 \001(\t\022,\n\002in\030\002 \001(\0162 .mojo.openapi." +
-      "Parameter.Location\022\023\n\013description\030\003 \001(\t\022" +
-      "\020\n\010required\030\004 \001(\010\022\022\n\ndeprecated\030\005 \001(\010\022\031\n" +
-      "\021allow_empty_value\030\006 \001(\010\022,\n\005style\030\n \001(\0162" +
-      "\035.mojo.openapi.Parameter.Style\022\017\n\007explod" +
-      "e\030\013 \001(\010\022\026\n\016allow_reserved\030\014 \001(\010\0221\n\006schem" +
-      "a\030\r \001(\0132!.mojo.openapi.ReferenceableSche" +
-      "ma\022\037\n\007example\030\016 \001(\0132\016.mojo.core.Any\0224\n\010e" +
-      "xamples\030\017 \003(\0132\".mojo.openapi.Header.Exam" +
-      "plesEntry\0222\n\007content\030\024 \003(\0132!.mojo.openap" +
-      "i.Header.ContentEntry\032S\n\rExamplesEntry\022\013" +
-      "\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".mojo.openap" +
-      "i.ReferenceableExample:\0028\001\032G\n\014ContentEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.mojo.op" +
-      "enapi.MediaType:\0028\001\"\357\002\n\tMediaType\0221\n\006sch" +
-      "ema\030\001 \001(\0132!.mojo.openapi.ReferenceableSc" +
-      "hema\022\037\n\007example\030\002 \001(\0132\016.mojo.core.Any\0227\n" +
-      "\010examples\030\003 \003(\0132%.mojo.openapi.MediaType" +
-      ".ExamplesEntry\0227\n\010encoding\030\005 \003(\0132%.mojo." +
-      "openapi.MediaType.EncodingEntry\032S\n\rExamp" +
-      "lesEntry\022\013\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".m" +
-      "ojo.openapi.ReferenceableExample:\0028\001\032G\n\r" +
-      "EncodingEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(" +
-      "\0132\026.mojo.openapi.Encoding:\0028\001\"\320\004\n\tOperat" +
-      "ion\022\014\n\004tags\030\001 \003(\t\022\017\n\007summary\030\002 \001(\t\0221\n\013de" +
-      "scription\030\003 \001(\0132\034.mojo.openapi.CachedDoc" +
-      "ument\0225\n\rexternal_docs\030\004 \001(\0132\036.mojo.open" +
-      "api.ExternalDocument\022\024\n\014operation_id\030\005 \001" +
-      "(\t\0228\n\nparameters\030\n \003(\0132$.mojo.openapi.Re" +
-      "ferenceableParameter\022<\n\014request_body\030\013 \001" +
-      "(\0132&.mojo.openapi.ReferenceableRequestBo" +
-      "dy\022*\n\tresponses\030\014 \001(\0132\027.mojo.openapi.Res" +
-      "ponses\0229\n\tcallbacks\030\r \003(\0132&.mojo.openapi" +
-      ".Operation.CallbacksEntry\022\022\n\ndeprecated\030" +
-      "\017 \001(\010\0223\n\010security\030\020 \001(\0132!.mojo.openapi.S" +
-      "ecurityRequirement\022%\n\007servers\030\021 \003(\0132\024.mo" +
-      "jo.openapi.Server\032U\n\016CallbacksEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.mojo.openapi.R" +
-      "eferenceableCallback:\0028\001\"\377\006\n\tParameter\022\014" +
-      "\n\004name\030\001 \001(\t\022,\n\002in\030\002 \001(\0162 .mojo.openapi." +
-      "Parameter.Location\022\023\n\013description\030\003 \001(\t\022" +
-      "\020\n\010required\030\004 \001(\010\022\022\n\ndeprecated\030\005 \001(\010\022\031\n" +
-      "\021allow_empty_value\030\006 \001(\010\022,\n\005style\030\n \001(\0162" +
-      "\035.mojo.openapi.Parameter.Style\022\017\n\007explod" +
-      "e\030\013 \001(\010\022\026\n\016allow_reserved\030\014 \001(\010\0221\n\006schem" +
-      "a\030\r \001(\0132!.mojo.openapi.ReferenceableSche" +
-      "ma\022\037\n\007example\030\016 \001(\0132\016.mojo.core.Any\0227\n\010e" +
-      "xamples\030\017 \003(\0132%.mojo.openapi.Parameter.E" +
-      "xamplesEntry\0225\n\007content\030\024 \003(\0132$.mojo.ope" +
-      "napi.Parameter.ContentEntry\032S\n\rExamplesE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\0221\n\005value\030\002 \001(\0132\".mojo." +
-      "openapi.ReferenceableExample:\0028\001\032G\n\014Cont" +
-      "entEntry\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.m" +
-      "ojo.openapi.MediaType:\0028\001\"u\n\010Location\022\030\n" +
-      "\024LOCATION_UNSPECIFIED\020\000\022\021\n\rLOCATION_PATH" +
-      "\020\001\022\022\n\016LOCATION_QUERY\020\002\022\023\n\017LOCATION_HEADE" +
-      "R\020\003\022\023\n\017LOCATION_COOKIE\020\004\"\257\001\n\005Style\022\025\n\021ST" +
-      "YLE_UNSPECIFIED\020\000\022\020\n\014STYLE_MATRIX\020\001\022\017\n\013S" +
-      "TYLE_LABEL\020\002\022\016\n\nSTYLE_FORM\020\003\022\020\n\014STYLE_SI" +
-      "MPLE\020\004\022\031\n\025STYLE_SPACE_DELIMITED\020\005\022\030\n\024STY" +
-      "LE_PIPE_DELIMITED\020\006\022\025\n\021STYLE_DEEP_OBJECT" +
-      "\020\007\"\203\004\n\010PathItem\022\025\n\003ref\030\001 \001(\tB\010\312\317$\004$ref\022\017" +
-      "\n\007summary\030\002 \001(\t\0221\n\013description\030\003 \001(\0132\034.m" +
-      "ojo.openapi.CachedDocument\022$\n\003get\030\005 \001(\0132" +
-      "\027.mojo.openapi.Operation\022$\n\003put\030\006 \001(\0132\027." +
-      "mojo.openapi.Operation\022%\n\004post\030\007 \001(\0132\027.m" +
-      "ojo.openapi.Operation\022\'\n\006delete\030\010 \001(\0132\027." +
-      "mojo.openapi.Operation\022(\n\007options\030\t \001(\0132" +
-      "\027.mojo.openapi.Operation\022%\n\004head\030\n \001(\0132\027" +
-      ".mojo.openapi.Operation\022&\n\005patch\030\013 \001(\0132\027" +
-      ".mojo.openapi.Operation\022&\n\005trace\030\014 \001(\0132\027" +
-      ".mojo.openapi.Operation\022%\n\007servers\030\r \003(\013" +
-      "2\024.mojo.openapi.Server\0228\n\nparameters\030\017 \003" +
-      "(\0132$.mojo.openapi.ReferenceableParameter" +
-      "\"\324\001\n\013RequestBody\0221\n\013description\030\001 \001(\0132\034." +
-      "mojo.openapi.CachedDocument\0227\n\007content\030\002" +
-      " \003(\0132&.mojo.openapi.RequestBody.ContentE" +
-      "ntry\022\020\n\010required\030\003 \001(\010\032G\n\014ContentEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.mojo.openap" +
-      "i.MediaType:\0028\001\"\250\003\n\010Response\022\023\n\013descript" +
-      "ion\030\001 \001(\t\0224\n\007headers\030\002 \003(\0132#.mojo.openap" +
-      "i.Response.HeadersEntry\0224\n\007content\030\003 \003(\013" +
-      "2#.mojo.openapi.Response.ContentEntry\0220\n" +
-      "\005links\030\004 \003(\0132!.mojo.openapi.Response.Lin" +
-      "ksEntry\032Q\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\0220\n\005" +
-      "value\030\002 \001(\0132!.mojo.openapi.Referenceable" +
-      "Header:\0028\001\032G\n\014ContentEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "&\n\005value\030\002 \001(\0132\027.mojo.openapi.MediaType:" +
-      "\0028\001\032M\n\nLinksEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030" +
-      "\002 \001(\0132\037.mojo.openapi.ReferenceableLink:\002" +
-      "8\001\"\216\001\n\tResponses\022/\n\004vals\030\001 \003(\0132!.mojo.op" +
-      "enapi.Responses.ValsEntry\032P\n\tValsEntry\022\013" +
-      "\n\003key\030\001 \001(\t\0222\n\005value\030\002 \001(\0132#.mojo.openap" +
-      "i.ReferenceableResponse:\0028\001\"\325\n\n\006Schema\0222" +
-      "\n\rdiscriminator\030\001 \001(\0132\033.mojo.openapi.Dis" +
-      "criminator\022\036\n\003xml\030\002 \001(\0132\021.mojo.openapi.X" +
-      "ml\0225\n\rexternal_docs\030\003 \001(\0132\036.mojo.openapi" +
-      ".ExternalDocument\022\037\n\007example\030\004 \001(\0132\016.moj" +
-      "o.core.Any\022\r\n\005title\030\n \001(\t\0221\n\013description" +
-      "\030\013 \001(\0132\034.mojo.openapi.CachedDocument\022\'\n\004" +
-      "type\030\014 \001(\0162\031.mojo.openapi.Schema.Type\022\016\n" +
-      "\006format\030\r \001(\t\022\023\n\013multiple_of\030\016 \001(\003\022\017\n\007ma" +
-      "ximum\030\017 \001(\001\022\031\n\021exclusive_maximum\030\020 \001(\001\022\017" +
-      "\n\007minimum\030\021 \001(\001\022\031\n\021exclusive_minimum\030\022 \001" +
-      "(\001\022\022\n\nmax_length\030\023 \001(\004\022\022\n\nmin_length\030\024 \001" +
-      "(\004\022!\n\007pattern\030\025 \001(\0132\020.mojo.core.Regex\0220\n" +
-      "\005items\030\026 \001(\0132!.mojo.openapi.Referenceabl" +
-      "eSchema\022\021\n\tmax_items\030\027 \001(\004\022\021\n\tmin_items\030" +
-      "\030 \001(\004\022\024\n\014unique_items\030\031 \001(\010\0228\n\npropertie" +
-      "s\030\032 \003(\0132$.mojo.openapi.Schema.Properties" +
-      "Entry\022@\n\025additional_properties\030\033 \001(\0132!.m" +
-      "ojo.openapi.ReferenceableSchema\022\026\n\016max_p" +
-      "roperties\030\034 \001(\004\022\026\n\016min_properties\030\035 \001(\004\022" +
-      "\020\n\010required\030\036 \003(\t\022\036\n\004enum\030\037 \003(\0132\020.mojo.c" +
-      "ore.Value\0221\n\006all_of\030# \003(\0132!.mojo.openapi" +
-      ".ReferenceableSchema\0221\n\006one_of\030$ \003(\0132!.m" +
-      "ojo.openapi.ReferenceableSchema\0221\n\006any_o" +
-      "f\030% \003(\0132!.mojo.openapi.ReferenceableSche" +
-      "ma\022.\n\003not\030& \001(\0132!.mojo.openapi.Reference" +
-      "ableSchema\022\037\n\007default\030( \001(\0132\016.mojo.core." +
-      "Any\022\020\n\010nullable\0302 \001(\010\022\021\n\tread_only\0303 \001(\010" +
-      "\022\022\n\nwrite_only\0304 \001(\010\022\022\n\ndeprecated\0305 \001(\010" +
-      "\032T\n\017PropertiesEntry\022\013\n\003key\030\001 \001(\t\0220\n\005valu" +
-      "e\030\002 \001(\0132!.mojo.openapi.ReferenceableSche" +
-      "ma:\0028\001\"\222\001\n\004Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n" +
-      "\tTYPE_NULL\020\001\022\020\n\014TYPE_BOOLEAN\020\002\022\020\n\014TYPE_I" +
-      "NTEGER\020\003\022\017\n\013TYPE_NUMBER\020\004\022\017\n\013TYPE_STRING" +
-      "\020\005\022\016\n\nTYPE_ARRAY\020\n\022\017\n\013TYPE_OBJECT\020\013\"\203\001\n\023" +
-      "ReferenceableHeader\022,\n\treference\030\001 \001(\0132\027" +
-      ".mojo.openapi.ReferenceH\000\022&\n\006header\030\002 \001(" +
-      "\0132\024.mojo.openapi.HeaderH\000B\026\n\024referenceab" +
-      "le_header\"\203\001\n\023ReferenceableSchema\022,\n\tref" +
-      "erence\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000\022" +
-      "&\n\006schema\030\002 \001(\0132\024.mojo.openapi.SchemaH\000B" +
-      "\026\n\024referenceable_schema\"\217\001\n\026Referenceabl" +
-      "eParameter\022,\n\treference\030\001 \001(\0132\027.mojo.ope" +
-      "napi.ReferenceH\000\022,\n\tparameter\030\002 \001(\0132\027.mo" +
-      "jo.openapi.ParameterH\000B\031\n\027referenceable_" +
-      "parameter\"\231\001\n\030ReferenceableRequestBody\022," +
-      "\n\treference\030\001 \001(\0132\027.mojo.openapi.Referen" +
-      "ceH\000\0221\n\014request_body\030\002 \001(\0132\031.mojo.openap" +
-      "i.RequestBodyH\000B\034\n\032referenceable_request" +
-      "_body\"\213\001\n\025ReferenceableCallback\022,\n\trefer" +
-      "ence\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000\022*\n" +
-      "\010callback\030\002 \001(\0132\026.mojo.openapi.CallbackH" +
-      "\000B\030\n\026referenceable_callback\"\213\001\n\025Referenc" +
-      "eableResponse\022,\n\treference\030\001 \001(\0132\027.mojo." +
-      "openapi.ReferenceH\000\022*\n\010response\030\002 \001(\0132\026." +
-      "mojo.openapi.ResponseH\000B\030\n\026referenceable" +
-      "_response\"y\n\005Paths\022+\n\004vals\030\001 \003(\0132\035.mojo." +
-      "openapi.Paths.ValsEntry\032C\n\tValsEntry\022\013\n\003" +
+      "pi\032\025mojo/core/regex.proto\032\025mojo/core/val" +
+      "ue.proto\032\027mojo/core/version.proto\032\017mojo/" +
+      "mojo.proto\032\"mojo/openapi/cached_document" +
+      ".proto\032 mojo/openapi/discriminator.proto" +
+      "\032\032mojo/openapi/example.proto\032$mojo/opena" +
+      "pi/external_document.proto\032\027mojo/openapi" +
+      "/info.proto\032\027mojo/openapi/link.proto\032\034mo" +
+      "jo/openapi/reference.proto\032(mojo/openapi" +
+      "/referenceable_example.proto\032%mojo/opena" +
+      "pi/referenceable_link.proto\032\'mojo/openap" +
+      "i/security_requirement.proto\032\"mojo/opena" +
+      "pi/security_scheme.proto\032\031mojo/openapi/s" +
+      "erver.proto\032\026mojo/openapi/tag.proto\032\026moj" +
+      "o/openapi/xml.proto\"\322\n\n\nComponents\0226\n\007sc" +
+      "hemas\030\001 \003(\0132%.mojo.openapi.Components.Sc" +
+      "hemasEntry\022:\n\tresponses\030\002 \003(\0132\'.mojo.ope" +
+      "napi.Components.ResponsesEntry\022<\n\nparame" +
+      "ters\030\003 \003(\0132(.mojo.openapi.Components.Par" +
+      "ametersEntry\0228\n\010examples\030\004 \003(\0132&.mojo.op" +
+      "enapi.Components.ExamplesEntry\022C\n\016reques" +
+      "t_bodies\030\005 \003(\0132+.mojo.openapi.Components" +
+      ".RequestBodiesEntry\0226\n\007headers\030\006 \003(\0132%.m" +
+      "ojo.openapi.Components.HeadersEntry\022G\n\020s" +
+      "ecurity_schemes\030\007 \003(\0132-.mojo.openapi.Com" +
+      "ponents.SecuritySchemesEntry\0222\n\005links\030\010 " +
+      "\003(\0132#.mojo.openapi.Components.LinksEntry" +
+      "\022:\n\tcallbacks\030\t \003(\0132\'.mojo.openapi.Compo" +
+      "nents.CallbacksEntry\022;\n\npath_items\030\n \003(\013" +
+      "2\'.mojo.openapi.Components.PathItemsEntr" +
+      "y\032D\n\014SchemasEntry\022\013\n\003key\030\001 \001(\t\022#\n\005value\030" +
+      "\002 \001(\0132\024.mojo.openapi.Schema:\0028\001\032H\n\016Respo" +
+      "nsesEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026." +
+      "mojo.openapi.Response:\0028\001\032J\n\017ParametersE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.mojo." +
+      "openapi.Parameter:\0028\001\032F\n\rExamplesEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.mojo.openap" +
+      "i.Example:\0028\001\032O\n\022RequestBodiesEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022(\n\005value\030\002 \001(\0132\031.mojo.openapi.R" +
+      "equestBody:\0028\001\032D\n\014HeadersEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022#\n\005value\030\002 \001(\0132\024.mojo.openapi.Header" +
+      ":\0028\001\032T\n\024SecuritySchemesEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022+\n\005value\030\002 \001(\0132\034.mojo.openapi.Security" +
+      "Scheme:\0028\001\032@\n\nLinksEntry\022\013\n\003key\030\001 \001(\t\022!\n" +
+      "\005value\030\002 \001(\0132\022.mojo.openapi.Link:\0028\001\032H\n\016" +
+      "CallbacksEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001" +
+      "(\0132\026.mojo.openapi.Callback:\0028\001\032H\n\016PathIt" +
+      "emsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.m" +
+      "ojo.openapi.PathItem:\0028\001\"\326\002\n\007OpenAPI\022#\n\007" +
+      "openapi\030\001 \001(\0132\022.mojo.core.Version\022 \n\004inf" +
+      "o\030\002 \001(\0132\022.mojo.openapi.Info\022%\n\007servers\030\004" +
+      " \003(\0132\024.mojo.openapi.Server\022\"\n\005paths\030\005 \001(" +
+      "\0132\023.mojo.openapi.Paths\022,\n\ncomponents\030\n \001" +
+      "(\0132\030.mojo.openapi.Components\0223\n\010security" +
+      "\030\013 \001(\0132!.mojo.openapi.SecurityRequiremen" +
+      "t\022\037\n\004tags\030\014 \003(\0132\021.mojo.openapi.Tag\0225\n\rex" +
+      "ternal_docs\030\r \001(\0132\036.mojo.openapi.Externa" +
+      "lDocument\"\177\n\010Callback\022.\n\004vals\030\001 \003(\0132 .mo" +
+      "jo.openapi.Callback.ValsEntry\032C\n\tValsEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.mojo.op" +
+      "enapi.PathItem:\0028\001\"\341\001\n\010Encoding\022\024\n\014conte" +
+      "nt_type\030\001 \001(\t\0224\n\007headers\030\002 \003(\0132#.mojo.op" +
+      "enapi.Encoding.HeadersEntry\022\r\n\005style\030\003 \001" +
+      "(\t\022\017\n\007explode\030\004 \001(\010\022\026\n\016allow_reserved\030\005 " +
+      "\001(\010\032Q\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\0220\n\005valu" +
+      "e\030\002 \001(\0132!.mojo.openapi.ReferenceableHead" +
+      "er:\0028\001\"\317\004\n\006Header\022\014\n\004name\030\001 \001(\t\022,\n\002in\030\002 " +
+      "\001(\0162 .mojo.openapi.Parameter.Location\022\023\n" +
+      "\013description\030\003 \001(\t\022\020\n\010required\030\004 \001(\010\022\022\n\n" +
+      "deprecated\030\005 \001(\010\022\031\n\021allow_empty_value\030\006 " +
+      "\001(\010\022,\n\005style\030\n \001(\0162\035.mojo.openapi.Parame" +
+      "ter.Style\022\017\n\007explode\030\013 \001(\010\022\026\n\016allow_rese" +
+      "rved\030\014 \001(\010\0221\n\006schema\030\r \001(\0132!.mojo.openap" +
+      "i.ReferenceableSchema\022!\n\007example\030\016 \001(\0132\020" +
+      ".mojo.core.Value\0224\n\010examples\030\017 \003(\0132\".moj" +
+      "o.openapi.Header.ExamplesEntry\0222\n\007conten" +
+      "t\030\024 \003(\0132!.mojo.openapi.Header.ContentEnt" +
+      "ry\032S\n\rExamplesEntry\022\013\n\003key\030\001 \001(\t\0221\n\005valu" +
+      "e\030\002 \001(\0132\".mojo.openapi.ReferenceableExam" +
+      "ple:\0028\001\032G\n\014ContentEntry\022\013\n\003key\030\001 \001(\t\022&\n\005" +
+      "value\030\002 \001(\0132\027.mojo.openapi.MediaType:\0028\001" +
+      "\"\361\002\n\tMediaType\0221\n\006schema\030\001 \001(\0132!.mojo.op" +
+      "enapi.ReferenceableSchema\022!\n\007example\030\002 \001" +
+      "(\0132\020.mojo.core.Value\0227\n\010examples\030\003 \003(\0132%" +
+      ".mojo.openapi.MediaType.ExamplesEntry\0227\n" +
+      "\010encoding\030\005 \003(\0132%.mojo.openapi.MediaType" +
+      ".EncodingEntry\032S\n\rExamplesEntry\022\013\n\003key\030\001" +
+      " \001(\t\0221\n\005value\030\002 \001(\0132\".mojo.openapi.Refer" +
+      "enceableExample:\0028\001\032G\n\rEncodingEntry\022\013\n\003" +
       "key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.mojo.openapi." +
-      "PathItem:\0028\001*M\n\016HttpStatusCode\022\034\n\030HTTP_S" +
-      "TATUS_CODE_DEFAULT\020\000\022\035\n\031HTTP_STATUS_CODE" +
-      "_CODE_200\020\001Be\n\031org.mojolang.mojo.openapi" +
-      "B\014OpenapiProtoP\001Z8github.com/mojo-lang/o" +
-      "penapi/go/pkg/mojo/openapi;openapib\006prot" +
-      "o3"
+      "Encoding:\0028\001\"\320\004\n\tOperation\022\014\n\004tags\030\001 \003(\t" +
+      "\022\017\n\007summary\030\002 \001(\t\0221\n\013description\030\003 \001(\0132\034" +
+      ".mojo.openapi.CachedDocument\0225\n\rexternal" +
+      "_docs\030\004 \001(\0132\036.mojo.openapi.ExternalDocum" +
+      "ent\022\024\n\014operation_id\030\005 \001(\t\0228\n\nparameters\030" +
+      "\n \003(\0132$.mojo.openapi.ReferenceableParame" +
+      "ter\022<\n\014request_body\030\013 \001(\0132&.mojo.openapi" +
+      ".ReferenceableRequestBody\022*\n\tresponses\030\014" +
+      " \001(\0132\027.mojo.openapi.Responses\0229\n\tcallbac" +
+      "ks\030\r \003(\0132&.mojo.openapi.Operation.Callba" +
+      "cksEntry\022\022\n\ndeprecated\030\017 \001(\010\0223\n\010security" +
+      "\030\020 \001(\0132!.mojo.openapi.SecurityRequiremen" +
+      "t\022%\n\007servers\030\021 \003(\0132\024.mojo.openapi.Server" +
+      "\032U\n\016CallbacksEntry\022\013\n\003key\030\001 \001(\t\0222\n\005value" +
+      "\030\002 \001(\0132#.mojo.openapi.ReferenceableCallb" +
+      "ack:\0028\001\"\201\007\n\tParameter\022\014\n\004name\030\001 \001(\t\022,\n\002i" +
+      "n\030\002 \001(\0162 .mojo.openapi.Parameter.Locatio" +
+      "n\022\023\n\013description\030\003 \001(\t\022\020\n\010required\030\004 \001(\010" +
+      "\022\022\n\ndeprecated\030\005 \001(\010\022\031\n\021allow_empty_valu" +
+      "e\030\006 \001(\010\022,\n\005style\030\n \001(\0162\035.mojo.openapi.Pa" +
+      "rameter.Style\022\017\n\007explode\030\013 \001(\010\022\026\n\016allow_" +
+      "reserved\030\014 \001(\010\0221\n\006schema\030\r \001(\0132!.mojo.op" +
+      "enapi.ReferenceableSchema\022!\n\007example\030\016 \001" +
+      "(\0132\020.mojo.core.Value\0227\n\010examples\030\017 \003(\0132%" +
+      ".mojo.openapi.Parameter.ExamplesEntry\0225\n" +
+      "\007content\030\024 \003(\0132$.mojo.openapi.Parameter." +
+      "ContentEntry\032S\n\rExamplesEntry\022\013\n\003key\030\001 \001" +
+      "(\t\0221\n\005value\030\002 \001(\0132\".mojo.openapi.Referen" +
+      "ceableExample:\0028\001\032G\n\014ContentEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022&\n\005value\030\002 \001(\0132\027.mojo.openapi.Med" +
+      "iaType:\0028\001\"u\n\010Location\022\030\n\024LOCATION_UNSPE" +
+      "CIFIED\020\000\022\021\n\rLOCATION_PATH\020\001\022\022\n\016LOCATION_" +
+      "QUERY\020\002\022\023\n\017LOCATION_HEADER\020\003\022\023\n\017LOCATION" +
+      "_COOKIE\020\004\"\257\001\n\005Style\022\025\n\021STYLE_UNSPECIFIED" +
+      "\020\000\022\020\n\014STYLE_MATRIX\020\001\022\017\n\013STYLE_LABEL\020\002\022\016\n" +
+      "\nSTYLE_FORM\020\003\022\020\n\014STYLE_SIMPLE\020\004\022\031\n\025STYLE" +
+      "_SPACE_DELIMITED\020\005\022\030\n\024STYLE_PIPE_DELIMIT" +
+      "ED\020\006\022\025\n\021STYLE_DEEP_OBJECT\020\007\"\203\004\n\010PathItem" +
+      "\022\025\n\003ref\030\001 \001(\tB\010\312\317$\004$ref\022\017\n\007summary\030\002 \001(\t" +
+      "\0221\n\013description\030\003 \001(\0132\034.mojo.openapi.Cac" +
+      "hedDocument\022$\n\003get\030\005 \001(\0132\027.mojo.openapi." +
+      "Operation\022$\n\003put\030\006 \001(\0132\027.mojo.openapi.Op" +
+      "eration\022%\n\004post\030\007 \001(\0132\027.mojo.openapi.Ope" +
+      "ration\022\'\n\006delete\030\010 \001(\0132\027.mojo.openapi.Op" +
+      "eration\022(\n\007options\030\t \001(\0132\027.mojo.openapi." +
+      "Operation\022%\n\004head\030\n \001(\0132\027.mojo.openapi.O" +
+      "peration\022&\n\005patch\030\013 \001(\0132\027.mojo.openapi.O" +
+      "peration\022&\n\005trace\030\014 \001(\0132\027.mojo.openapi.O" +
+      "peration\022%\n\007servers\030\r \003(\0132\024.mojo.openapi" +
+      ".Server\0228\n\nparameters\030\017 \003(\0132$.mojo.opena" +
+      "pi.ReferenceableParameter\"\324\001\n\013RequestBod" +
+      "y\0221\n\013description\030\001 \001(\0132\034.mojo.openapi.Ca" +
+      "chedDocument\0227\n\007content\030\002 \003(\0132&.mojo.ope" +
+      "napi.RequestBody.ContentEntry\022\020\n\010require" +
+      "d\030\003 \001(\010\032G\n\014ContentEntry\022\013\n\003key\030\001 \001(\t\022&\n\005" +
+      "value\030\002 \001(\0132\027.mojo.openapi.MediaType:\0028\001" +
+      "\"\250\003\n\010Response\022\023\n\013description\030\001 \001(\t\0224\n\007he" +
+      "aders\030\002 \003(\0132#.mojo.openapi.Response.Head" +
+      "ersEntry\0224\n\007content\030\003 \003(\0132#.mojo.openapi" +
+      ".Response.ContentEntry\0220\n\005links\030\004 \003(\0132!." +
+      "mojo.openapi.Response.LinksEntry\032Q\n\014Head" +
+      "ersEntry\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.m" +
+      "ojo.openapi.ReferenceableHeader:\0028\001\032G\n\014C" +
+      "ontentEntry\022\013\n\003key\030\001 \001(\t\022&\n\005value\030\002 \001(\0132" +
+      "\027.mojo.openapi.MediaType:\0028\001\032M\n\nLinksEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037.mojo.op" +
+      "enapi.ReferenceableLink:\0028\001\"\216\001\n\tResponse" +
+      "s\022/\n\004vals\030\001 \003(\0132!.mojo.openapi.Responses" +
+      ".ValsEntry\032P\n\tValsEntry\022\013\n\003key\030\001 \001(\t\0222\n\005" +
+      "value\030\002 \001(\0132#.mojo.openapi.Referenceable" +
+      "Response:\0028\001\"\331\n\n\006Schema\0222\n\rdiscriminator" +
+      "\030\001 \001(\0132\033.mojo.openapi.Discriminator\022\036\n\003x" +
+      "ml\030\002 \001(\0132\021.mojo.openapi.Xml\0225\n\rexternal_" +
+      "docs\030\003 \001(\0132\036.mojo.openapi.ExternalDocume" +
+      "nt\022!\n\007example\030\004 \001(\0132\020.mojo.core.Value\022\r\n" +
+      "\005title\030\n \001(\t\0221\n\013description\030\013 \001(\0132\034.mojo" +
+      ".openapi.CachedDocument\022\'\n\004type\030\014 \001(\0162\031." +
+      "mojo.openapi.Schema.Type\022\016\n\006format\030\r \001(\t" +
+      "\022\023\n\013multiple_of\030\016 \001(\003\022\017\n\007maximum\030\017 \001(\001\022\031" +
+      "\n\021exclusive_maximum\030\020 \001(\001\022\017\n\007minimum\030\021 \001" +
+      "(\001\022\031\n\021exclusive_minimum\030\022 \001(\001\022\022\n\nmax_len" +
+      "gth\030\023 \001(\004\022\022\n\nmin_length\030\024 \001(\004\022!\n\007pattern" +
+      "\030\025 \001(\0132\020.mojo.core.Regex\0220\n\005items\030\026 \001(\0132" +
+      "!.mojo.openapi.ReferenceableSchema\022\021\n\tma" +
+      "x_items\030\027 \001(\004\022\021\n\tmin_items\030\030 \001(\004\022\024\n\014uniq" +
+      "ue_items\030\031 \001(\010\0228\n\nproperties\030\032 \003(\0132$.moj" +
+      "o.openapi.Schema.PropertiesEntry\022@\n\025addi" +
+      "tional_properties\030\033 \001(\0132!.mojo.openapi.R" +
+      "eferenceableSchema\022\026\n\016max_properties\030\034 \001" +
+      "(\004\022\026\n\016min_properties\030\035 \001(\004\022\020\n\010required\030\036" +
+      " \003(\t\022\036\n\004enum\030\037 \003(\0132\020.mojo.core.Value\0221\n\006" +
+      "all_of\030# \003(\0132!.mojo.openapi.Referenceabl" +
+      "eSchema\0221\n\006one_of\030$ \003(\0132!.mojo.openapi.R" +
+      "eferenceableSchema\0221\n\006any_of\030% \003(\0132!.moj" +
+      "o.openapi.ReferenceableSchema\022.\n\003not\030& \001" +
+      "(\0132!.mojo.openapi.ReferenceableSchema\022!\n" +
+      "\007default\030( \001(\0132\020.mojo.core.Value\022\020\n\010null" +
+      "able\0302 \001(\010\022\021\n\tread_only\0303 \001(\010\022\022\n\nwrite_o" +
+      "nly\0304 \001(\010\022\022\n\ndeprecated\0305 \001(\010\032T\n\017Propert" +
+      "iesEntry\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.m" +
+      "ojo.openapi.ReferenceableSchema:\0028\001\"\222\001\n\004" +
+      "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\tTYPE_NULL\020" +
+      "\001\022\020\n\014TYPE_BOOLEAN\020\002\022\020\n\014TYPE_INTEGER\020\003\022\017\n" +
+      "\013TYPE_NUMBER\020\004\022\017\n\013TYPE_STRING\020\005\022\016\n\nTYPE_" +
+      "ARRAY\020\n\022\017\n\013TYPE_OBJECT\020\013\"\203\001\n\023Referenceab" +
+      "leHeader\022,\n\treference\030\001 \001(\0132\027.mojo.opena" +
+      "pi.ReferenceH\000\022&\n\006header\030\002 \001(\0132\024.mojo.op" +
+      "enapi.HeaderH\000B\026\n\024referenceable_header\"\203" +
+      "\001\n\023ReferenceableSchema\022,\n\treference\030\001 \001(" +
+      "\0132\027.mojo.openapi.ReferenceH\000\022&\n\006schema\030\002" +
+      " \001(\0132\024.mojo.openapi.SchemaH\000B\026\n\024referenc" +
+      "eable_schema\"\217\001\n\026ReferenceableParameter\022" +
+      ",\n\treference\030\001 \001(\0132\027.mojo.openapi.Refere" +
+      "nceH\000\022,\n\tparameter\030\002 \001(\0132\027.mojo.openapi." +
+      "ParameterH\000B\031\n\027referenceable_parameter\"\231" +
+      "\001\n\030ReferenceableRequestBody\022,\n\treference" +
+      "\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000\0221\n\014req" +
+      "uest_body\030\002 \001(\0132\031.mojo.openapi.RequestBo" +
+      "dyH\000B\034\n\032referenceable_request_body\"\213\001\n\025R" +
+      "eferenceableCallback\022,\n\treference\030\001 \001(\0132" +
+      "\027.mojo.openapi.ReferenceH\000\022*\n\010callback\030\002" +
+      " \001(\0132\026.mojo.openapi.CallbackH\000B\030\n\026refere" +
+      "nceable_callback\"\213\001\n\025ReferenceableRespon" +
+      "se\022,\n\treference\030\001 \001(\0132\027.mojo.openapi.Ref" +
+      "erenceH\000\022*\n\010response\030\002 \001(\0132\026.mojo.openap" +
+      "i.ResponseH\000B\030\n\026referenceable_response\"y" +
+      "\n\005Paths\022+\n\004vals\030\001 \003(\0132\035.mojo.openapi.Pat" +
+      "hs.ValsEntry\032C\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022%" +
+      "\n\005value\030\002 \001(\0132\026.mojo.openapi.PathItem:\0028" +
+      "\001*M\n\016HttpStatusCode\022\034\n\030HTTP_STATUS_CODE_" +
+      "DEFAULT\020\000\022\035\n\031HTTP_STATUS_CODE_CODE_200\020\001" +
+      "Be\n\031org.mojolang.mojo.openapiB\014OpenapiPr" +
+      "otoP\001Z8github.com/mojo-lang/openapi/go/p" +
+      "kg/mojo/openapi;openapib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.mojolang.mojo.core.AnyProto.getDescriptor(),
           org.mojolang.mojo.core.RegexProto.getDescriptor(),
           org.mojolang.mojo.core.ValueProto.getDescriptor(),
           org.mojolang.mojo.core.VersionProto.getDescriptor(),
@@ -783,7 +781,6 @@ public final class OpenapiProto {
     registry.add(com.google.protobuf.MojoProtos.alias);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    org.mojolang.mojo.core.AnyProto.getDescriptor();
     org.mojolang.mojo.core.RegexProto.getDescriptor();
     org.mojolang.mojo.core.ValueProto.getDescriptor();
     org.mojolang.mojo.core.VersionProto.getDescriptor();

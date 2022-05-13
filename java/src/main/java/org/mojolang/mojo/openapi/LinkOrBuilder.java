@@ -32,11 +32,11 @@ public interface LinkOrBuilder extends
       getOperationIdBytes();
 
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   int getParametersCount();
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   boolean containsParameters(
       java.lang.String key);
@@ -44,41 +44,41 @@ public interface LinkOrBuilder extends
    * Use {@link #getParametersMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, org.mojolang.mojo.core.Any>
+  java.util.Map<java.lang.String, org.mojolang.mojo.core.Value>
   getParameters();
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
-  java.util.Map<java.lang.String, org.mojolang.mojo.core.Any>
+  java.util.Map<java.lang.String, org.mojolang.mojo.core.Value>
   getParametersMap();
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
 
-  org.mojolang.mojo.core.Any getParametersOrDefault(
+  org.mojolang.mojo.core.Value getParametersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.core.Any defaultValue);
+      org.mojolang.mojo.core.Value defaultValue);
   /**
-   * <code>map&lt;string, .mojo.core.Any&gt; parameters = 3;</code>
+   * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
 
-  org.mojolang.mojo.core.Any getParametersOrThrow(
+  org.mojolang.mojo.core.Value getParametersOrThrow(
       java.lang.String key);
 
   /**
-   * <code>.mojo.core.Any request_body = 4;</code>
+   * <code>.mojo.core.Value request_body = 4;</code>
    * @return Whether the requestBody field is set.
    */
   boolean hasRequestBody();
   /**
-   * <code>.mojo.core.Any request_body = 4;</code>
+   * <code>.mojo.core.Value request_body = 4;</code>
    * @return The requestBody.
    */
-  org.mojolang.mojo.core.Any getRequestBody();
+  org.mojolang.mojo.core.Value getRequestBody();
   /**
-   * <code>.mojo.core.Any request_body = 4;</code>
+   * <code>.mojo.core.Value request_body = 4;</code>
    */
-  org.mojolang.mojo.core.AnyOrBuilder getRequestBodyOrBuilder();
+  org.mojolang.mojo.core.ValueOrBuilder getRequestBodyOrBuilder();
 
   /**
    * <code>string description = 5;</code>
