@@ -18,6 +18,7 @@
 package openapi
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *HttpStatusCodeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iter
 	any := iter.ReadAny()
 	e := (*HttpStatusCode)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("HttpStatusCodeCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := HttpStatusCodeNames[value]; ok {
 			*e = HttpStatusCode(value)
+		} else {
+			iter.ReportError("HttpStatusCodeCodec.Decode", fmt.Sprintf("invalid enum value %d for HttpStatusCode", value))
 		}
 	}
 }

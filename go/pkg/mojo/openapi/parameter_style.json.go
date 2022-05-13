@@ -18,6 +18,7 @@
 package openapi
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *ParameterStyleCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iter
 	any := iter.ReadAny()
 	e := (*Parameter_Style)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("ParameterStyleCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := ParameterStyleNames[value]; ok {
 			*e = Parameter_Style(value)
+		} else {
+			iter.ReportError("ParameterStyleCodec.Decode", fmt.Sprintf("invalid enum value %d for Parameter_Style", value))
 		}
 	}
 }

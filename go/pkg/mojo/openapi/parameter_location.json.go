@@ -18,6 +18,7 @@
 package openapi
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *ParameterLocationCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.I
 	any := iter.ReadAny()
 	e := (*Parameter_Location)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("ParameterLocationCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := ParameterLocationNames[value]; ok {
 			*e = Parameter_Location(value)
+		} else {
+			iter.ReportError("ParameterLocationCodec.Decode", fmt.Sprintf("invalid enum value %d for Parameter_Location", value))
 		}
 	}
 }

@@ -18,6 +18,7 @@
 package openapi
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *SchemaTypeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.Iterator
 	any := iter.ReadAny()
 	e := (*Schema_Type)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("SchemaTypeCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := SchemaTypeNames[value]; ok {
 			*e = Schema_Type(value)
+		} else {
+			iter.ReportError("SchemaTypeCodec.Decode", fmt.Sprintf("invalid enum value %d for Schema_Type", value))
 		}
 	}
 }

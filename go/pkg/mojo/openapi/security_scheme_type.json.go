@@ -18,6 +18,7 @@
 package openapi
 
 import (
+	"fmt"
 	"unsafe"
 
 	jsoniter "github.com/json-iterator/go"
@@ -36,11 +37,15 @@ func (codec *SecuritySchemeTypeCodec) Decode(ptr unsafe.Pointer, iter *jsoniter.
 	any := iter.ReadAny()
 	e := (*SecurityScheme_Type)(ptr)
 	if any.ValueType() == jsoniter.StringValue {
-		e.Parse(any.ToString())
+		if err := e.Parse(any.ToString()); err != nil {
+			iter.ReportError("SecuritySchemeTypeCodec.Decode", err.Error())
+		}
 	} else if any.ValueType() == jsoniter.NumberValue {
 		value := any.ToInt32()
 		if _, ok := SecuritySchemeTypeNames[value]; ok {
 			*e = SecurityScheme_Type(value)
+		} else {
+			iter.ReportError("SecuritySchemeTypeCodec.Decode", fmt.Sprintf("invalid enum value %d for SecurityScheme_Type", value))
 		}
 	}
 }
