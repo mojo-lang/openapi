@@ -1,1 +1,11 @@
-{"title":"mojo.openapi.ReferenceableSchema","oneOf":[{"$ref":"#/components/schemas/mojo.openapi.Reference"},{"$ref":"#/components/schemas/mojo.openapi.Schema"}]}
+{
+    "title": "mojo.openapi.ReferenceableSchema",
+    "oneOf": [
+        {
+            "$ref": "#/components/schemas/mojo.openapi.Reference"
+        },
+        {
+            "$ref": "#/components/schemas/mojo.openapi.Schema"
+        }
+    ]
+}
