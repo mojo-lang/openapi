@@ -1,5 +1,9 @@
 package openapi
 
+import "strings"
+
+const RequestBodyReferenceRoot = "/components/requestBodies/"
+
 func NewReferenceableRequestBody(requestBody *RequestBody) *ReferenceableRequestBody {
     s := &ReferenceableRequestBody{}
     s.SetRequestBody(requestBody)
@@ -26,4 +30,20 @@ func (x *ReferenceableRequestBody) SetReference(reference *Reference) {
             Reference: reference,
         }
     }
+}
+
+func (x *ReferenceableRequestBody) GetRequestBodyOf(index map[string]*RequestBody) *RequestBody {
+    if x != nil {
+        reference := x.GetReference()
+        if reference != nil {
+            fragment := reference.GetRef().GetFragment()
+            key := strings.TrimPrefix(fragment, RequestBodyReferenceRoot)
+            if s, ok := index[key]; ok {
+                return s
+            }
+            return nil
+        }
+        return x.GetRequestBody()
+    }
+    return nil
 }

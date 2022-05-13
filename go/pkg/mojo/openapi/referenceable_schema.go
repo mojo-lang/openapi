@@ -7,7 +7,7 @@ import (
     "strings"
 )
 
-const ReferenceRoot = "/components/schemas/"
+const SchemaReferenceRoot = "/components/schemas/"
 
 func NewReferenceableSchema(schema *Schema) *ReferenceableSchema {
     s := &ReferenceableSchema{}
@@ -77,7 +77,7 @@ func (x *ReferenceableSchema) GetSchemaOf(index map[string]*Schema) *Schema {
         reference := x.GetReference()
         if reference != nil {
             fragment := reference.GetRef().GetFragment()
-            key := strings.TrimPrefix(fragment, ReferenceRoot)
+            key := strings.TrimPrefix(fragment, SchemaReferenceRoot)
             if s, ok := index[key]; ok {
                 return s
             }
@@ -158,5 +158,5 @@ func (x *ReferenceableSchema) SetDescription(doc *CachedDocument) {
 
 func (m *Reference) GetSchemaName() string {
     fragment := m.GetRef().GetFragment()
-    return strings.TrimPrefix(fragment, ReferenceRoot)
+    return strings.TrimPrefix(fragment, SchemaReferenceRoot)
 }

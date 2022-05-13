@@ -1,5 +1,9 @@
 package openapi
 
+import "strings"
+
+const ResponseReferenceRoot = "/components/responses/"
+
 func NewReferenceableResponse(response *Response) *ReferenceableResponse {
     s := &ReferenceableResponse{}
     s.SetResponse(response)
@@ -26,4 +30,20 @@ func (x *ReferenceableResponse) SetReference(reference *Reference) {
             Reference: reference,
         }
     }
+}
+
+func (x *ReferenceableResponse) GetResponseOf(index map[string]*Response) *Response {
+    if x != nil {
+        reference := x.GetReference()
+        if reference != nil {
+            fragment := reference.GetRef().GetFragment()
+            key := strings.TrimPrefix(fragment, ResponseReferenceRoot)
+            if s, ok := index[key]; ok {
+                return s
+            }
+            return nil
+        }
+        return x.GetResponse()
+    }
+    return nil
 }
