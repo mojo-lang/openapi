@@ -1,9 +1,29 @@
 package openapi
 
 import (
+    "reflect"
     "sort"
     "strings"
 )
+
+func (x *PathItem) GetOperations() []struct {
+    Operation *Operation
+    Method    string
+} {
+    var operations []struct {
+        Operation *Operation
+        Method    string
+    }
+    for _, method := range []string{"Get", "Put", "Post", "Delete", "Options", "Head", "Patch", "Trace"} {
+        if operation, ok := reflect.ValueOf(x).Elem().FieldByName(method).Interface().(*Operation); ok && operation != nil {
+            operations = append(operations, struct {
+                Operation *Operation
+                Method    string
+            }{Operation: operation, Method: strings.ToUpper(method)})
+        }
+    }
+    return operations
+}
 
 func (x *PathItem) SetOperation(name string, operation *Operation) {
     switch strings.ToLower(name) {
