@@ -17,7 +17,8 @@ func (codec *ReferenceableRequestBodyCodec) Decode(ptr unsafe.Pointer, iter *jso
     any := iter.ReadAny()
     requestBody := (*ReferenceableRequestBody)(ptr)
     if any.ValueType() == jsoniter.ObjectValue {
-        if any.Get("$ref") != nil {
+        ref := any.Get("$ref")
+        if ref.ValueType() == jsoniter.StringValue {
             r := &Reference{}
             any.ToVal(r)
             requestBody.SetReference(r)

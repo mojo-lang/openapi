@@ -17,7 +17,8 @@ func (codec *ReferenceableSchemaCodec) Decode(ptr unsafe.Pointer, iter *jsoniter
     any := iter.ReadAny()
     schema := (*ReferenceableSchema)(ptr)
     if any.ValueType() == jsoniter.ObjectValue {
-        if any.Get("$ref") != nil {
+        ref := any.Get("$ref")
+        if ref.ValueType() == jsoniter.StringValue {
             r := &Reference{}
             any.ToVal(r)
             schema.SetReference(r)

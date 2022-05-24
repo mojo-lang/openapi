@@ -17,7 +17,8 @@ func (codec *ReferenceableParameterCodec) Decode(ptr unsafe.Pointer, iter *jsoni
     any := iter.ReadAny()
     parameter := (*ReferenceableParameter)(ptr)
     if any.ValueType() == jsoniter.ObjectValue {
-        if any.Get("$ref") != nil {
+        ref := any.Get("$ref")
+        if ref.ValueType() == jsoniter.StringValue {
             r := &Reference{}
             any.ToVal(r)
             parameter.SetReference(r)

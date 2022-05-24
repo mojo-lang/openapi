@@ -24,10 +24,13 @@ func (x *OpenAPI) GetOperation(id string) (path string, method string, operation
         for k, v := range x.Paths.Vals {
             for _, method = range []string{"Get", "Put", "Post", "Delete", "Options", "Head", "Patch", "Trace"} {
                 ok := false
-                if operation, ok = reflect.ValueOf(v).Elem().FieldByName(method).Interface().(*Operation); ok && operation.OperationId == id {
-                    path = k
-                    method = strings.ToUpper(method)
-                    return
+                op := reflect.ValueOf(v).Elem().FieldByName(method)
+                if !op.IsNil() {
+                    if operation, ok = op.Interface().(*Operation); ok && operation.OperationId == id {
+                        path = k
+                        method = strings.ToUpper(method)
+                        return
+                    }
                 }
             }
         }

@@ -17,7 +17,8 @@ func (codec *ReferenceableResponseCodec) Decode(ptr unsafe.Pointer, iter *jsonit
     any := iter.ReadAny()
     response := (*ReferenceableResponse)(ptr)
     if any.ValueType() == jsoniter.ObjectValue {
-        if any.Get("$ref") != nil {
+        ref := any.Get("$ref")
+        if ref.ValueType() == jsoniter.StringValue {
             r := &Reference{}
             any.ToVal(r)
             response.SetReference(r)
