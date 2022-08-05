@@ -18,10 +18,15 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var SecuritySchemeTypeNames = map[int32]string{
+	0: "unspecified",
 	1: "api_key",
 	2: "http",
 	3: "oauth2",
@@ -29,6 +34,7 @@ var SecuritySchemeTypeNames = map[int32]string{
 }
 
 var SecuritySchemeTypeValues = map[string]SecurityScheme_Type{
+	"unspecified":     SecurityScheme_TYPE_UNSPECIFIED,
 	"api_key":         SecurityScheme_TYPE_API_KEY,
 	"http":            SecurityScheme_TYPE_HTTP,
 	"oauth2":          SecurityScheme_TYPE_OAUTH2,
@@ -36,14 +42,17 @@ var SecuritySchemeTypeValues = map[string]SecurityScheme_Type{
 }
 
 func (x SecurityScheme_Type) Format() string {
-	s, ok := SecuritySchemeTypeNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := SecuritySchemeTypeNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x SecurityScheme_Type) ToString() string {
@@ -51,15 +60,17 @@ func (x SecurityScheme_Type) ToString() string {
 }
 
 func (x *SecurityScheme_Type) Parse(value string) error {
-	if x != nil {
-		s, ok := SecuritySchemeTypeValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := SecuritySchemeTypeValues[value]; ok {
 			*x = s
 		} else {
-			*x = SecurityScheme_TYPE_API_KEY
+			v := core.CaseStyler("snake")(value)
+			if s, ok = SecuritySchemeTypeValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid SecurityScheme_Type: %s", value)
+			}
 		}
-	} else {
-		*x = SecurityScheme_TYPE_API_KEY
 	}
 	return nil
 }

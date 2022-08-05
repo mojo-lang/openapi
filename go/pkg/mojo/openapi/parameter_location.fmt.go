@@ -18,10 +18,15 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var ParameterLocationNames = map[int32]string{
+	0: "unspecified",
 	1: "path",
 	2: "query",
 	3: "header",
@@ -29,21 +34,25 @@ var ParameterLocationNames = map[int32]string{
 }
 
 var ParameterLocationValues = map[string]Parameter_Location{
-	"path":   Parameter_LOCATION_PATH,
-	"query":  Parameter_LOCATION_QUERY,
-	"header": Parameter_LOCATION_HEADER,
-	"cookie": Parameter_LOCATION_COOKIE,
+	"unspecified": Parameter_LOCATION_UNSPECIFIED,
+	"path":        Parameter_LOCATION_PATH,
+	"query":       Parameter_LOCATION_QUERY,
+	"header":      Parameter_LOCATION_HEADER,
+	"cookie":      Parameter_LOCATION_COOKIE,
 }
 
 func (x Parameter_Location) Format() string {
-	s, ok := ParameterLocationNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := ParameterLocationNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Parameter_Location) ToString() string {
@@ -51,15 +60,17 @@ func (x Parameter_Location) ToString() string {
 }
 
 func (x *Parameter_Location) Parse(value string) error {
-	if x != nil {
-		s, ok := ParameterLocationValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := ParameterLocationValues[value]; ok {
 			*x = s
 		} else {
-			*x = Parameter_LOCATION_PATH
+			v := core.CaseStyler("snake")(value)
+			if s, ok = ParameterLocationValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Parameter_Location: %s", value)
+			}
 		}
-	} else {
-		*x = Parameter_LOCATION_PATH
 	}
 	return nil
 }

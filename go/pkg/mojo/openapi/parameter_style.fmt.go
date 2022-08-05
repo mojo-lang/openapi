@@ -18,10 +18,15 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var ParameterStyleNames = map[int32]string{
+	0: "unspecified",
 	1: "matrix",
 	2: "label",
 	3: "form",
@@ -32,6 +37,7 @@ var ParameterStyleNames = map[int32]string{
 }
 
 var ParameterStyleValues = map[string]Parameter_Style{
+	"unspecified":     Parameter_STYLE_UNSPECIFIED,
 	"matrix":          Parameter_STYLE_MATRIX,
 	"label":           Parameter_STYLE_LABEL,
 	"form":            Parameter_STYLE_FORM,
@@ -42,14 +48,17 @@ var ParameterStyleValues = map[string]Parameter_Style{
 }
 
 func (x Parameter_Style) Format() string {
-	s, ok := ParameterStyleNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := ParameterStyleNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Parameter_Style) ToString() string {
@@ -57,15 +66,17 @@ func (x Parameter_Style) ToString() string {
 }
 
 func (x *Parameter_Style) Parse(value string) error {
-	if x != nil {
-		s, ok := ParameterStyleValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := ParameterStyleValues[value]; ok {
 			*x = s
 		} else {
-			*x = Parameter_STYLE_MATRIX
+			v := core.CaseStyler("snake")(value)
+			if s, ok = ParameterStyleValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Parameter_Style: %s", value)
+			}
 		}
-	} else {
-		*x = Parameter_STYLE_MATRIX
 	}
 	return nil
 }

@@ -18,10 +18,15 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var ExpressionTypeNames = map[int32]string{
+	0: "unspecified",
 	1: "url",
 	2: "method",
 	3: "statusCode",
@@ -31,23 +36,27 @@ var ExpressionTypeNames = map[int32]string{
 }
 
 var ExpressionTypeValues = map[string]Expression_Type{
-	"url":        Expression_TYPE_URL,
-	"method":     Expression_TYPE_METHOD,
-	"statusCode": Expression_TYPE_STATUS_CODE,
-	"request":    Expression_TYPE_REQUEST,
-	"source":     Expression_TYPE_SOURCE,
-	"response":   Expression_TYPE_RESPONSE,
+	"unspecified": Expression_TYPE_UNSPECIFIED,
+	"url":         Expression_TYPE_URL,
+	"method":      Expression_TYPE_METHOD,
+	"statusCode":  Expression_TYPE_STATUS_CODE,
+	"request":     Expression_TYPE_REQUEST,
+	"source":      Expression_TYPE_SOURCE,
+	"response":    Expression_TYPE_RESPONSE,
 }
 
 func (x Expression_Type) Format() string {
-	s, ok := ExpressionTypeNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := ExpressionTypeNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Expression_Type) ToString() string {
@@ -55,15 +64,17 @@ func (x Expression_Type) ToString() string {
 }
 
 func (x *Expression_Type) Parse(value string) error {
-	if x != nil {
-		s, ok := ExpressionTypeValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := ExpressionTypeValues[value]; ok {
 			*x = s
 		} else {
-			*x = Expression_TYPE_URL
+			v := core.CaseStyler("snake")(value)
+			if s, ok = ExpressionTypeValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Expression_Type: %s", value)
+			}
 		}
-	} else {
-		*x = Expression_TYPE_URL
 	}
 	return nil
 }

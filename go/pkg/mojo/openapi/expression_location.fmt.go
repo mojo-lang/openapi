@@ -18,10 +18,15 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var ExpressionLocationNames = map[int32]string{
+	0: "unspecified",
 	1: "path",
 	2: "query",
 	3: "header",
@@ -29,21 +34,25 @@ var ExpressionLocationNames = map[int32]string{
 }
 
 var ExpressionLocationValues = map[string]Expression_Location{
-	"path":   Expression_LOCATION_PATH,
-	"query":  Expression_LOCATION_QUERY,
-	"header": Expression_LOCATION_HEADER,
-	"body":   Expression_LOCATION_BODY,
+	"unspecified": Expression_LOCATION_UNSPECIFIED,
+	"path":        Expression_LOCATION_PATH,
+	"query":       Expression_LOCATION_QUERY,
+	"header":      Expression_LOCATION_HEADER,
+	"body":        Expression_LOCATION_BODY,
 }
 
 func (x Expression_Location) Format() string {
-	s, ok := ExpressionLocationNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := ExpressionLocationNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Expression_Location) ToString() string {
@@ -51,15 +60,17 @@ func (x Expression_Location) ToString() string {
 }
 
 func (x *Expression_Location) Parse(value string) error {
-	if x != nil {
-		s, ok := ExpressionLocationValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := ExpressionLocationValues[value]; ok {
 			*x = s
 		} else {
-			*x = Expression_LOCATION_PATH
+			v := core.CaseStyler("snake")(value)
+			if s, ok = ExpressionLocationValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Expression_Location: %s", value)
+			}
 		}
-	} else {
-		*x = Expression_LOCATION_PATH
 	}
 	return nil
 }

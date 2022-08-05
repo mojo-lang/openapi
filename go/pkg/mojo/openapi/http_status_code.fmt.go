@@ -18,7 +18,11 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var HttpStatusCodeNames = map[int32]string{
@@ -32,14 +36,17 @@ var HttpStatusCodeValues = map[string]HttpStatusCode{
 }
 
 func (x HttpStatusCode) Format() string {
-	s, ok := HttpStatusCodeNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := HttpStatusCodeNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x HttpStatusCode) ToString() string {
@@ -47,15 +54,17 @@ func (x HttpStatusCode) ToString() string {
 }
 
 func (x *HttpStatusCode) Parse(value string) error {
-	if x != nil {
-		s, ok := HttpStatusCodeValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := HttpStatusCodeValues[value]; ok {
 			*x = s
 		} else {
-			*x = HttpStatusCode_HTTP_STATUS_CODE_DEFAULT
+			v := core.CaseStyler("snake")(value)
+			if s, ok = HttpStatusCodeValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid HttpStatusCode: %s", value)
+			}
 		}
-	} else {
-		*x = HttpStatusCode_HTTP_STATUS_CODE_DEFAULT
 	}
 	return nil
 }

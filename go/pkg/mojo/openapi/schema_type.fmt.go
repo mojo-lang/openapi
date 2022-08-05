@@ -18,10 +18,15 @@
 package openapi
 
 import (
+	"fmt"
 	"strconv"
+	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 var SchemaTypeNames = map[int32]string{
+	0:  "unspecified",
 	1:  "null",
 	2:  "boolean",
 	3:  "integer",
@@ -32,24 +37,28 @@ var SchemaTypeNames = map[int32]string{
 }
 
 var SchemaTypeValues = map[string]Schema_Type{
-	"null":    Schema_TYPE_NULL,
-	"boolean": Schema_TYPE_BOOLEAN,
-	"integer": Schema_TYPE_INTEGER,
-	"number":  Schema_TYPE_NUMBER,
-	"string":  Schema_TYPE_STRING,
-	"array":   Schema_TYPE_ARRAY,
-	"object":  Schema_TYPE_OBJECT,
+	"unspecified": Schema_TYPE_UNSPECIFIED,
+	"null":        Schema_TYPE_NULL,
+	"boolean":     Schema_TYPE_BOOLEAN,
+	"integer":     Schema_TYPE_INTEGER,
+	"number":      Schema_TYPE_NUMBER,
+	"string":      Schema_TYPE_STRING,
+	"array":       Schema_TYPE_ARRAY,
+	"object":      Schema_TYPE_OBJECT,
 }
 
 func (x Schema_Type) Format() string {
-	s, ok := SchemaTypeNames[int32(x)]
-	if ok {
+	v := int32(x)
+	if s, ok := SchemaTypeNames[v]; ok {
+		if v == 0 && "unspecified" == strings.ToLower(s) {
+			return ""
+		}
 		return s
 	}
-	if int(x) == 0 {
-		return "unspecified"
+	if v == 0 {
+		return ""
 	}
-	return strconv.Itoa(int(x))
+	return strconv.Itoa(int(v))
 }
 
 func (x Schema_Type) ToString() string {
@@ -57,15 +66,17 @@ func (x Schema_Type) ToString() string {
 }
 
 func (x *Schema_Type) Parse(value string) error {
-	if x != nil {
-		s, ok := SchemaTypeValues[value]
-		if ok {
+	if x != nil && len(value) > 0 {
+		if s, ok := SchemaTypeValues[value]; ok {
 			*x = s
 		} else {
-			*x = Schema_TYPE_NULL
+			v := core.CaseStyler("snake")(value)
+			if s, ok = SchemaTypeValues[v]; ok {
+				*x = s
+			} else {
+				return fmt.Errorf("invalid Schema_Type: %s", value)
+			}
 		}
-	} else {
-		*x = Schema_TYPE_NULL
 	}
 	return nil
 }
