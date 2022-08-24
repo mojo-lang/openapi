@@ -130,8 +130,8 @@ func (x *ReferenceableSchema) GetTitle(index map[string]*Schema) string {
 }
 
 func (x *ReferenceableSchema) GetDescription(index map[string]*Schema) *document.Document {
-    if document := x.GetReference().GetDescription(); document != nil {
-        return document.GetDocument()
+    if doc := x.GetReference().GetDescription(); doc != nil {
+        return doc.GetDocument()
     }
 
     s := x.GetSchemaOf(index)
