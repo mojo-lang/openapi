@@ -1,1 +1,21 @@
 package openapi
+
+import (
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+func TestParameter_SupplementExample(t *testing.T) {
+	param := &Parameter{
+		Name: "test",
+		In:   0,
+		Schema: NewReferenceableSchema(&Schema{
+			Example: core.NewBoolValue(true),
+			Type:    Schema_TYPE_BOOLEAN,
+		}),
+	}
+
+	param.SupplementExample(nil)
+	assert.Nil(t, param.Example)
+}
