@@ -1,8 +1,9 @@
 package openapi
 
 import (
-	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"strings"
+
+	"github.com/mojo-lang/core/go/pkg/mojo/core"
 )
 
 const (

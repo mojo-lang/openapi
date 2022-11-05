@@ -1,9 +1,10 @@
 package openapi
 
 import (
-    jsoniter "github.com/json-iterator/go"
-    "github.com/stretchr/testify/assert"
-    "testing"
+	"testing"
+
+	jsoniter "github.com/json-iterator/go"
+	"github.com/stretchr/testify/assert"
 )
 
 const referenceableExample = `{
@@ -23,15 +24,15 @@ const referenceableExample2 = `{
 }`
 
 func TestReferenceableExampleCodec_Decode(t *testing.T) {
-    param := &ReferenceableExample{}
-    err := jsoniter.Unmarshal([]byte(referenceableExample), param)
-    assert.NoError(t, err)
-    assert.Equal(t, "id", param.GetExample().GetValue().GetObject().GetString("name"))
+	param := &ReferenceableExample{}
+	err := jsoniter.Unmarshal([]byte(referenceableExample), param)
+	assert.NoError(t, err)
+	assert.Equal(t, "id", param.GetExample().GetValue().GetObject().GetString("name"))
 }
 
 func TestReferenceableExampleCodec_Decode2(t *testing.T) {
-    param := &ReferenceableExample{}
-    err := jsoniter.Unmarshal([]byte(referenceableExample2), param)
-    assert.NoError(t, err)
-    assert.Equal(t, "#/components/examples/foo.Bar", param.GetReference().Ref.ToString())
+	param := &ReferenceableExample{}
+	err := jsoniter.Unmarshal([]byte(referenceableExample2), param)
+	assert.NoError(t, err)
+	assert.Equal(t, "#/components/examples/foo.Bar", param.GetReference().Ref.ToString())
 }

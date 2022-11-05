@@ -1,9 +1,10 @@
 package openapi
 
 import (
+	"testing"
+
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestParameter_SupplementExample(t *testing.T) {
