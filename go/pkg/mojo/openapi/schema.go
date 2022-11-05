@@ -2,11 +2,13 @@ package openapi
 
 import (
 	"bytes"
+	"context"
 	"fmt"
+	"sort"
+
 	"github.com/brianvoe/gofakeit/v6"
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"google.golang.org/protobuf/proto"
-	"sort"
 )
 
 func (x *Schema) ValidateExample(index map[string]*Schema) error {
@@ -39,7 +41,7 @@ func (x *Schema) ValidateValue(value *core.Value, index map[string]*Schema) erro
 				return fmt.Errorf("the example value type should only be boolean")
 			}
 		case Schema_TYPE_INTEGER:
-			//TODO add min max check
+			// TODO add min max check
 			if value.GetKind() == core.ValueKind_VALUE_KIND_INTEGER {
 				return nil
 			} else {
@@ -52,7 +54,7 @@ func (x *Schema) ValidateValue(value *core.Value, index map[string]*Schema) erro
 				return fmt.Errorf("the example value type should only be number")
 			}
 		case Schema_TYPE_STRING:
-			//TODO add pattern check
+			// TODO add pattern check
 			if value.GetKind() == core.ValueKind_VALUE_KIND_STRING || value.GetKind() == core.ValueKind_VALUE_KIND_BYTES {
 				return nil
 			} else {
@@ -82,8 +84,8 @@ func (x *Schema) ValidateValue(value *core.Value, index map[string]*Schema) erro
 								return err
 							}
 						} else {
-							//unknown field will be skipped
-							//return fmt.Errorf("unknown field %s", k)
+							// unknown field will be skipped
+							// return fmt.Errorf("unknown field %s", k)
 						}
 					}
 
@@ -286,14 +288,27 @@ func (x *Schema) dependencies(index map[string]*Schema, duplicates map[string]bo
 }
 
 func (x *Schema) GenerateExample(index map[string]*Schema) *core.Value {
-	return x.generateExample(index, make(core.Options))
+	return x.generateExample(context.Background(), index, make(core.Options))
 }
 
-func (x *Schema) generateExample(index map[string]*Schema, options core.Options) *core.Value {
+func (x *Schema) generateExample(ctx context.Context, index map[string]*Schema, options core.Options) *core.Value {
 	if x != nil {
-		//if x.Example != nil {
+		// if x.Example != nil {
 		//    return x.Example
-		//}
+		// }
+
+		key := ""
+		if len(x.Title) > 0 {
+			key = x.Title
+		} else {
+			key = fmt.Sprintf("%p", x)
+		}
+
+		if ctx.Value(key) != nil { // self referenced
+			return nil
+		}
+		ctx = context.WithValue(ctx, key, x)
+
 		switch x.Type {
 		case Schema_TYPE_NULL:
 		case Schema_TYPE_BOOLEAN:
@@ -318,7 +333,7 @@ func (x *Schema) generateExample(index map[string]*Schema, options core.Options)
 		case Schema_TYPE_ARRAY:
 			var values []*core.Value
 			for i := 0; i < 3; i++ {
-				if value := x.Items.GetSchemaOf(index).generateExample(index, options); value != nil {
+				if value := x.Items.GetSchemaOf(index).generateExample(ctx, index, options); value != nil {
 					values = append(values, value)
 				}
 			}
@@ -327,7 +342,7 @@ func (x *Schema) generateExample(index map[string]*Schema, options core.Options)
 			if x.AdditionalProperties != nil { // map
 				values := make(map[string]*core.Value)
 				for i := 0; i < 3; i++ {
-					if value := x.AdditionalProperties.GetSchemaOf(index).generateExample(index, options); value != nil {
+					if value := x.AdditionalProperties.GetSchemaOf(index).generateExample(ctx, index, options); value != nil {
 						key := gofakeit.Name()
 						for j := 0; j < 100; j++ {
 							if _, ok := values[key]; !ok {
@@ -343,7 +358,7 @@ func (x *Schema) generateExample(index map[string]*Schema, options core.Options)
 				values := make(map[string]interface{})
 				for key, value := range x.Properties {
 					options["label"] = key
-					if v := value.GetSchemaOf(index).generateExample(index, options); v != nil {
+					if v := value.GetSchemaOf(index).generateExample(ctx, index, options); v != nil {
 						values[key] = v
 					}
 				}
@@ -358,5 +373,6 @@ func (x *Schema) generateExample(index map[string]*Schema, options core.Options)
 }
 
 func (x *Schema) generateStringExample(options core.Options) string {
+	_ = options
 	return gofakeit.BuzzWord()
 }
