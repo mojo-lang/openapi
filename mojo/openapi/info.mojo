@@ -22,7 +22,7 @@ type Info {
     description: Cached<document.Document> @2
 
     /// A URL to the Terms of Service for the API.
-    terms_of_service: Url @3
+    terms_of_service: String @3
 
     /// The contact information for the exposed API.
     contact: Contact @4
