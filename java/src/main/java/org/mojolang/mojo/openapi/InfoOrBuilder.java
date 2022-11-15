@@ -35,19 +35,16 @@ public interface InfoOrBuilder extends
   org.mojolang.mojo.openapi.CachedDocumentOrBuilder getDescriptionOrBuilder();
 
   /**
-   * <code>.mojo.core.Url terms_of_service = 3;</code>
-   * @return Whether the termsOfService field is set.
-   */
-  boolean hasTermsOfService();
-  /**
-   * <code>.mojo.core.Url terms_of_service = 3;</code>
+   * <code>string terms_of_service = 3;</code>
    * @return The termsOfService.
    */
-  org.mojolang.mojo.core.Url getTermsOfService();
+  java.lang.String getTermsOfService();
   /**
-   * <code>.mojo.core.Url terms_of_service = 3;</code>
+   * <code>string terms_of_service = 3;</code>
+   * @return The bytes for termsOfService.
    */
-  org.mojolang.mojo.core.UrlOrBuilder getTermsOfServiceOrBuilder();
+  com.google.protobuf.ByteString
+      getTermsOfServiceBytes();
 
   /**
    * <code>.mojo.openapi.Contact contact = 4;</code>

@@ -13,7 +13,9 @@
             "$ref": "#/components/schemas/mojo.openapi.License"
         },
         "termsOfService": {
-            "$ref": "#/components/schemas/mojo.core.Url"
+            "title": "mojo.core.String",
+            "description": "A URL to the Terms of Service for the API.",
+            "type": "string"
         },
         "title": {
             "title": "mojo.core.String",

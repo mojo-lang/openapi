@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private Info() {
     title_ = "";
+    termsOfService_ = "";
   }
 
   @java.lang.Override
@@ -69,16 +70,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
-            org.mojolang.mojo.core.Url.Builder subBuilder = null;
-            if (termsOfService_ != null) {
-              subBuilder = termsOfService_.toBuilder();
-            }
-            termsOfService_ = input.readMessage(org.mojolang.mojo.core.Url.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(termsOfService_);
-              termsOfService_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            termsOfService_ = s;
             break;
           }
           case 34: {
@@ -217,29 +211,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TERMS_OF_SERVICE_FIELD_NUMBER = 3;
-  private org.mojolang.mojo.core.Url termsOfService_;
+  private volatile java.lang.Object termsOfService_;
   /**
-   * <code>.mojo.core.Url terms_of_service = 3;</code>
-   * @return Whether the termsOfService field is set.
-   */
-  @java.lang.Override
-  public boolean hasTermsOfService() {
-    return termsOfService_ != null;
-  }
-  /**
-   * <code>.mojo.core.Url terms_of_service = 3;</code>
+   * <code>string terms_of_service = 3;</code>
    * @return The termsOfService.
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.Url getTermsOfService() {
-    return termsOfService_ == null ? org.mojolang.mojo.core.Url.getDefaultInstance() : termsOfService_;
+  public java.lang.String getTermsOfService() {
+    java.lang.Object ref = termsOfService_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      termsOfService_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.mojo.core.Url terms_of_service = 3;</code>
+   * <code>string terms_of_service = 3;</code>
+   * @return The bytes for termsOfService.
    */
   @java.lang.Override
-  public org.mojolang.mojo.core.UrlOrBuilder getTermsOfServiceOrBuilder() {
-    return getTermsOfService();
+  public com.google.protobuf.ByteString
+      getTermsOfServiceBytes() {
+    java.lang.Object ref = termsOfService_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      termsOfService_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CONTACT_FIELD_NUMBER = 4;
@@ -340,8 +346,8 @@ private static final long serialVersionUID = 0L;
     if (description_ != null) {
       output.writeMessage(2, getDescription());
     }
-    if (termsOfService_ != null) {
-      output.writeMessage(3, getTermsOfService());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(termsOfService_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, termsOfService_);
     }
     if (contact_ != null) {
       output.writeMessage(4, getContact());
@@ -368,9 +374,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getDescription());
     }
-    if (termsOfService_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getTermsOfService());
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(termsOfService_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, termsOfService_);
     }
     if (contact_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -406,11 +411,8 @@ private static final long serialVersionUID = 0L;
       if (!getDescription()
           .equals(other.getDescription())) return false;
     }
-    if (hasTermsOfService() != other.hasTermsOfService()) return false;
-    if (hasTermsOfService()) {
-      if (!getTermsOfService()
-          .equals(other.getTermsOfService())) return false;
-    }
+    if (!getTermsOfService()
+        .equals(other.getTermsOfService())) return false;
     if (hasContact() != other.hasContact()) return false;
     if (hasContact()) {
       if (!getContact()
@@ -443,10 +445,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
     }
-    if (hasTermsOfService()) {
-      hash = (37 * hash) + TERMS_OF_SERVICE_FIELD_NUMBER;
-      hash = (53 * hash) + getTermsOfService().hashCode();
-    }
+    hash = (37 * hash) + TERMS_OF_SERVICE_FIELD_NUMBER;
+    hash = (53 * hash) + getTermsOfService().hashCode();
     if (hasContact()) {
       hash = (37 * hash) + CONTACT_FIELD_NUMBER;
       hash = (53 * hash) + getContact().hashCode();
@@ -600,12 +600,8 @@ private static final long serialVersionUID = 0L;
         description_ = null;
         descriptionBuilder_ = null;
       }
-      if (termsOfServiceBuilder_ == null) {
-        termsOfService_ = null;
-      } else {
-        termsOfService_ = null;
-        termsOfServiceBuilder_ = null;
-      }
+      termsOfService_ = "";
+
       if (contactBuilder_ == null) {
         contact_ = null;
       } else {
@@ -656,11 +652,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.description_ = descriptionBuilder_.build();
       }
-      if (termsOfServiceBuilder_ == null) {
-        result.termsOfService_ = termsOfService_;
-      } else {
-        result.termsOfService_ = termsOfServiceBuilder_.build();
-      }
+      result.termsOfService_ = termsOfService_;
       if (contactBuilder_ == null) {
         result.contact_ = contact_;
       } else {
@@ -731,8 +723,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasDescription()) {
         mergeDescription(other.getDescription());
       }
-      if (other.hasTermsOfService()) {
-        mergeTermsOfService(other.getTermsOfService());
+      if (!other.getTermsOfService().isEmpty()) {
+        termsOfService_ = other.termsOfService_;
+        onChanged();
       }
       if (other.hasContact()) {
         mergeContact(other.getContact());
@@ -967,123 +960,80 @@ private static final long serialVersionUID = 0L;
       return descriptionBuilder_;
     }
 
-    private org.mojolang.mojo.core.Url termsOfService_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Url, org.mojolang.mojo.core.Url.Builder, org.mojolang.mojo.core.UrlOrBuilder> termsOfServiceBuilder_;
+    private java.lang.Object termsOfService_ = "";
     /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
-     * @return Whether the termsOfService field is set.
-     */
-    public boolean hasTermsOfService() {
-      return termsOfServiceBuilder_ != null || termsOfService_ != null;
-    }
-    /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
+     * <code>string terms_of_service = 3;</code>
      * @return The termsOfService.
      */
-    public org.mojolang.mojo.core.Url getTermsOfService() {
-      if (termsOfServiceBuilder_ == null) {
-        return termsOfService_ == null ? org.mojolang.mojo.core.Url.getDefaultInstance() : termsOfService_;
+    public java.lang.String getTermsOfService() {
+      java.lang.Object ref = termsOfService_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        termsOfService_ = s;
+        return s;
       } else {
-        return termsOfServiceBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
+     * <code>string terms_of_service = 3;</code>
+     * @return The bytes for termsOfService.
      */
-    public Builder setTermsOfService(org.mojolang.mojo.core.Url value) {
-      if (termsOfServiceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        termsOfService_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getTermsOfServiceBytes() {
+      java.lang.Object ref = termsOfService_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        termsOfService_ = b;
+        return b;
       } else {
-        termsOfServiceBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
+     * <code>string terms_of_service = 3;</code>
+     * @param value The termsOfService to set.
+     * @return This builder for chaining.
      */
     public Builder setTermsOfService(
-        org.mojolang.mojo.core.Url.Builder builderForValue) {
-      if (termsOfServiceBuilder_ == null) {
-        termsOfService_ = builderForValue.build();
-        onChanged();
-      } else {
-        termsOfServiceBuilder_.setMessage(builderForValue.build());
-      }
-
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      termsOfService_ = value;
+      onChanged();
       return this;
     }
     /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
-     */
-    public Builder mergeTermsOfService(org.mojolang.mojo.core.Url value) {
-      if (termsOfServiceBuilder_ == null) {
-        if (termsOfService_ != null) {
-          termsOfService_ =
-            org.mojolang.mojo.core.Url.newBuilder(termsOfService_).mergeFrom(value).buildPartial();
-        } else {
-          termsOfService_ = value;
-        }
-        onChanged();
-      } else {
-        termsOfServiceBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
+     * <code>string terms_of_service = 3;</code>
+     * @return This builder for chaining.
      */
     public Builder clearTermsOfService() {
-      if (termsOfServiceBuilder_ == null) {
-        termsOfService_ = null;
-        onChanged();
-      } else {
-        termsOfService_ = null;
-        termsOfServiceBuilder_ = null;
-      }
-
+      
+      termsOfService_ = getDefaultInstance().getTermsOfService();
+      onChanged();
       return this;
     }
     /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
+     * <code>string terms_of_service = 3;</code>
+     * @param value The bytes for termsOfService to set.
+     * @return This builder for chaining.
      */
-    public org.mojolang.mojo.core.Url.Builder getTermsOfServiceBuilder() {
+    public Builder setTermsOfServiceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
       
+      termsOfService_ = value;
       onChanged();
-      return getTermsOfServiceFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
-     */
-    public org.mojolang.mojo.core.UrlOrBuilder getTermsOfServiceOrBuilder() {
-      if (termsOfServiceBuilder_ != null) {
-        return termsOfServiceBuilder_.getMessageOrBuilder();
-      } else {
-        return termsOfService_ == null ?
-            org.mojolang.mojo.core.Url.getDefaultInstance() : termsOfService_;
-      }
-    }
-    /**
-     * <code>.mojo.core.Url terms_of_service = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        org.mojolang.mojo.core.Url, org.mojolang.mojo.core.Url.Builder, org.mojolang.mojo.core.UrlOrBuilder> 
-        getTermsOfServiceFieldBuilder() {
-      if (termsOfServiceBuilder_ == null) {
-        termsOfServiceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            org.mojolang.mojo.core.Url, org.mojolang.mojo.core.Url.Builder, org.mojolang.mojo.core.UrlOrBuilder>(
-                getTermsOfService(),
-                getParentForChildren(),
-                isClean());
-        termsOfService_ = null;
-      }
-      return termsOfServiceBuilder_;
+      return this;
     }
 
     private org.mojolang.mojo.openapi.Contact contact_;

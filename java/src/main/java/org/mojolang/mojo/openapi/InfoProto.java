@@ -29,23 +29,22 @@ public final class InfoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027mojo/openapi/info.proto\022\014mojo.openapi\032" +
-      "\023mojo/core/url.proto\032\027mojo/core/version." +
-      "proto\032\"mojo/openapi/cached_document.prot" +
-      "o\032\032mojo/openapi/contact.proto\032\032mojo/open" +
-      "api/license.proto\"\347\001\n\004Info\022\r\n\005title\030\001 \001(" +
-      "\t\0221\n\013description\030\002 \001(\0132\034.mojo.openapi.Ca" +
-      "chedDocument\022(\n\020terms_of_service\030\003 \001(\0132\016" +
-      ".mojo.core.Url\022&\n\007contact\030\004 \001(\0132\025.mojo.o" +
-      "penapi.Contact\022&\n\007license\030\005 \001(\0132\025.mojo.o" +
-      "penapi.License\022#\n\007version\030\006 \001(\0132\022.mojo.c" +
-      "ore.VersionBb\n\031org.mojolang.mojo.openapi" +
-      "B\tInfoProtoP\001Z8github.com/mojo-lang/open" +
-      "api/go/pkg/mojo/openapi;openapib\006proto3"
+      "\027mojo/core/version.proto\032\"mojo/openapi/c" +
+      "ached_document.proto\032\032mojo/openapi/conta" +
+      "ct.proto\032\032mojo/openapi/license.proto\"\327\001\n" +
+      "\004Info\022\r\n\005title\030\001 \001(\t\0221\n\013description\030\002 \001(" +
+      "\0132\034.mojo.openapi.CachedDocument\022\030\n\020terms" +
+      "_of_service\030\003 \001(\t\022&\n\007contact\030\004 \001(\0132\025.moj" +
+      "o.openapi.Contact\022&\n\007license\030\005 \001(\0132\025.moj" +
+      "o.openapi.License\022#\n\007version\030\006 \001(\0132\022.moj" +
+      "o.core.VersionBb\n\031org.mojolang.mojo.open" +
+      "apiB\tInfoProtoP\001Z8github.com/mojo-lang/o" +
+      "penapi/go/pkg/mojo/openapi;openapib\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.mojolang.mojo.core.UrlProto.getDescriptor(),
           org.mojolang.mojo.core.VersionProto.getDescriptor(),
           org.mojolang.mojo.openapi.CachedDocumentProto.getDescriptor(),
           org.mojolang.mojo.openapi.ContactProto.getDescriptor(),
@@ -57,7 +56,6 @@ public final class InfoProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mojo_openapi_Info_descriptor,
         new java.lang.String[] { "Title", "Description", "TermsOfService", "Contact", "License", "Version", });
-    org.mojolang.mojo.core.UrlProto.getDescriptor();
     org.mojolang.mojo.core.VersionProto.getDescriptor();
     org.mojolang.mojo.openapi.CachedDocumentProto.getDescriptor();
     org.mojolang.mojo.openapi.ContactProto.getDescriptor();
