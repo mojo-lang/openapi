@@ -8,7 +8,7 @@
 | `description` | `mojo.openapi.CachedDocument` |  | N |  | support GFM |
 | `type` | `string` |  | N |  | Value MUST be a string. Multiple types via an array are not supported. |
 | `format` | `string` |  | N |  | format is an open string-valued property,and can have any value. Formats such as "Email", "Uuid", and so on,MAY be used even though undefined by this specification.Types that are not accompanied by a format property follow the type definition in the JSON Schema.Tools that do not recognize a specific format MAY default back to the type alone, as if the format is not specified. |
-| `multipleOf` | `integer` | `Int64` | N |  | The value of "multipleOf" MUST be a number, strictly greater than 0.<br>A numeric instance is valid only if division by this keyword's value results in an integer. |
+| `multipleOf` | `number` | `Float64` | N |  | The value of "multipleOf" MUST be a number, strictly greater than 0.<br>A numeric instance is valid only if division by this keyword's value results in an integer.<br>The `multiple_of` will be less than 1, when the numeric has a fixed decimals.For example, `multiple_of` will be `0.01`, when the numeric need to hold two decimals, and any greater precision will be rejected. |
 | `maximum` | `number` | `Float64` | N |  |
 | `exclusiveMaximum` | `number` | `Float64` | N |  |
 | `minimum` | `number` | `Float64` | N |  |

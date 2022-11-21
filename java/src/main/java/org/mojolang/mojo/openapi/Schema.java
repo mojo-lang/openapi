@@ -140,9 +140,9 @@ private static final long serialVersionUID = 0L;
             format_ = s;
             break;
           }
-          case 112: {
+          case 113: {
 
-            multipleOf_ = input.readInt64();
+            multipleOf_ = input.readDouble();
             break;
           }
           case 121: {
@@ -790,13 +790,13 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MULTIPLE_OF_FIELD_NUMBER = 14;
-  private long multipleOf_;
+  private double multipleOf_;
   /**
-   * <code>int64 multiple_of = 14;</code>
+   * <code>double multiple_of = 14;</code>
    * @return The multipleOf.
    */
   @java.lang.Override
-  public long getMultipleOf() {
+  public double getMultipleOf() {
     return multipleOf_;
   }
 
@@ -1409,8 +1409,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, format_);
     }
-    if (multipleOf_ != 0L) {
-      output.writeInt64(14, multipleOf_);
+    if (java.lang.Double.doubleToRawLongBits(multipleOf_) != 0) {
+      output.writeDouble(14, multipleOf_);
     }
     if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
       output.writeDouble(15, maximum_);
@@ -1532,9 +1532,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(format_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, format_);
     }
-    if (multipleOf_ != 0L) {
+    if (java.lang.Double.doubleToRawLongBits(multipleOf_) != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(14, multipleOf_);
+        .computeDoubleSize(14, multipleOf_);
     }
     if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -1695,8 +1695,9 @@ private static final long serialVersionUID = 0L;
     if (type_ != other.type_) return false;
     if (!getFormat()
         .equals(other.getFormat())) return false;
-    if (getMultipleOf()
-        != other.getMultipleOf()) return false;
+    if (java.lang.Double.doubleToLongBits(getMultipleOf())
+        != java.lang.Double.doubleToLongBits(
+            other.getMultipleOf())) return false;
     if (java.lang.Double.doubleToLongBits(getMaximum())
         != java.lang.Double.doubleToLongBits(
             other.getMaximum())) return false;
@@ -1807,7 +1808,7 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFormat().hashCode();
     hash = (37 * hash) + MULTIPLE_OF_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getMultipleOf());
+        java.lang.Double.doubleToLongBits(getMultipleOf()));
     hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getMaximum()));
@@ -2092,7 +2093,7 @@ private static final long serialVersionUID = 0L;
 
       format_ = "";
 
-      multipleOf_ = 0L;
+      multipleOf_ = 0D;
 
       maximum_ = 0D;
 
@@ -2394,7 +2395,7 @@ private static final long serialVersionUID = 0L;
         format_ = other.format_;
         onChanged();
       }
-      if (other.getMultipleOf() != 0L) {
+      if (other.getMultipleOf() != 0D) {
         setMultipleOf(other.getMultipleOf());
       }
       if (other.getMaximum() != 0D) {
@@ -3404,33 +3405,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long multipleOf_ ;
+    private double multipleOf_ ;
     /**
-     * <code>int64 multiple_of = 14;</code>
+     * <code>double multiple_of = 14;</code>
      * @return The multipleOf.
      */
     @java.lang.Override
-    public long getMultipleOf() {
+    public double getMultipleOf() {
       return multipleOf_;
     }
     /**
-     * <code>int64 multiple_of = 14;</code>
+     * <code>double multiple_of = 14;</code>
      * @param value The multipleOf to set.
      * @return This builder for chaining.
      */
-    public Builder setMultipleOf(long value) {
+    public Builder setMultipleOf(double value) {
       
       multipleOf_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 multiple_of = 14;</code>
+     * <code>double multiple_of = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearMultipleOf() {
       
-      multipleOf_ = 0L;
+      multipleOf_ = 0D;
       onChanged();
       return this;
     }

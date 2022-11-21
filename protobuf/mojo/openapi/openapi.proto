@@ -195,7 +195,7 @@ message Schema {
     CachedDocument description = 11;
     Type type = 12;
     string format = 13;
-    int64 multiple_of = 14;
+    double multiple_of = 14;
     double maximum = 15;
     double exclusive_maximum = 16;
     double minimum = 17;

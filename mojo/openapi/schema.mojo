@@ -60,7 +60,10 @@ type Schema {
         /// The value of "multipleOf" MUST be a number, strictly greater than 0.
         ///
         /// A numeric instance is valid only if division by this keyword's value results in an integer.
-        multiple_of: Int @14 @minimum(1)
+        ///
+        /// The `multiple_of` will be less than 1, when the numeric has a fixed decimals.
+        /// For example, `multiple_of` will be `0.01`, when the numeric need to hold two decimals, and any greater precision will be rejected.
+        multiple_of: Double @14 @exclusive_maximum(0)
 
         maximum: Double @15
         exclusive_maximum: Double @16

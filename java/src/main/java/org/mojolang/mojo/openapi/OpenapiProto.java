@@ -421,7 +421,7 @@ public final class OpenapiProto {
       "\005title\030\n \001(\t\0221\n\013description\030\013 \001(\0132\034.mojo" +
       ".openapi.CachedDocument\022\'\n\004type\030\014 \001(\0162\031." +
       "mojo.openapi.Schema.Type\022\016\n\006format\030\r \001(\t" +
-      "\022\023\n\013multiple_of\030\016 \001(\003\022\017\n\007maximum\030\017 \001(\001\022\031" +
+      "\022\023\n\013multiple_of\030\016 \001(\001\022\017\n\007maximum\030\017 \001(\001\022\031" +
       "\n\021exclusive_maximum\030\020 \001(\001\022\017\n\007minimum\030\021 \001" +
       "(\001\022\031\n\021exclusive_minimum\030\022 \001(\001\022\022\n\nmax_len" +
       "gth\030\023 \001(\004\022\022\n\nmin_length\030\024 \001(\004\022!\n\007pattern" +

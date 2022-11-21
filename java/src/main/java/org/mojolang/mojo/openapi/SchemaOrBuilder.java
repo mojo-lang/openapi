@@ -118,10 +118,10 @@ public interface SchemaOrBuilder extends
       getFormatBytes();
 
   /**
-   * <code>int64 multiple_of = 14;</code>
+   * <code>double multiple_of = 14;</code>
    * @return The multipleOf.
    */
-  long getMultipleOf();
+  double getMultipleOf();
 
   /**
    * <code>double maximum = 15;</code>

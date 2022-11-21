@@ -109,10 +109,10 @@
             "format": "Float64"
         },
         "multipleOf": {
-            "title": "mojo.core.Int64",
-            "description": "The value of \"multipleOf\" MUST be a number, strictly greater than 0.\n\nA numeric instance is valid only if division by this keyword's value results in an integer.",
-            "type": "integer",
-            "format": "Int64"
+            "title": "mojo.core.Float64",
+            "description": "The value of \"multipleOf\" MUST be a number, strictly greater than 0.\n\nA numeric instance is valid only if division by this keyword's value results in an integer.\n\nThe `multiple_of` will be less than 1, when the numeric has a fixed decimals.\nFor example, `multiple_of` will be `0.01`, when the numeric need to hold two decimals, and any greater precision will be rejected.",
+            "type": "number",
+            "format": "Float64"
         },
         "not": {
             "$ref": "#/components/schemas/mojo.openapi.ReferenceableSchema"
