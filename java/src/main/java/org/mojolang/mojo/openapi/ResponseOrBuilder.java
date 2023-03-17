@@ -42,14 +42,14 @@ public interface ResponseOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 2;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableHeader defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableHeader defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 2;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrThrow(
       java.lang.String key);
 
@@ -76,14 +76,14 @@ public interface ResponseOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.MediaType&gt; content = 3;</code>
    */
-
-  org.mojolang.mojo.openapi.MediaType getContentOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.MediaType getContentOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.MediaType defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.MediaType defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.MediaType&gt; content = 3;</code>
    */
-
   org.mojolang.mojo.openapi.MediaType getContentOrThrow(
       java.lang.String key);
 
@@ -110,14 +110,14 @@ public interface ResponseOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 4;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableLink getLinksOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableLink getLinksOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableLink defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableLink defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableLink&gt; links = 4;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableLink getLinksOrThrow(
       java.lang.String key);
 }

@@ -10,7 +10,6 @@ option java_outer_classname = "ExpressionProto";
 option java_package = "org.mojolang.mojo.openapi";
 
 message Expression {
-    
     enum Type {
         TYPE_UNSPECIFIED=0;
         TYPE_URL=1;
@@ -20,7 +19,7 @@ message Expression {
         TYPE_SOURCE=5;
         TYPE_RESPONSE=6;
     }
-    
+
     enum Location {
         LOCATION_UNSPECIFIED=0;
         LOCATION_PATH=1;
@@ -28,12 +27,13 @@ message Expression {
         LOCATION_HEADER=3;
         LOCATION_BODY=5;
     }
-    
+
     message Source {
         Expression.Location location = 1;
         string name = 2;
         string path = 3;
     }
+
     Type type = 1;
     Source source = 2;
 }

@@ -30,14 +30,14 @@ public interface CallbackOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
-
-  org.mojolang.mojo.openapi.PathItem getValsOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.PathItem getValsOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.PathItem defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.PathItem defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.PathItem&gt; vals = 1;</code>
    */
-
   org.mojolang.mojo.openapi.PathItem getValsOrThrow(
       java.lang.String key);
 }

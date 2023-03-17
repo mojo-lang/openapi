@@ -42,14 +42,14 @@ public interface EncodingOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 2;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableHeader defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableHeader defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableHeader&gt; headers = 2;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableHeader getHeadersOrThrow(
       java.lang.String key);
 

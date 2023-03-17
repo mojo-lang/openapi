@@ -75,14 +75,14 @@ public interface OAuthFlowOrBuilder extends
   /**
    * <code>map&lt;string, string&gt; scopes = 10;</code>
    */
-
-  java.lang.String getScopesOrDefault(
+  /* nullable */
+java.lang.String getScopesOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue);
+      /* nullable */
+java.lang.String defaultValue);
   /**
    * <code>map&lt;string, string&gt; scopes = 10;</code>
    */
-
   java.lang.String getScopesOrThrow(
       java.lang.String key);
 }

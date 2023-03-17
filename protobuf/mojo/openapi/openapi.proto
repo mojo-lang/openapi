@@ -108,7 +108,6 @@ message Operation {
 }
 
 message Parameter {
-    
     enum Location {
         LOCATION_UNSPECIFIED=0;
         LOCATION_PATH=1;
@@ -116,7 +115,7 @@ message Parameter {
         LOCATION_HEADER=3;
         LOCATION_COOKIE=4;
     }
-    
+
     enum Style {
         STYLE_UNSPECIFIED=0;
         STYLE_MATRIX=1;
@@ -127,6 +126,7 @@ message Parameter {
         STYLE_PIPE_DELIMITED=6;
         STYLE_DEEP_OBJECT=7;
     }
+
     string name = 1;
     Location in = 2;
     string description = 3;
@@ -176,7 +176,6 @@ message Responses {
 }
 
 message Schema {
-    
     enum Type {
         TYPE_UNSPECIFIED=0;
         TYPE_NULL=1;
@@ -187,6 +186,7 @@ message Schema {
         TYPE_ARRAY=10;
         TYPE_OBJECT=11;
     }
+
     Discriminator discriminator = 1;
     Xml xml = 2;
     ExternalDocument external_docs = 3;

@@ -33,101 +33,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private Link(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            operationRef_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            operationId_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-              parameters_ = com.google.protobuf.MapField.newMapField(
-                  ParametersDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000001;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, org.mojolang.mojo.core.Value>
-            parameters__ = input.readMessage(
-                ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            parameters_.getMutableMap().put(
-                parameters__.getKey(), parameters__.getValue());
-            break;
-          }
-          case 34: {
-            org.mojolang.mojo.core.Value.Builder subBuilder = null;
-            if (requestBody_ != null) {
-              subBuilder = requestBody_.toBuilder();
-            }
-            requestBody_ = input.readMessage(org.mojolang.mojo.core.Value.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(requestBody_);
-              requestBody_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 50: {
-            org.mojolang.mojo.openapi.Server.Builder subBuilder = null;
-            if (server_ != null) {
-              subBuilder = server_.toBuilder();
-            }
-            server_ = input.readMessage(org.mojolang.mojo.openapi.Server.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(server_);
-              server_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.openapi.LinkProto.internal_static_mojo_openapi_Link_descriptor;
@@ -154,7 +59,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OPERATION_REF_FIELD_NUMBER = 1;
-  private volatile java.lang.Object operationRef_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationRef_ = "";
   /**
    * <code>string operation_ref = 1;</code>
    * @return The operationRef.
@@ -192,7 +98,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OPERATION_ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object operationId_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object operationId_ = "";
   /**
    * <code>string operation_id = 2;</code>
    * @return The operationId.
@@ -241,6 +148,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
                 org.mojolang.mojo.core.Value.getDefaultInstance());
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, org.mojolang.mojo.core.Value> parameters_;
   private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Value>
@@ -251,14 +159,12 @@ private static final long serialVersionUID = 0L;
     }
     return parameters_;
   }
-
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
   /**
    * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
-
   @java.lang.Override
   public boolean containsParameters(
       java.lang.String key) {
@@ -277,7 +183,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> getParametersMap() {
     return internalGetParameters().getMap();
   }
@@ -285,10 +190,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   @java.lang.Override
-
-  public org.mojolang.mojo.core.Value getParametersOrDefault(
+  public /* nullable */
+org.mojolang.mojo.core.Value getParametersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.core.Value defaultValue) {
+      /* nullable */
+org.mojolang.mojo.core.Value defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> map =
         internalGetParameters().getMap();
@@ -298,7 +204,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
   @java.lang.Override
-
   public org.mojolang.mojo.core.Value getParametersOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -333,11 +238,12 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.core.ValueOrBuilder getRequestBodyOrBuilder() {
-    return getRequestBody();
+    return requestBody_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : requestBody_;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object description_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
   /**
    * <code>string description = 5;</code>
    * @return The description.
@@ -397,7 +303,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.openapi.ServerOrBuilder getServerOrBuilder() {
-    return getServer();
+    return server_ == null ? org.mojolang.mojo.openapi.Server.getDefaultInstance() : server_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -435,7 +341,7 @@ private static final long serialVersionUID = 0L;
     if (server_ != null) {
       output.writeMessage(6, getServer());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -471,7 +377,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getServer());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -504,7 +410,7 @@ private static final long serialVersionUID = 0L;
       if (!getServer()
           .equals(other.getServer())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -533,7 +439,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SERVER_FIELD_NUMBER;
       hash = (53 * hash) + getServer().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -672,39 +578,30 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.openapi.Link.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       operationRef_ = "";
-
       operationId_ = "";
-
       internalGetMutableParameters().clear();
-      if (requestBodyBuilder_ == null) {
-        requestBody_ = null;
-      } else {
-        requestBody_ = null;
+      requestBody_ = null;
+      if (requestBodyBuilder_ != null) {
+        requestBodyBuilder_.dispose();
         requestBodyBuilder_ = null;
       }
       description_ = "";
-
-      if (serverBuilder_ == null) {
-        server_ = null;
-      } else {
-        server_ = null;
+      server_ = null;
+      if (serverBuilder_ != null) {
+        serverBuilder_.dispose();
         serverBuilder_ = null;
       }
       return this;
@@ -733,24 +630,36 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.openapi.Link buildPartial() {
       org.mojolang.mojo.openapi.Link result = new org.mojolang.mojo.openapi.Link(this);
-      int from_bitField0_ = bitField0_;
-      result.operationRef_ = operationRef_;
-      result.operationId_ = operationId_;
-      result.parameters_ = internalGetParameters();
-      result.parameters_.makeImmutable();
-      if (requestBodyBuilder_ == null) {
-        result.requestBody_ = requestBody_;
-      } else {
-        result.requestBody_ = requestBodyBuilder_.build();
-      }
-      result.description_ = description_;
-      if (serverBuilder_ == null) {
-        result.server_ = server_;
-      } else {
-        result.server_ = serverBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.openapi.Link result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.operationRef_ = operationRef_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.operationId_ = operationId_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.parameters_ = internalGetParameters();
+        result.parameters_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestBody_ = requestBodyBuilder_ == null
+            ? requestBody_
+            : requestBodyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.server_ = serverBuilder_ == null
+            ? server_
+            : serverBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -799,25 +708,29 @@ private static final long serialVersionUID = 0L;
       if (other == org.mojolang.mojo.openapi.Link.getDefaultInstance()) return this;
       if (!other.getOperationRef().isEmpty()) {
         operationRef_ = other.operationRef_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getOperationId().isEmpty()) {
         operationId_ = other.operationId_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       internalGetMutableParameters().mergeFrom(
           other.internalGetParameters());
+      bitField0_ |= 0x00000004;
       if (other.hasRequestBody()) {
         mergeRequestBody(other.getRequestBody());
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasServer()) {
         mergeServer(other.getServer());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -832,17 +745,68 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.openapi.Link parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              operationRef_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
+              operationId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 26: {
+              com.google.protobuf.MapEntry<java.lang.String, org.mojolang.mojo.core.Value>
+              parameters__ = input.readMessage(
+                  ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableParameters().getMutableMap().put(
+                  parameters__.getKey(), parameters__.getValue());
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              input.readMessage(
+                  getRequestBodyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              description_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
+            case 50: {
+              input.readMessage(
+                  getServerFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.openapi.Link) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int bitField0_;
@@ -888,11 +852,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOperationRef(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       operationRef_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,8 +863,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOperationRef() {
-      
       operationRef_ = getDefaultInstance().getOperationRef();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -913,12 +875,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOperationRefBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       operationRef_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -964,11 +924,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOperationId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       operationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -977,8 +935,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOperationId() {
-      
       operationId_ = getDefaultInstance().getOperationId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -989,12 +947,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOperationIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       operationId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1002,7 +958,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, org.mojolang.mojo.core.Value> parameters_;
     private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Value>
-    internalGetParameters() {
+        internalGetParameters() {
       if (parameters_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ParametersDefaultEntryHolder.defaultEntry);
@@ -1010,8 +966,7 @@ private static final long serialVersionUID = 0L;
       return parameters_;
     }
     private com.google.protobuf.MapField<java.lang.String, org.mojolang.mojo.core.Value>
-    internalGetMutableParameters() {
-      onChanged();;
+        internalGetMutableParameters() {
       if (parameters_ == null) {
         parameters_ = com.google.protobuf.MapField.newMapField(
             ParametersDefaultEntryHolder.defaultEntry);
@@ -1019,16 +974,16 @@ private static final long serialVersionUID = 0L;
       if (!parameters_.isMutable()) {
         parameters_ = parameters_.copy();
       }
+      bitField0_ |= 0x00000004;
+      onChanged();
       return parameters_;
     }
-
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
     /**
      * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
-
     @java.lang.Override
     public boolean containsParameters(
         java.lang.String key) {
@@ -1047,7 +1002,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> getParametersMap() {
       return internalGetParameters().getMap();
     }
@@ -1055,10 +1009,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     @java.lang.Override
-
-    public org.mojolang.mojo.core.Value getParametersOrDefault(
+    public /* nullable */
+org.mojolang.mojo.core.Value getParametersOrDefault(
         java.lang.String key,
-        org.mojolang.mojo.core.Value defaultValue) {
+        /* nullable */
+org.mojolang.mojo.core.Value defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> map =
           internalGetParameters().getMap();
@@ -1068,7 +1023,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
     @java.lang.Override
-
     public org.mojolang.mojo.core.Value getParametersOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1079,8 +1033,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearParameters() {
+      bitField0_ = (bitField0_ & ~0x00000004);
       internalGetMutableParameters().getMutableMap()
           .clear();
       return this;
@@ -1088,7 +1042,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
-
     public Builder removeParameters(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1101,7 +1054,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, org.mojolang.mojo.core.Value>
-    getMutableParameters() {
+        getMutableParameters() {
+      bitField0_ |= 0x00000004;
       return internalGetMutableParameters().getMutableMap();
     }
     /**
@@ -1111,22 +1065,20 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         org.mojolang.mojo.core.Value value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableParameters().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
      * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
      */
-
     public Builder putAllParameters(
         java.util.Map<java.lang.String, org.mojolang.mojo.core.Value> values) {
       internalGetMutableParameters().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 
@@ -1138,7 +1090,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the requestBody field is set.
      */
     public boolean hasRequestBody() {
-      return requestBodyBuilder_ != null || requestBody_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>.mojo.core.Value request_body = 4;</code>
@@ -1160,11 +1112,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         requestBody_ = value;
-        onChanged();
       } else {
         requestBodyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1174,11 +1126,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.core.Value.Builder builderForValue) {
       if (requestBodyBuilder_ == null) {
         requestBody_ = builderForValue.build();
-        onChanged();
       } else {
         requestBodyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1186,38 +1138,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeRequestBody(org.mojolang.mojo.core.Value value) {
       if (requestBodyBuilder_ == null) {
-        if (requestBody_ != null) {
-          requestBody_ =
-            org.mojolang.mojo.core.Value.newBuilder(requestBody_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0) &&
+          requestBody_ != null &&
+          requestBody_ != org.mojolang.mojo.core.Value.getDefaultInstance()) {
+          getRequestBodyBuilder().mergeFrom(value);
         } else {
           requestBody_ = value;
         }
-        onChanged();
       } else {
         requestBodyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.core.Value request_body = 4;</code>
      */
     public Builder clearRequestBody() {
-      if (requestBodyBuilder_ == null) {
-        requestBody_ = null;
-        onChanged();
-      } else {
-        requestBody_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      requestBody_ = null;
+      if (requestBodyBuilder_ != null) {
+        requestBodyBuilder_.dispose();
         requestBodyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.core.Value request_body = 4;</code>
      */
     public org.mojolang.mojo.core.Value.Builder getRequestBodyBuilder() {
-      
+      bitField0_ |= 0x00000008;
       onChanged();
       return getRequestBodyFieldBuilder().getBuilder();
     }
@@ -1290,11 +1242,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDescription(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1303,8 +1253,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDescription() {
-      
       description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1315,12 +1265,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDescriptionBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       description_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1333,7 +1281,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the server field is set.
      */
     public boolean hasServer() {
-      return serverBuilder_ != null || server_ != null;
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>.mojo.openapi.Server server = 6;</code>
@@ -1355,11 +1303,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         server_ = value;
-        onChanged();
       } else {
         serverBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1369,11 +1317,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.openapi.Server.Builder builderForValue) {
       if (serverBuilder_ == null) {
         server_ = builderForValue.build();
-        onChanged();
       } else {
         serverBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
@@ -1381,38 +1329,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeServer(org.mojolang.mojo.openapi.Server value) {
       if (serverBuilder_ == null) {
-        if (server_ != null) {
-          server_ =
-            org.mojolang.mojo.openapi.Server.newBuilder(server_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000020) != 0) &&
+          server_ != null &&
+          server_ != org.mojolang.mojo.openapi.Server.getDefaultInstance()) {
+          getServerBuilder().mergeFrom(value);
         } else {
           server_ = value;
         }
-        onChanged();
       } else {
         serverBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.Server server = 6;</code>
      */
     public Builder clearServer() {
-      if (serverBuilder_ == null) {
-        server_ = null;
-        onChanged();
-      } else {
-        server_ = null;
+      bitField0_ = (bitField0_ & ~0x00000020);
+      server_ = null;
+      if (serverBuilder_ != null) {
+        serverBuilder_.dispose();
         serverBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.Server server = 6;</code>
      */
     public org.mojolang.mojo.openapi.Server.Builder getServerBuilder() {
-      
+      bitField0_ |= 0x00000020;
       onChanged();
       return getServerFieldBuilder().getBuilder();
     }
@@ -1476,7 +1424,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Link(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

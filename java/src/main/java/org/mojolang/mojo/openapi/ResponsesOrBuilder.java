@@ -30,14 +30,14 @@ public interface ResponsesOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; vals = 1;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableResponse getValsOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableResponse getValsOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableResponse defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableResponse defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableResponse&gt; vals = 1;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableResponse getValsOrThrow(
       java.lang.String key);
 }

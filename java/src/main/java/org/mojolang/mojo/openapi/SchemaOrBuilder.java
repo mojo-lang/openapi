@@ -230,14 +230,14 @@ public interface SchemaOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableSchema&gt; properties = 26;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableSchema defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableSchema defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableSchema&gt; properties = 26;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableSchema getPropertiesOrThrow(
       java.lang.String key);
 

@@ -136,14 +136,14 @@ public interface ParameterOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 15;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableExample defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableExample defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 15;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrThrow(
       java.lang.String key);
 
@@ -170,14 +170,14 @@ public interface ParameterOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.MediaType&gt; content = 20;</code>
    */
-
-  org.mojolang.mojo.openapi.MediaType getContentOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.MediaType getContentOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.MediaType defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.MediaType defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.MediaType&gt; content = 20;</code>
    */
-
   org.mojolang.mojo.openapi.MediaType getContentOrThrow(
       java.lang.String key);
 }

@@ -30,14 +30,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Schema&gt; schemas = 1;</code>
    */
-
-  org.mojolang.mojo.openapi.Schema getSchemasOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Schema getSchemasOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Schema defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Schema defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Schema&gt; schemas = 1;</code>
    */
-
   org.mojolang.mojo.openapi.Schema getSchemasOrThrow(
       java.lang.String key);
 
@@ -64,14 +64,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
-
-  org.mojolang.mojo.openapi.Response getResponsesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Response getResponsesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Response defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Response defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Response&gt; responses = 2;</code>
    */
-
   org.mojolang.mojo.openapi.Response getResponsesOrThrow(
       java.lang.String key);
 
@@ -98,14 +98,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
-
-  org.mojolang.mojo.openapi.Parameter getParametersOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Parameter getParametersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Parameter defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Parameter defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Parameter&gt; parameters = 3;</code>
    */
-
   org.mojolang.mojo.openapi.Parameter getParametersOrThrow(
       java.lang.String key);
 
@@ -132,14 +132,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
-
-  org.mojolang.mojo.openapi.Example getExamplesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Example getExamplesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Example defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Example defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Example&gt; examples = 4;</code>
    */
-
   org.mojolang.mojo.openapi.Example getExamplesOrThrow(
       java.lang.String key);
 
@@ -166,14 +166,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
-
-  org.mojolang.mojo.openapi.RequestBody getRequestBodiesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.RequestBody getRequestBodiesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.RequestBody defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.RequestBody defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.RequestBody&gt; request_bodies = 5;</code>
    */
-
   org.mojolang.mojo.openapi.RequestBody getRequestBodiesOrThrow(
       java.lang.String key);
 
@@ -200,14 +200,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
-
-  org.mojolang.mojo.openapi.Header getHeadersOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Header getHeadersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Header defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Header defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Header&gt; headers = 6;</code>
    */
-
   org.mojolang.mojo.openapi.Header getHeadersOrThrow(
       java.lang.String key);
 
@@ -234,14 +234,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
-
-  org.mojolang.mojo.openapi.SecurityScheme getSecuritySchemesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.SecurityScheme getSecuritySchemesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.SecurityScheme defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.SecurityScheme defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.SecurityScheme&gt; security_schemes = 7;</code>
    */
-
   org.mojolang.mojo.openapi.SecurityScheme getSecuritySchemesOrThrow(
       java.lang.String key);
 
@@ -268,14 +268,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
-
-  org.mojolang.mojo.openapi.Link getLinksOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Link getLinksOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Link defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Link defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Link&gt; links = 8;</code>
    */
-
   org.mojolang.mojo.openapi.Link getLinksOrThrow(
       java.lang.String key);
 
@@ -302,14 +302,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
-
-  org.mojolang.mojo.openapi.Callback getCallbacksOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Callback getCallbacksOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Callback defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Callback defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Callback&gt; callbacks = 9;</code>
    */
-
   org.mojolang.mojo.openapi.Callback getCallbacksOrThrow(
       java.lang.String key);
 
@@ -336,14 +336,14 @@ public interface ComponentsOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
-
-  org.mojolang.mojo.openapi.PathItem getPathItemsOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.PathItem getPathItemsOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.PathItem defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.PathItem defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.PathItem&gt; path_items = 10;</code>
    */
-
   org.mojolang.mojo.openapi.PathItem getPathItemsOrThrow(
       java.lang.String key);
 }

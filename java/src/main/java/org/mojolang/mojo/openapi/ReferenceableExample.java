@@ -30,71 +30,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ReferenceableExample(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.mojolang.mojo.openapi.Reference.Builder subBuilder = null;
-            if (referenceableExampleCase_ == 1) {
-              subBuilder = ((org.mojolang.mojo.openapi.Reference) referenceableExample_).toBuilder();
-            }
-            referenceableExample_ =
-                input.readMessage(org.mojolang.mojo.openapi.Reference.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.openapi.Reference) referenceableExample_);
-              referenceableExample_ = subBuilder.buildPartial();
-            }
-            referenceableExampleCase_ = 1;
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.openapi.Example.Builder subBuilder = null;
-            if (referenceableExampleCase_ == 2) {
-              subBuilder = ((org.mojolang.mojo.openapi.Example) referenceableExample_).toBuilder();
-            }
-            referenceableExample_ =
-                input.readMessage(org.mojolang.mojo.openapi.Example.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((org.mojolang.mojo.openapi.Example) referenceableExample_);
-              referenceableExample_ = subBuilder.buildPartial();
-            }
-            referenceableExampleCase_ = 2;
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.openapi.ReferenceableExampleProto.internal_static_mojo_openapi_ReferenceableExample_descriptor;
@@ -231,7 +166,7 @@ private static final long serialVersionUID = 0L;
     if (referenceableExampleCase_ == 2) {
       output.writeMessage(2, (org.mojolang.mojo.openapi.Example) referenceableExample_);
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -248,7 +183,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, (org.mojolang.mojo.openapi.Example) referenceableExample_);
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -276,7 +211,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -299,7 +234,7 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -416,22 +351,24 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.openapi.ReferenceableExample.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      if (referenceBuilder_ != null) {
+        referenceBuilder_.clear();
+      }
+      if (exampleBuilder_ != null) {
+        exampleBuilder_.clear();
+      }
       referenceableExampleCase_ = 0;
       referenceableExample_ = null;
       return this;
@@ -460,23 +397,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.openapi.ReferenceableExample buildPartial() {
       org.mojolang.mojo.openapi.ReferenceableExample result = new org.mojolang.mojo.openapi.ReferenceableExample(this);
-      if (referenceableExampleCase_ == 1) {
-        if (referenceBuilder_ == null) {
-          result.referenceableExample_ = referenceableExample_;
-        } else {
-          result.referenceableExample_ = referenceBuilder_.build();
-        }
-      }
-      if (referenceableExampleCase_ == 2) {
-        if (exampleBuilder_ == null) {
-          result.referenceableExample_ = referenceableExample_;
-        } else {
-          result.referenceableExample_ = exampleBuilder_.build();
-        }
-      }
-      result.referenceableExampleCase_ = referenceableExampleCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.openapi.ReferenceableExample result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.mojolang.mojo.openapi.ReferenceableExample result) {
+      result.referenceableExampleCase_ = referenceableExampleCase_;
+      result.referenceableExample_ = this.referenceableExample_;
+      if (referenceableExampleCase_ == 1 &&
+          referenceBuilder_ != null) {
+        result.referenceableExample_ = referenceBuilder_.build();
+      }
+      if (referenceableExampleCase_ == 2 &&
+          exampleBuilder_ != null) {
+        result.referenceableExample_ = exampleBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -536,7 +477,7 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -551,17 +492,44 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.openapi.ReferenceableExample parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getReferenceFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              referenceableExampleCase_ = 1;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getExampleFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              referenceableExampleCase_ = 2;
+              break;
+            } // case 18
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.openapi.ReferenceableExample) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
     private int referenceableExampleCase_ = 0;
@@ -579,6 +547,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.mojolang.mojo.openapi.Reference, org.mojolang.mojo.openapi.Reference.Builder, org.mojolang.mojo.openapi.ReferenceOrBuilder> referenceBuilder_;
@@ -654,8 +623,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (referenceableExampleCase_ == 1) {
           referenceBuilder_.mergeFrom(value);
+        } else {
+          referenceBuilder_.setMessage(value);
         }
-        referenceBuilder_.setMessage(value);
       }
       referenceableExampleCase_ = 1;
       return this;
@@ -717,7 +687,7 @@ private static final long serialVersionUID = 0L;
         referenceableExample_ = null;
       }
       referenceableExampleCase_ = 1;
-      onChanged();;
+      onChanged();
       return referenceBuilder_;
     }
 
@@ -795,8 +765,9 @@ private static final long serialVersionUID = 0L;
       } else {
         if (referenceableExampleCase_ == 2) {
           exampleBuilder_.mergeFrom(value);
+        } else {
+          exampleBuilder_.setMessage(value);
         }
-        exampleBuilder_.setMessage(value);
       }
       referenceableExampleCase_ = 2;
       return this;
@@ -858,7 +829,7 @@ private static final long serialVersionUID = 0L;
         referenceableExample_ = null;
       }
       referenceableExampleCase_ = 2;
-      onChanged();;
+      onChanged();
       return exampleBuilder_;
     }
     @java.lang.Override
@@ -894,7 +865,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReferenceableExample(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

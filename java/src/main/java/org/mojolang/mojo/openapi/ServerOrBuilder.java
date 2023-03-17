@@ -60,14 +60,14 @@ public interface ServerOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ServerVariable&gt; variables = 4;</code>
    */
-
-  org.mojolang.mojo.openapi.ServerVariable getVariablesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ServerVariable getVariablesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ServerVariable defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ServerVariable defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ServerVariable&gt; variables = 4;</code>
    */
-
   org.mojolang.mojo.openapi.ServerVariable getVariablesOrThrow(
       java.lang.String key);
 }

@@ -42,14 +42,14 @@ public interface DiscriminatorOrBuilder extends
   /**
    * <code>map&lt;string, string&gt; mapping = 2;</code>
    */
-
-  java.lang.String getMappingOrDefault(
+  /* nullable */
+java.lang.String getMappingOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue);
+      /* nullable */
+java.lang.String defaultValue);
   /**
    * <code>map&lt;string, string&gt; mapping = 2;</code>
    */
-
   java.lang.String getMappingOrThrow(
       java.lang.String key);
 }

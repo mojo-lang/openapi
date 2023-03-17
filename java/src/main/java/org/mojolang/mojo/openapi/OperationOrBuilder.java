@@ -163,14 +163,14 @@ public interface OperationOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 13;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableCallback defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableCallback defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableCallback&gt; callbacks = 13;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableCallback getCallbacksOrThrow(
       java.lang.String key);
 

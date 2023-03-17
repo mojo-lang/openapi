@@ -54,14 +54,14 @@ public interface LinkOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
-
-  org.mojolang.mojo.core.Value getParametersOrDefault(
+  /* nullable */
+org.mojolang.mojo.core.Value getParametersOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.core.Value defaultValue);
+      /* nullable */
+org.mojolang.mojo.core.Value defaultValue);
   /**
    * <code>map&lt;string, .mojo.core.Value&gt; parameters = 3;</code>
    */
-
   org.mojolang.mojo.core.Value getParametersOrThrow(
       java.lang.String key);
 

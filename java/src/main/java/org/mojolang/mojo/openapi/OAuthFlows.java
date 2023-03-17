@@ -30,95 +30,6 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private OAuthFlows(
-      com.google.protobuf.CodedInputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
-    try {
-      boolean done = false;
-      while (!done) {
-        int tag = input.readTag();
-        switch (tag) {
-          case 0:
-            done = true;
-            break;
-          case 10: {
-            org.mojolang.mojo.openapi.OAuthFlow.Builder subBuilder = null;
-            if (implicit_ != null) {
-              subBuilder = implicit_.toBuilder();
-            }
-            implicit_ = input.readMessage(org.mojolang.mojo.openapi.OAuthFlow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(implicit_);
-              implicit_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 18: {
-            org.mojolang.mojo.openapi.OAuthFlow.Builder subBuilder = null;
-            if (password_ != null) {
-              subBuilder = password_.toBuilder();
-            }
-            password_ = input.readMessage(org.mojolang.mojo.openapi.OAuthFlow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(password_);
-              password_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 26: {
-            org.mojolang.mojo.openapi.OAuthFlow.Builder subBuilder = null;
-            if (clientCredentials_ != null) {
-              subBuilder = clientCredentials_.toBuilder();
-            }
-            clientCredentials_ = input.readMessage(org.mojolang.mojo.openapi.OAuthFlow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(clientCredentials_);
-              clientCredentials_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 34: {
-            org.mojolang.mojo.openapi.OAuthFlow.Builder subBuilder = null;
-            if (authorizationCode_ != null) {
-              subBuilder = authorizationCode_.toBuilder();
-            }
-            authorizationCode_ = input.readMessage(org.mojolang.mojo.openapi.OAuthFlow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(authorizationCode_);
-              authorizationCode_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownField(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-        }
-      }
-    } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-      throw e.setUnfinishedMessage(this);
-    } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
-    } finally {
-      this.unknownFields = unknownFields.build();
-      makeExtensionsImmutable();
-    }
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.mojolang.mojo.openapi.OauthFlowsProto.internal_static_mojo_openapi_OAuthFlows_descriptor;
@@ -155,7 +66,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.openapi.OAuthFlowOrBuilder getImplicitOrBuilder() {
-    return getImplicit();
+    return implicit_ == null ? org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance() : implicit_;
   }
 
   public static final int PASSWORD_FIELD_NUMBER = 2;
@@ -181,7 +92,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.openapi.OAuthFlowOrBuilder getPasswordOrBuilder() {
-    return getPassword();
+    return password_ == null ? org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance() : password_;
   }
 
   public static final int CLIENT_CREDENTIALS_FIELD_NUMBER = 3;
@@ -207,7 +118,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.openapi.OAuthFlowOrBuilder getClientCredentialsOrBuilder() {
-    return getClientCredentials();
+    return clientCredentials_ == null ? org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance() : clientCredentials_;
   }
 
   public static final int AUTHORIZATION_CODE_FIELD_NUMBER = 4;
@@ -233,7 +144,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public org.mojolang.mojo.openapi.OAuthFlowOrBuilder getAuthorizationCodeOrBuilder() {
-    return getAuthorizationCode();
+    return authorizationCode_ == null ? org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance() : authorizationCode_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -262,7 +173,7 @@ private static final long serialVersionUID = 0L;
     if (authorizationCode_ != null) {
       output.writeMessage(4, getAuthorizationCode());
     }
-    unknownFields.writeTo(output);
+    getUnknownFields().writeTo(output);
   }
 
   @java.lang.Override
@@ -287,7 +198,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getAuthorizationCode());
     }
-    size += unknownFields.getSerializedSize();
+    size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
   }
@@ -322,7 +233,7 @@ private static final long serialVersionUID = 0L;
       if (!getAuthorizationCode()
           .equals(other.getAuthorizationCode())) return false;
     }
-    if (!unknownFields.equals(other.unknownFields)) return false;
+    if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
 
@@ -349,7 +260,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + AUTHORIZATION_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getAuthorizationCode().hashCode();
     }
-    hash = (29 * hash) + unknownFields.hashCode();
+    hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
@@ -466,44 +377,36 @@ private static final long serialVersionUID = 0L;
 
     // Construct using org.mojolang.mojo.openapi.OAuthFlows.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (implicitBuilder_ == null) {
-        implicit_ = null;
-      } else {
-        implicit_ = null;
+      bitField0_ = 0;
+      implicit_ = null;
+      if (implicitBuilder_ != null) {
+        implicitBuilder_.dispose();
         implicitBuilder_ = null;
       }
-      if (passwordBuilder_ == null) {
-        password_ = null;
-      } else {
-        password_ = null;
+      password_ = null;
+      if (passwordBuilder_ != null) {
+        passwordBuilder_.dispose();
         passwordBuilder_ = null;
       }
-      if (clientCredentialsBuilder_ == null) {
-        clientCredentials_ = null;
-      } else {
-        clientCredentials_ = null;
+      clientCredentials_ = null;
+      if (clientCredentialsBuilder_ != null) {
+        clientCredentialsBuilder_.dispose();
         clientCredentialsBuilder_ = null;
       }
-      if (authorizationCodeBuilder_ == null) {
-        authorizationCode_ = null;
-      } else {
-        authorizationCode_ = null;
+      authorizationCode_ = null;
+      if (authorizationCodeBuilder_ != null) {
+        authorizationCodeBuilder_.dispose();
         authorizationCodeBuilder_ = null;
       }
       return this;
@@ -532,28 +435,33 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.mojolang.mojo.openapi.OAuthFlows buildPartial() {
       org.mojolang.mojo.openapi.OAuthFlows result = new org.mojolang.mojo.openapi.OAuthFlows(this);
-      if (implicitBuilder_ == null) {
-        result.implicit_ = implicit_;
-      } else {
-        result.implicit_ = implicitBuilder_.build();
-      }
-      if (passwordBuilder_ == null) {
-        result.password_ = password_;
-      } else {
-        result.password_ = passwordBuilder_.build();
-      }
-      if (clientCredentialsBuilder_ == null) {
-        result.clientCredentials_ = clientCredentials_;
-      } else {
-        result.clientCredentials_ = clientCredentialsBuilder_.build();
-      }
-      if (authorizationCodeBuilder_ == null) {
-        result.authorizationCode_ = authorizationCode_;
-      } else {
-        result.authorizationCode_ = authorizationCodeBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.mojolang.mojo.openapi.OAuthFlows result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.implicit_ = implicitBuilder_ == null
+            ? implicit_
+            : implicitBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.password_ = passwordBuilder_ == null
+            ? password_
+            : passwordBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientCredentials_ = clientCredentialsBuilder_ == null
+            ? clientCredentials_
+            : clientCredentialsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.authorizationCode_ = authorizationCodeBuilder_ == null
+            ? authorizationCode_
+            : authorizationCodeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -612,7 +520,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasAuthorizationCode()) {
         mergeAuthorizationCode(other.getAuthorizationCode());
       }
-      this.mergeUnknownFields(other.unknownFields);
+      this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
     }
@@ -627,19 +535,61 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      org.mojolang.mojo.openapi.OAuthFlows parsedMessage = null;
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       try {
-        parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              input.readMessage(
+                  getImplicitFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 10
+            case 18: {
+              input.readMessage(
+                  getPasswordFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  getClientCredentialsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              input.readMessage(
+                  getAuthorizationCodeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            default: {
+              if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                done = true; // was an endgroup tag
+              }
+              break;
+            } // default:
+          } // switch (tag)
+        } // while (!done)
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (org.mojolang.mojo.openapi.OAuthFlows) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
-        if (parsedMessage != null) {
-          mergeFrom(parsedMessage);
-        }
-      }
+        onChanged();
+      } // finally
       return this;
     }
+    private int bitField0_;
 
     private org.mojolang.mojo.openapi.OAuthFlow implicit_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -649,7 +599,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the implicit field is set.
      */
     public boolean hasImplicit() {
-      return implicitBuilder_ != null || implicit_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.mojo.openapi.OAuthFlow implicit = 1;</code>
@@ -671,11 +621,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         implicit_ = value;
-        onChanged();
       } else {
         implicitBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -685,11 +635,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.openapi.OAuthFlow.Builder builderForValue) {
       if (implicitBuilder_ == null) {
         implicit_ = builderForValue.build();
-        onChanged();
       } else {
         implicitBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -697,38 +647,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeImplicit(org.mojolang.mojo.openapi.OAuthFlow value) {
       if (implicitBuilder_ == null) {
-        if (implicit_ != null) {
-          implicit_ =
-            org.mojolang.mojo.openapi.OAuthFlow.newBuilder(implicit_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          implicit_ != null &&
+          implicit_ != org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance()) {
+          getImplicitBuilder().mergeFrom(value);
         } else {
           implicit_ = value;
         }
-        onChanged();
       } else {
         implicitBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow implicit = 1;</code>
      */
     public Builder clearImplicit() {
-      if (implicitBuilder_ == null) {
-        implicit_ = null;
-        onChanged();
-      } else {
-        implicit_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      implicit_ = null;
+      if (implicitBuilder_ != null) {
+        implicitBuilder_.dispose();
         implicitBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow implicit = 1;</code>
      */
     public org.mojolang.mojo.openapi.OAuthFlow.Builder getImplicitBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getImplicitFieldBuilder().getBuilder();
     }
@@ -768,7 +718,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the password field is set.
      */
     public boolean hasPassword() {
-      return passwordBuilder_ != null || password_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.mojo.openapi.OAuthFlow password = 2;</code>
@@ -790,11 +740,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         password_ = value;
-        onChanged();
       } else {
         passwordBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -804,11 +754,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.openapi.OAuthFlow.Builder builderForValue) {
       if (passwordBuilder_ == null) {
         password_ = builderForValue.build();
-        onChanged();
       } else {
         passwordBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -816,38 +766,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePassword(org.mojolang.mojo.openapi.OAuthFlow value) {
       if (passwordBuilder_ == null) {
-        if (password_ != null) {
-          password_ =
-            org.mojolang.mojo.openapi.OAuthFlow.newBuilder(password_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          password_ != null &&
+          password_ != org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance()) {
+          getPasswordBuilder().mergeFrom(value);
         } else {
           password_ = value;
         }
-        onChanged();
       } else {
         passwordBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow password = 2;</code>
      */
     public Builder clearPassword() {
-      if (passwordBuilder_ == null) {
-        password_ = null;
-        onChanged();
-      } else {
-        password_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      password_ = null;
+      if (passwordBuilder_ != null) {
+        passwordBuilder_.dispose();
         passwordBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow password = 2;</code>
      */
     public org.mojolang.mojo.openapi.OAuthFlow.Builder getPasswordBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPasswordFieldBuilder().getBuilder();
     }
@@ -887,7 +837,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the clientCredentials field is set.
      */
     public boolean hasClientCredentials() {
-      return clientCredentialsBuilder_ != null || clientCredentials_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>.mojo.openapi.OAuthFlow client_credentials = 3;</code>
@@ -909,11 +859,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         clientCredentials_ = value;
-        onChanged();
       } else {
         clientCredentialsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -923,11 +873,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.openapi.OAuthFlow.Builder builderForValue) {
       if (clientCredentialsBuilder_ == null) {
         clientCredentials_ = builderForValue.build();
-        onChanged();
       } else {
         clientCredentialsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -935,38 +885,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeClientCredentials(org.mojolang.mojo.openapi.OAuthFlow value) {
       if (clientCredentialsBuilder_ == null) {
-        if (clientCredentials_ != null) {
-          clientCredentials_ =
-            org.mojolang.mojo.openapi.OAuthFlow.newBuilder(clientCredentials_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0) &&
+          clientCredentials_ != null &&
+          clientCredentials_ != org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance()) {
+          getClientCredentialsBuilder().mergeFrom(value);
         } else {
           clientCredentials_ = value;
         }
-        onChanged();
       } else {
         clientCredentialsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow client_credentials = 3;</code>
      */
     public Builder clearClientCredentials() {
-      if (clientCredentialsBuilder_ == null) {
-        clientCredentials_ = null;
-        onChanged();
-      } else {
-        clientCredentials_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      clientCredentials_ = null;
+      if (clientCredentialsBuilder_ != null) {
+        clientCredentialsBuilder_.dispose();
         clientCredentialsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow client_credentials = 3;</code>
      */
     public org.mojolang.mojo.openapi.OAuthFlow.Builder getClientCredentialsBuilder() {
-      
+      bitField0_ |= 0x00000004;
       onChanged();
       return getClientCredentialsFieldBuilder().getBuilder();
     }
@@ -1006,7 +956,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the authorizationCode field is set.
      */
     public boolean hasAuthorizationCode() {
-      return authorizationCodeBuilder_ != null || authorizationCode_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>.mojo.openapi.OAuthFlow authorization_code = 4;</code>
@@ -1028,11 +978,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         authorizationCode_ = value;
-        onChanged();
       } else {
         authorizationCodeBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1042,11 +992,11 @@ private static final long serialVersionUID = 0L;
         org.mojolang.mojo.openapi.OAuthFlow.Builder builderForValue) {
       if (authorizationCodeBuilder_ == null) {
         authorizationCode_ = builderForValue.build();
-        onChanged();
       } else {
         authorizationCodeBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1054,38 +1004,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAuthorizationCode(org.mojolang.mojo.openapi.OAuthFlow value) {
       if (authorizationCodeBuilder_ == null) {
-        if (authorizationCode_ != null) {
-          authorizationCode_ =
-            org.mojolang.mojo.openapi.OAuthFlow.newBuilder(authorizationCode_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0) &&
+          authorizationCode_ != null &&
+          authorizationCode_ != org.mojolang.mojo.openapi.OAuthFlow.getDefaultInstance()) {
+          getAuthorizationCodeBuilder().mergeFrom(value);
         } else {
           authorizationCode_ = value;
         }
-        onChanged();
       } else {
         authorizationCodeBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow authorization_code = 4;</code>
      */
     public Builder clearAuthorizationCode() {
-      if (authorizationCodeBuilder_ == null) {
-        authorizationCode_ = null;
-        onChanged();
-      } else {
-        authorizationCode_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      authorizationCode_ = null;
+      if (authorizationCodeBuilder_ != null) {
+        authorizationCodeBuilder_.dispose();
         authorizationCodeBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.mojo.openapi.OAuthFlow authorization_code = 4;</code>
      */
     public org.mojolang.mojo.openapi.OAuthFlow.Builder getAuthorizationCodeBuilder() {
-      
+      bitField0_ |= 0x00000008;
       onChanged();
       return getAuthorizationCodeFieldBuilder().getBuilder();
     }
@@ -1149,7 +1099,18 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new OAuthFlows(input, extensionRegistry);
+      Builder builder = newBuilder();
+      try {
+        builder.mergeFrom(input, extensionRegistry);
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(builder.buildPartial());
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e)
+            .setUnfinishedMessage(builder.buildPartial());
+      }
+      return builder.buildPartial();
     }
   };
 

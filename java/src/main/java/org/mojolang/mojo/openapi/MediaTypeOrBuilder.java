@@ -60,14 +60,14 @@ public interface MediaTypeOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 3;</code>
    */
-
-  org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.ReferenceableExample defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.ReferenceableExample defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.ReferenceableExample&gt; examples = 3;</code>
    */
-
   org.mojolang.mojo.openapi.ReferenceableExample getExamplesOrThrow(
       java.lang.String key);
 
@@ -94,14 +94,14 @@ public interface MediaTypeOrBuilder extends
   /**
    * <code>map&lt;string, .mojo.openapi.Encoding&gt; encoding = 5;</code>
    */
-
-  org.mojolang.mojo.openapi.Encoding getEncodingOrDefault(
+  /* nullable */
+org.mojolang.mojo.openapi.Encoding getEncodingOrDefault(
       java.lang.String key,
-      org.mojolang.mojo.openapi.Encoding defaultValue);
+      /* nullable */
+org.mojolang.mojo.openapi.Encoding defaultValue);
   /**
    * <code>map&lt;string, .mojo.openapi.Encoding&gt; encoding = 5;</code>
    */
-
   org.mojolang.mojo.openapi.Encoding getEncodingOrThrow(
       java.lang.String key);
 }
