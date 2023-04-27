@@ -41,7 +41,7 @@ func (x *Tag) Reset() {
 	}
 }
 
-func (x *Tag) String() string {
+func (x *Tag) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

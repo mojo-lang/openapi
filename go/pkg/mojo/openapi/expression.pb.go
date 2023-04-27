@@ -62,7 +62,7 @@ func (x Expression_Type) Enum() *Expression_Type {
 	return p
 }
 
-func (x Expression_Type) String() string {
+func (x Expression_Type) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -117,7 +117,7 @@ func (x Expression_Location) Enum() *Expression_Location {
 	return p
 }
 
-func (x Expression_Location) String() string {
+func (x Expression_Location) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -156,7 +156,7 @@ func (x *Expression) Reset() {
 	}
 }
 
-func (x *Expression) String() string {
+func (x *Expression) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -212,7 +212,7 @@ func (x *Expression_Source) Reset() {
 	}
 }
 
-func (x *Expression_Source) String() string {
+func (x *Expression_Source) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

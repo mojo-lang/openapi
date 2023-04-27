@@ -40,7 +40,7 @@ func (x *Discriminator) Reset() {
 	}
 }
 
-func (x *Discriminator) String() string {
+func (x *Discriminator) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

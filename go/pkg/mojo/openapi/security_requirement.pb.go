@@ -40,7 +40,7 @@ func (x *SecurityRequirement) Reset() {
 	}
 }
 
-func (x *SecurityRequirement) String() string {
+func (x *SecurityRequirement) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

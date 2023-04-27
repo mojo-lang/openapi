@@ -49,7 +49,7 @@ func (x HttpStatusCode) Enum() *HttpStatusCode {
 	return p
 }
 
-func (x HttpStatusCode) String() string {
+func (x HttpStatusCode) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -104,7 +104,7 @@ func (x Parameter_Location) Enum() *Parameter_Location {
 	return p
 }
 
-func (x Parameter_Location) String() string {
+func (x Parameter_Location) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -168,7 +168,7 @@ func (x Parameter_Style) Enum() *Parameter_Style {
 	return p
 }
 
-func (x Parameter_Style) String() string {
+func (x Parameter_Style) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -232,7 +232,7 @@ func (x Schema_Type) Enum() *Schema_Type {
 	return p
 }
 
-func (x Schema_Type) String() string {
+func (x Schema_Type) ToText() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -279,7 +279,7 @@ func (x *Components) Reset() {
 	}
 }
 
-func (x *Components) String() string {
+func (x *Components) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -396,7 +396,7 @@ func (x *OpenAPI) Reset() {
 	}
 }
 
-func (x *OpenAPI) String() string {
+func (x *OpenAPI) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -492,7 +492,7 @@ func (x *Callback) Reset() {
 	}
 }
 
-func (x *Callback) String() string {
+func (x *Callback) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -543,7 +543,7 @@ func (x *Encoding) Reset() {
 	}
 }
 
-func (x *Encoding) String() string {
+func (x *Encoding) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -630,7 +630,7 @@ func (x *Header) Reset() {
 	}
 }
 
-func (x *Header) String() string {
+func (x *Header) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -764,7 +764,7 @@ func (x *MediaType) Reset() {
 	}
 }
 
-func (x *MediaType) String() string {
+func (x *MediaType) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -843,7 +843,7 @@ func (x *Operation) Reset() {
 	}
 }
 
-func (x *Operation) String() string {
+func (x *Operation) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -979,7 +979,7 @@ func (x *Parameter) Reset() {
 	}
 }
 
-func (x *Parameter) String() string {
+func (x *Parameter) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1122,7 +1122,7 @@ func (x *PathItem) Reset() {
 	}
 }
 
-func (x *PathItem) String() string {
+func (x *PathItem) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1255,7 +1255,7 @@ func (x *RequestBody) Reset() {
 	}
 }
 
-func (x *RequestBody) String() string {
+func (x *RequestBody) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1319,7 +1319,7 @@ func (x *Response) Reset() {
 	}
 }
 
-func (x *Response) String() string {
+func (x *Response) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1387,7 +1387,7 @@ func (x *Responses) Reset() {
 	}
 }
 
-func (x *Responses) String() string {
+func (x *Responses) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1468,7 +1468,7 @@ func (x *Schema) Reset() {
 	}
 }
 
-func (x *Schema) String() string {
+func (x *Schema) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1756,7 +1756,7 @@ func (x *ReferenceableHeader) Reset() {
 	}
 }
 
-func (x *ReferenceableHeader) String() string {
+func (x *ReferenceableHeader) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1836,7 +1836,7 @@ func (x *ReferenceableSchema) Reset() {
 	}
 }
 
-func (x *ReferenceableSchema) String() string {
+func (x *ReferenceableSchema) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1916,7 +1916,7 @@ func (x *ReferenceableParameter) Reset() {
 	}
 }
 
-func (x *ReferenceableParameter) String() string {
+func (x *ReferenceableParameter) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -1996,7 +1996,7 @@ func (x *ReferenceableRequestBody) Reset() {
 	}
 }
 
-func (x *ReferenceableRequestBody) String() string {
+func (x *ReferenceableRequestBody) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2076,7 +2076,7 @@ func (x *ReferenceableCallback) Reset() {
 	}
 }
 
-func (x *ReferenceableCallback) String() string {
+func (x *ReferenceableCallback) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2156,7 +2156,7 @@ func (x *ReferenceableResponse) Reset() {
 	}
 }
 
-func (x *ReferenceableResponse) String() string {
+func (x *ReferenceableResponse) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -2233,7 +2233,7 @@ func (x *Paths) Reset() {
 	}
 }
 
-func (x *Paths) String() string {
+func (x *Paths) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

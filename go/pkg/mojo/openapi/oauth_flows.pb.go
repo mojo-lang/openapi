@@ -42,7 +42,7 @@ func (x *OAuthFlows) Reset() {
 	}
 }
 
-func (x *OAuthFlows) String() string {
+func (x *OAuthFlows) ToText() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
