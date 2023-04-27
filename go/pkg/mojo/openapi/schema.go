@@ -291,12 +291,31 @@ func (x *Schema) GenerateExample(index map[string]*Schema) *core.Value {
 	return x.generateExample(context.Background(), index, make(core.Options))
 }
 
+func (x *Schema) SupplementExample(index map[string]*Schema) *core.Value {
+	if x != nil {
+		if x.Example != nil {
+			return x.Example
+		}
+		switch x.Type {
+		case Schema_TYPE_OBJECT:
+			if x.AdditionalProperties == nil && len(x.Properties) > 0 { // struct
+				values := make(map[string]interface{})
+				for key, value := range x.Properties {
+					if v := value.GetSchemaOf(index).SupplementExample(index); v != nil {
+						values[key] = v
+					}
+				}
+				obj, _ := core.NewObjectFromMap(values)
+				return core.NewObjectValue(obj)
+			}
+		}
+		return x.generateExample(context.Background(), index, make(core.Options))
+	}
+	return nil
+}
+
 func (x *Schema) generateExample(ctx context.Context, index map[string]*Schema, options core.Options) *core.Value {
 	if x != nil {
-		// if x.Example != nil {
-		//    return x.Example
-		// }
-
 		key := ""
 		if len(x.Title) > 0 {
 			key = x.Title

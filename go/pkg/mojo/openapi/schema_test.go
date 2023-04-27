@@ -50,3 +50,16 @@ func TestSchema_GenerateExample(t *testing.T) {
 	assert.Equal(t, core.ValueKind_VALUE_KIND_INTEGER, v.GetObject().GetValue("foo").GetKind())
 	assert.Equal(t, core.ValueKind_VALUE_KIND_STRING, v.GetObject().GetValue("bar").GetKind())
 }
+
+func TestSchema_SupplementExample(t *testing.T) {
+	schema := &Schema{Type: Schema_TYPE_OBJECT, Properties: map[string]*ReferenceableSchema{
+		"foo": NewReferenceableSchema(&Schema{Type: Schema_TYPE_INTEGER}),
+		"bar": NewReferenceableSchema(&Schema{Type: Schema_TYPE_STRING, Example: core.NewStringValue("baz")}),
+	}}
+	v := schema.SupplementExample(nil)
+	assert.NotNil(t, v)
+	assert.Equal(t, core.ValueKind_VALUE_KIND_OBJECT, v.GetKind())
+	assert.Equal(t, core.ValueKind_VALUE_KIND_INTEGER, v.GetObject().GetValue("foo").GetKind())
+	assert.Equal(t, core.ValueKind_VALUE_KIND_STRING, v.GetObject().GetValue("bar").GetKind())
+	assert.Equal(t, "baz", v.GetObject().GetValue("bar").GetString())
+}
