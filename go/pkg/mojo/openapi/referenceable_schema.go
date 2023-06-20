@@ -23,7 +23,7 @@ func NewReferencedSchema(reference *Reference) *ReferenceableSchema {
 }
 
 func (x *ReferenceableSchema) SetSchema(schema *Schema) *ReferenceableSchema {
-	if x != nil {
+	if x != nil && schema != nil {
 		x.ReferenceableSchema = &ReferenceableSchema_Schema{
 			Schema: schema,
 		}
@@ -32,7 +32,7 @@ func (x *ReferenceableSchema) SetSchema(schema *Schema) *ReferenceableSchema {
 }
 
 func (x *ReferenceableSchema) SetReference(reference *Reference) *ReferenceableSchema {
-	if x != nil {
+	if x != nil && reference != nil {
 		x.ReferenceableSchema = &ReferenceableSchema_Reference{
 			Reference: reference,
 		}
@@ -76,7 +76,7 @@ func (x *ReferenceableSchema) GetSchemaName() string {
 func (x *ReferenceableSchema) GetSchemaOf(index map[string]*Schema) *Schema {
 	if x != nil {
 		reference := x.GetReference()
-		if reference != nil {
+		if reference != nil && index != nil {
 			fragment := reference.GetRef().GetFragment()
 			key := strings.TrimPrefix(fragment, SchemaReferenceRoot)
 			if s, ok := index[key]; ok {
