@@ -65,11 +65,11 @@ type Schema {
         /// For example, `multiple_of` will be `0.01`, when the numeric need to hold two decimals, and any greater precision will be rejected.
         multiple_of: Double @14 @exclusive_maximum(0)
 
-        maximum: Double @15
-        exclusive_maximum: Double @16
+        maximum: Float64Value @15
+        exclusive_maximum: Float64Value @16
 
-        minimum: Double @17
-        exclusive_minimum: Double @18
+        minimum: Float64Value @17
+        exclusive_minimum: Float64Value @18
 
         max_length: UInt @19
 
