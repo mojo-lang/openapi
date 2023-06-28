@@ -301,7 +301,7 @@ func (x *Schema) SupplementExample(index map[string]*Schema) *core.Value {
 			if x.AdditionalProperties == nil && len(x.Properties) > 0 { // struct
 				values := make(map[string]interface{})
 				for key, value := range x.Properties {
-					if v := value.GetSchemaOf(index).SupplementExample(index); v != nil {
+					if v := value.GetSchemaOf(index).generateExample(context.Background(), index, make(core.Options)); v != nil {
 						values[key] = v
 					}
 				}

@@ -1,8 +1,10 @@
 package openapi
 
 import (
+	"io/ioutil"
 	"testing"
 
+	jsoniter "github.com/json-iterator/go"
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"github.com/stretchr/testify/assert"
 )
@@ -54,4 +56,16 @@ func TestOpenAPI_SupplementExample(t *testing.T) {
 
 	o.SupplementExample()
 	assert.NotNil(t, o.GetPath("/path/to/service").GetGet().GetParameter(0, nil).GetExample())
+}
+
+func TestOpenAPI_SupplementExample2(t *testing.T) {
+	api := &OpenAPI{}
+	content, err := ioutil.ReadFile("./testdata/supplement_example_test.json")
+	if assert.NoError(t, err) {
+		err = jsoniter.Unmarshal(content, api)
+		if assert.NoError(t, err) {
+			api.SupplementExample()
+		}
+	}
+
 }
