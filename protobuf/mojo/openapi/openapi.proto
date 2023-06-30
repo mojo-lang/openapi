@@ -4,7 +4,6 @@ syntax = "proto3";
 
 package mojo.openapi;
 
-import "mojo/core/boxed.proto";
 import "mojo/core/regex.proto";
 import "mojo/core/value.proto";
 import "mojo/core/version.proto";
@@ -197,10 +196,10 @@ message Schema {
     Type type = 12;
     string format = 13;
     double multiple_of = 14;
-    mojo.core.Float64Value maximum = 15;
-    mojo.core.Float64Value exclusive_maximum = 16;
-    mojo.core.Float64Value minimum = 17;
-    mojo.core.Float64Value exclusive_minimum = 18;
+    mojo.core.Value maximum = 15;
+    mojo.core.Value exclusive_maximum = 16;
+    mojo.core.Value minimum = 17;
+    mojo.core.Value exclusive_minimum = 18;
     uint64 max_length = 19;
     uint64 min_length = 20;
     mojo.core.Regex pattern = 21;

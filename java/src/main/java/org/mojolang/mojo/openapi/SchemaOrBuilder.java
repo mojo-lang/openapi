@@ -124,28 +124,64 @@ public interface SchemaOrBuilder extends
   double getMultipleOf();
 
   /**
-   * <code>double maximum = 15;</code>
+   * <code>.mojo.core.Value maximum = 15;</code>
+   * @return Whether the maximum field is set.
+   */
+  boolean hasMaximum();
+  /**
+   * <code>.mojo.core.Value maximum = 15;</code>
    * @return The maximum.
    */
-  double getMaximum();
+  org.mojolang.mojo.core.Value getMaximum();
+  /**
+   * <code>.mojo.core.Value maximum = 15;</code>
+   */
+  org.mojolang.mojo.core.ValueOrBuilder getMaximumOrBuilder();
 
   /**
-   * <code>double exclusive_maximum = 16;</code>
+   * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+   * @return Whether the exclusiveMaximum field is set.
+   */
+  boolean hasExclusiveMaximum();
+  /**
+   * <code>.mojo.core.Value exclusive_maximum = 16;</code>
    * @return The exclusiveMaximum.
    */
-  double getExclusiveMaximum();
+  org.mojolang.mojo.core.Value getExclusiveMaximum();
+  /**
+   * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+   */
+  org.mojolang.mojo.core.ValueOrBuilder getExclusiveMaximumOrBuilder();
 
   /**
-   * <code>double minimum = 17;</code>
+   * <code>.mojo.core.Value minimum = 17;</code>
+   * @return Whether the minimum field is set.
+   */
+  boolean hasMinimum();
+  /**
+   * <code>.mojo.core.Value minimum = 17;</code>
    * @return The minimum.
    */
-  double getMinimum();
+  org.mojolang.mojo.core.Value getMinimum();
+  /**
+   * <code>.mojo.core.Value minimum = 17;</code>
+   */
+  org.mojolang.mojo.core.ValueOrBuilder getMinimumOrBuilder();
 
   /**
-   * <code>double exclusive_minimum = 18;</code>
+   * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+   * @return Whether the exclusiveMinimum field is set.
+   */
+  boolean hasExclusiveMinimum();
+  /**
+   * <code>.mojo.core.Value exclusive_minimum = 18;</code>
    * @return The exclusiveMinimum.
    */
-  double getExclusiveMinimum();
+  org.mojolang.mojo.core.Value getExclusiveMinimum();
+  /**
+   * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+   */
+  org.mojolang.mojo.core.ValueOrBuilder getExclusiveMinimumOrBuilder();
 
   /**
    * <code>uint64 max_length = 19;</code>

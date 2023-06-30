@@ -413,7 +413,7 @@ public final class OpenapiProto {
       "s\022/\n\004vals\030\001 \003(\0132!.mojo.openapi.Responses" +
       ".ValsEntry\032P\n\tValsEntry\022\013\n\003key\030\001 \001(\t\0222\n\005" +
       "value\030\002 \001(\0132#.mojo.openapi.Referenceable" +
-      "Response:\0028\001\"\331\n\n\006Schema\0222\n\rdiscriminator" +
+      "Response:\0028\001\"\241\013\n\006Schema\0222\n\rdiscriminator" +
       "\030\001 \001(\0132\033.mojo.openapi.Discriminator\022\036\n\003x" +
       "ml\030\002 \001(\0132\021.mojo.openapi.Xml\0225\n\rexternal_" +
       "docs\030\003 \001(\0132\036.mojo.openapi.ExternalDocume" +
@@ -421,62 +421,64 @@ public final class OpenapiProto {
       "\005title\030\n \001(\t\0221\n\013description\030\013 \001(\0132\034.mojo" +
       ".openapi.CachedDocument\022\'\n\004type\030\014 \001(\0162\031." +
       "mojo.openapi.Schema.Type\022\016\n\006format\030\r \001(\t" +
-      "\022\023\n\013multiple_of\030\016 \001(\001\022\017\n\007maximum\030\017 \001(\001\022\031" +
-      "\n\021exclusive_maximum\030\020 \001(\001\022\017\n\007minimum\030\021 \001" +
-      "(\001\022\031\n\021exclusive_minimum\030\022 \001(\001\022\022\n\nmax_len" +
-      "gth\030\023 \001(\004\022\022\n\nmin_length\030\024 \001(\004\022!\n\007pattern" +
-      "\030\025 \001(\0132\020.mojo.core.Regex\0220\n\005items\030\026 \001(\0132" +
-      "!.mojo.openapi.ReferenceableSchema\022\021\n\tma" +
-      "x_items\030\027 \001(\004\022\021\n\tmin_items\030\030 \001(\004\022\024\n\014uniq" +
-      "ue_items\030\031 \001(\010\0228\n\nproperties\030\032 \003(\0132$.moj" +
-      "o.openapi.Schema.PropertiesEntry\022@\n\025addi" +
-      "tional_properties\030\033 \001(\0132!.mojo.openapi.R" +
-      "eferenceableSchema\022\026\n\016max_properties\030\034 \001" +
-      "(\004\022\026\n\016min_properties\030\035 \001(\004\022\020\n\010required\030\036" +
-      " \003(\t\022\036\n\004enum\030\037 \003(\0132\020.mojo.core.Value\0221\n\006" +
-      "all_of\030# \003(\0132!.mojo.openapi.Referenceabl" +
-      "eSchema\0221\n\006one_of\030$ \003(\0132!.mojo.openapi.R" +
-      "eferenceableSchema\0221\n\006any_of\030% \003(\0132!.moj" +
-      "o.openapi.ReferenceableSchema\022.\n\003not\030& \001" +
-      "(\0132!.mojo.openapi.ReferenceableSchema\022!\n" +
-      "\007default\030( \001(\0132\020.mojo.core.Value\022\020\n\010null" +
-      "able\0302 \001(\010\022\021\n\tread_only\0303 \001(\010\022\022\n\nwrite_o" +
-      "nly\0304 \001(\010\022\022\n\ndeprecated\0305 \001(\010\032T\n\017Propert" +
-      "iesEntry\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.m" +
-      "ojo.openapi.ReferenceableSchema:\0028\001\"\222\001\n\004" +
-      "Type\022\024\n\020TYPE_UNSPECIFIED\020\000\022\r\n\tTYPE_NULL\020" +
-      "\001\022\020\n\014TYPE_BOOLEAN\020\002\022\020\n\014TYPE_INTEGER\020\003\022\017\n" +
-      "\013TYPE_NUMBER\020\004\022\017\n\013TYPE_STRING\020\005\022\016\n\nTYPE_" +
-      "ARRAY\020\n\022\017\n\013TYPE_OBJECT\020\013\"\203\001\n\023Referenceab" +
-      "leHeader\022,\n\treference\030\001 \001(\0132\027.mojo.opena" +
-      "pi.ReferenceH\000\022&\n\006header\030\002 \001(\0132\024.mojo.op" +
-      "enapi.HeaderH\000B\026\n\024referenceable_header\"\203" +
-      "\001\n\023ReferenceableSchema\022,\n\treference\030\001 \001(" +
-      "\0132\027.mojo.openapi.ReferenceH\000\022&\n\006schema\030\002" +
-      " \001(\0132\024.mojo.openapi.SchemaH\000B\026\n\024referenc" +
-      "eable_schema\"\217\001\n\026ReferenceableParameter\022" +
-      ",\n\treference\030\001 \001(\0132\027.mojo.openapi.Refere" +
-      "nceH\000\022,\n\tparameter\030\002 \001(\0132\027.mojo.openapi." +
-      "ParameterH\000B\031\n\027referenceable_parameter\"\231" +
-      "\001\n\030ReferenceableRequestBody\022,\n\treference" +
-      "\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000\0221\n\014req" +
-      "uest_body\030\002 \001(\0132\031.mojo.openapi.RequestBo" +
-      "dyH\000B\034\n\032referenceable_request_body\"\213\001\n\025R" +
-      "eferenceableCallback\022,\n\treference\030\001 \001(\0132" +
-      "\027.mojo.openapi.ReferenceH\000\022*\n\010callback\030\002" +
-      " \001(\0132\026.mojo.openapi.CallbackH\000B\030\n\026refere" +
-      "nceable_callback\"\213\001\n\025ReferenceableRespon" +
-      "se\022,\n\treference\030\001 \001(\0132\027.mojo.openapi.Ref" +
-      "erenceH\000\022*\n\010response\030\002 \001(\0132\026.mojo.openap" +
-      "i.ResponseH\000B\030\n\026referenceable_response\"y" +
-      "\n\005Paths\022+\n\004vals\030\001 \003(\0132\035.mojo.openapi.Pat" +
-      "hs.ValsEntry\032C\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022%" +
-      "\n\005value\030\002 \001(\0132\026.mojo.openapi.PathItem:\0028" +
-      "\001*M\n\016HttpStatusCode\022\034\n\030HTTP_STATUS_CODE_" +
-      "DEFAULT\020\000\022\035\n\031HTTP_STATUS_CODE_CODE_200\020\001" +
-      "Be\n\031org.mojolang.mojo.openapiB\014OpenapiPr" +
-      "otoP\001Z8github.com/mojo-lang/openapi/go/p" +
-      "kg/mojo/openapi;openapib\006proto3"
+      "\022\023\n\013multiple_of\030\016 \001(\001\022!\n\007maximum\030\017 \001(\0132\020" +
+      ".mojo.core.Value\022+\n\021exclusive_maximum\030\020 " +
+      "\001(\0132\020.mojo.core.Value\022!\n\007minimum\030\021 \001(\0132\020" +
+      ".mojo.core.Value\022+\n\021exclusive_minimum\030\022 " +
+      "\001(\0132\020.mojo.core.Value\022\022\n\nmax_length\030\023 \001(" +
+      "\004\022\022\n\nmin_length\030\024 \001(\004\022!\n\007pattern\030\025 \001(\0132\020" +
+      ".mojo.core.Regex\0220\n\005items\030\026 \001(\0132!.mojo.o" +
+      "penapi.ReferenceableSchema\022\021\n\tmax_items\030" +
+      "\027 \001(\004\022\021\n\tmin_items\030\030 \001(\004\022\024\n\014unique_items" +
+      "\030\031 \001(\010\0228\n\nproperties\030\032 \003(\0132$.mojo.openap" +
+      "i.Schema.PropertiesEntry\022@\n\025additional_p" +
+      "roperties\030\033 \001(\0132!.mojo.openapi.Reference" +
+      "ableSchema\022\026\n\016max_properties\030\034 \001(\004\022\026\n\016mi" +
+      "n_properties\030\035 \001(\004\022\020\n\010required\030\036 \003(\t\022\036\n\004" +
+      "enum\030\037 \003(\0132\020.mojo.core.Value\0221\n\006all_of\030#" +
+      " \003(\0132!.mojo.openapi.ReferenceableSchema\022" +
+      "1\n\006one_of\030$ \003(\0132!.mojo.openapi.Reference" +
+      "ableSchema\0221\n\006any_of\030% \003(\0132!.mojo.openap" +
+      "i.ReferenceableSchema\022.\n\003not\030& \001(\0132!.moj" +
+      "o.openapi.ReferenceableSchema\022!\n\007default" +
+      "\030( \001(\0132\020.mojo.core.Value\022\020\n\010nullable\0302 \001" +
+      "(\010\022\021\n\tread_only\0303 \001(\010\022\022\n\nwrite_only\0304 \001(" +
+      "\010\022\022\n\ndeprecated\0305 \001(\010\032T\n\017PropertiesEntry" +
+      "\022\013\n\003key\030\001 \001(\t\0220\n\005value\030\002 \001(\0132!.mojo.open" +
+      "api.ReferenceableSchema:\0028\001\"\222\001\n\004Type\022\024\n\020" +
+      "TYPE_UNSPECIFIED\020\000\022\r\n\tTYPE_NULL\020\001\022\020\n\014TYP" +
+      "E_BOOLEAN\020\002\022\020\n\014TYPE_INTEGER\020\003\022\017\n\013TYPE_NU" +
+      "MBER\020\004\022\017\n\013TYPE_STRING\020\005\022\016\n\nTYPE_ARRAY\020\n\022" +
+      "\017\n\013TYPE_OBJECT\020\013\"\203\001\n\023ReferenceableHeader" +
+      "\022,\n\treference\030\001 \001(\0132\027.mojo.openapi.Refer" +
+      "enceH\000\022&\n\006header\030\002 \001(\0132\024.mojo.openapi.He" +
+      "aderH\000B\026\n\024referenceable_header\"\203\001\n\023Refer" +
+      "enceableSchema\022,\n\treference\030\001 \001(\0132\027.mojo" +
+      ".openapi.ReferenceH\000\022&\n\006schema\030\002 \001(\0132\024.m" +
+      "ojo.openapi.SchemaH\000B\026\n\024referenceable_sc" +
+      "hema\"\217\001\n\026ReferenceableParameter\022,\n\trefer" +
+      "ence\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000\022,\n" +
+      "\tparameter\030\002 \001(\0132\027.mojo.openapi.Paramete" +
+      "rH\000B\031\n\027referenceable_parameter\"\231\001\n\030Refer" +
+      "enceableRequestBody\022,\n\treference\030\001 \001(\0132\027" +
+      ".mojo.openapi.ReferenceH\000\0221\n\014request_bod" +
+      "y\030\002 \001(\0132\031.mojo.openapi.RequestBodyH\000B\034\n\032" +
+      "referenceable_request_body\"\213\001\n\025Reference" +
+      "ableCallback\022,\n\treference\030\001 \001(\0132\027.mojo.o" +
+      "penapi.ReferenceH\000\022*\n\010callback\030\002 \001(\0132\026.m" +
+      "ojo.openapi.CallbackH\000B\030\n\026referenceable_" +
+      "callback\"\213\001\n\025ReferenceableResponse\022,\n\tre" +
+      "ference\030\001 \001(\0132\027.mojo.openapi.ReferenceH\000" +
+      "\022*\n\010response\030\002 \001(\0132\026.mojo.openapi.Respon" +
+      "seH\000B\030\n\026referenceable_response\"y\n\005Paths\022" +
+      "+\n\004vals\030\001 \003(\0132\035.mojo.openapi.Paths.ValsE" +
+      "ntry\032C\n\tValsEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030" +
+      "\002 \001(\0132\026.mojo.openapi.PathItem:\0028\001*M\n\016Htt" +
+      "pStatusCode\022\034\n\030HTTP_STATUS_CODE_DEFAULT\020" +
+      "\000\022\035\n\031HTTP_STATUS_CODE_CODE_200\020\001Be\n\031org." +
+      "mojolang.mojo.openapiB\014OpenapiProtoP\001Z8g" +
+      "ithub.com/mojo-lang/openapi/go/pkg/mojo/" +
+      "openapi;openapib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

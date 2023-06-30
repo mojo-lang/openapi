@@ -1,8 +1,10 @@
 package openapi
 
 import (
+	"io/ioutil"
 	"testing"
 
+	jsoniter "github.com/json-iterator/go"
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"github.com/stretchr/testify/assert"
 )
@@ -62,4 +64,18 @@ func TestSchema_SupplementExample(t *testing.T) {
 	assert.Equal(t, core.ValueKind_VALUE_KIND_INTEGER, v.GetObject().GetValue("foo").GetKind())
 	assert.Equal(t, core.ValueKind_VALUE_KIND_STRING, v.GetObject().GetValue("bar").GetKind())
 	assert.Equal(t, "baz", v.GetObject().GetValue("bar").GetString())
+}
+
+func TestSchema_GetMaximum(t *testing.T) {
+	api := &OpenAPI{}
+	content, err := ioutil.ReadFile("./testdata/supplement_example_test.json")
+	if assert.NoError(t, err) {
+		err = jsoniter.Unmarshal(content, api)
+		if assert.NoError(t, err) {
+			schema := api.Components.Schemas["EveArchiveFileInfoFree"]
+			s := schema.Properties["mainContainFileNums"].GetSchema()
+			v := s.Maximum.GetUint64()
+			assert.Equal(t, uint64(18446744073709551615), v)
+		}
+	}
 }

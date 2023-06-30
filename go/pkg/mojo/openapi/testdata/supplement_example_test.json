@@ -65,8 +65,9 @@
             "type": "string"
           },
           "mainContainFileNums": {
-            "format": "int32",
-            "type": "integer"
+            "format": "int64",
+            "type": "integer",
+            "maximum": 18446744073709551615
           },
           "mainEmailCaption": {
             "type": "string"

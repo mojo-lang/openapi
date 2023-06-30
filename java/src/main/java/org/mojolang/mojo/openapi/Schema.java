@@ -463,47 +463,107 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAXIMUM_FIELD_NUMBER = 15;
-  private double maximum_ = 0D;
+  private org.mojolang.mojo.core.Value maximum_;
   /**
-   * <code>double maximum = 15;</code>
+   * <code>.mojo.core.Value maximum = 15;</code>
+   * @return Whether the maximum field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaximum() {
+    return maximum_ != null;
+  }
+  /**
+   * <code>.mojo.core.Value maximum = 15;</code>
    * @return The maximum.
    */
   @java.lang.Override
-  public double getMaximum() {
-    return maximum_;
+  public org.mojolang.mojo.core.Value getMaximum() {
+    return maximum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : maximum_;
+  }
+  /**
+   * <code>.mojo.core.Value maximum = 15;</code>
+   */
+  @java.lang.Override
+  public org.mojolang.mojo.core.ValueOrBuilder getMaximumOrBuilder() {
+    return maximum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : maximum_;
   }
 
   public static final int EXCLUSIVE_MAXIMUM_FIELD_NUMBER = 16;
-  private double exclusiveMaximum_ = 0D;
+  private org.mojolang.mojo.core.Value exclusiveMaximum_;
   /**
-   * <code>double exclusive_maximum = 16;</code>
+   * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+   * @return Whether the exclusiveMaximum field is set.
+   */
+  @java.lang.Override
+  public boolean hasExclusiveMaximum() {
+    return exclusiveMaximum_ != null;
+  }
+  /**
+   * <code>.mojo.core.Value exclusive_maximum = 16;</code>
    * @return The exclusiveMaximum.
    */
   @java.lang.Override
-  public double getExclusiveMaximum() {
-    return exclusiveMaximum_;
+  public org.mojolang.mojo.core.Value getExclusiveMaximum() {
+    return exclusiveMaximum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMaximum_;
+  }
+  /**
+   * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+   */
+  @java.lang.Override
+  public org.mojolang.mojo.core.ValueOrBuilder getExclusiveMaximumOrBuilder() {
+    return exclusiveMaximum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMaximum_;
   }
 
   public static final int MINIMUM_FIELD_NUMBER = 17;
-  private double minimum_ = 0D;
+  private org.mojolang.mojo.core.Value minimum_;
   /**
-   * <code>double minimum = 17;</code>
+   * <code>.mojo.core.Value minimum = 17;</code>
+   * @return Whether the minimum field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinimum() {
+    return minimum_ != null;
+  }
+  /**
+   * <code>.mojo.core.Value minimum = 17;</code>
    * @return The minimum.
    */
   @java.lang.Override
-  public double getMinimum() {
-    return minimum_;
+  public org.mojolang.mojo.core.Value getMinimum() {
+    return minimum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : minimum_;
+  }
+  /**
+   * <code>.mojo.core.Value minimum = 17;</code>
+   */
+  @java.lang.Override
+  public org.mojolang.mojo.core.ValueOrBuilder getMinimumOrBuilder() {
+    return minimum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : minimum_;
   }
 
   public static final int EXCLUSIVE_MINIMUM_FIELD_NUMBER = 18;
-  private double exclusiveMinimum_ = 0D;
+  private org.mojolang.mojo.core.Value exclusiveMinimum_;
   /**
-   * <code>double exclusive_minimum = 18;</code>
+   * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+   * @return Whether the exclusiveMinimum field is set.
+   */
+  @java.lang.Override
+  public boolean hasExclusiveMinimum() {
+    return exclusiveMinimum_ != null;
+  }
+  /**
+   * <code>.mojo.core.Value exclusive_minimum = 18;</code>
    * @return The exclusiveMinimum.
    */
   @java.lang.Override
-  public double getExclusiveMinimum() {
-    return exclusiveMinimum_;
+  public org.mojolang.mojo.core.Value getExclusiveMinimum() {
+    return exclusiveMinimum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMinimum_;
+  }
+  /**
+   * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+   */
+  @java.lang.Override
+  public org.mojolang.mojo.core.ValueOrBuilder getExclusiveMinimumOrBuilder() {
+    return exclusiveMinimum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMinimum_;
   }
 
   public static final int MAX_LENGTH_FIELD_NUMBER = 19;
@@ -1077,17 +1137,17 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
     if (java.lang.Double.doubleToRawLongBits(multipleOf_) != 0) {
       output.writeDouble(14, multipleOf_);
     }
-    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
-      output.writeDouble(15, maximum_);
+    if (maximum_ != null) {
+      output.writeMessage(15, getMaximum());
     }
-    if (java.lang.Double.doubleToRawLongBits(exclusiveMaximum_) != 0) {
-      output.writeDouble(16, exclusiveMaximum_);
+    if (exclusiveMaximum_ != null) {
+      output.writeMessage(16, getExclusiveMaximum());
     }
-    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
-      output.writeDouble(17, minimum_);
+    if (minimum_ != null) {
+      output.writeMessage(17, getMinimum());
     }
-    if (java.lang.Double.doubleToRawLongBits(exclusiveMinimum_) != 0) {
-      output.writeDouble(18, exclusiveMinimum_);
+    if (exclusiveMinimum_ != null) {
+      output.writeMessage(18, getExclusiveMinimum());
     }
     if (maxLength_ != 0L) {
       output.writeUInt64(19, maxLength_);
@@ -1201,21 +1261,21 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(14, multipleOf_);
     }
-    if (java.lang.Double.doubleToRawLongBits(maximum_) != 0) {
+    if (maximum_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(15, maximum_);
+        .computeMessageSize(15, getMaximum());
     }
-    if (java.lang.Double.doubleToRawLongBits(exclusiveMaximum_) != 0) {
+    if (exclusiveMaximum_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(16, exclusiveMaximum_);
+        .computeMessageSize(16, getExclusiveMaximum());
     }
-    if (java.lang.Double.doubleToRawLongBits(minimum_) != 0) {
+    if (minimum_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(17, minimum_);
+        .computeMessageSize(17, getMinimum());
     }
-    if (java.lang.Double.doubleToRawLongBits(exclusiveMinimum_) != 0) {
+    if (exclusiveMinimum_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(18, exclusiveMinimum_);
+        .computeMessageSize(18, getExclusiveMinimum());
     }
     if (maxLength_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -1363,18 +1423,26 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
     if (java.lang.Double.doubleToLongBits(getMultipleOf())
         != java.lang.Double.doubleToLongBits(
             other.getMultipleOf())) return false;
-    if (java.lang.Double.doubleToLongBits(getMaximum())
-        != java.lang.Double.doubleToLongBits(
-            other.getMaximum())) return false;
-    if (java.lang.Double.doubleToLongBits(getExclusiveMaximum())
-        != java.lang.Double.doubleToLongBits(
-            other.getExclusiveMaximum())) return false;
-    if (java.lang.Double.doubleToLongBits(getMinimum())
-        != java.lang.Double.doubleToLongBits(
-            other.getMinimum())) return false;
-    if (java.lang.Double.doubleToLongBits(getExclusiveMinimum())
-        != java.lang.Double.doubleToLongBits(
-            other.getExclusiveMinimum())) return false;
+    if (hasMaximum() != other.hasMaximum()) return false;
+    if (hasMaximum()) {
+      if (!getMaximum()
+          .equals(other.getMaximum())) return false;
+    }
+    if (hasExclusiveMaximum() != other.hasExclusiveMaximum()) return false;
+    if (hasExclusiveMaximum()) {
+      if (!getExclusiveMaximum()
+          .equals(other.getExclusiveMaximum())) return false;
+    }
+    if (hasMinimum() != other.hasMinimum()) return false;
+    if (hasMinimum()) {
+      if (!getMinimum()
+          .equals(other.getMinimum())) return false;
+    }
+    if (hasExclusiveMinimum() != other.hasExclusiveMinimum()) return false;
+    if (hasExclusiveMinimum()) {
+      if (!getExclusiveMinimum()
+          .equals(other.getExclusiveMinimum())) return false;
+    }
     if (getMaxLength()
         != other.getMaxLength()) return false;
     if (getMinLength()
@@ -1474,18 +1542,22 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
     hash = (37 * hash) + MULTIPLE_OF_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         java.lang.Double.doubleToLongBits(getMultipleOf()));
-    hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getMaximum()));
-    hash = (37 * hash) + EXCLUSIVE_MAXIMUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getExclusiveMaximum()));
-    hash = (37 * hash) + MINIMUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getMinimum()));
-    hash = (37 * hash) + EXCLUSIVE_MINIMUM_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getExclusiveMinimum()));
+    if (hasMaximum()) {
+      hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
+      hash = (53 * hash) + getMaximum().hashCode();
+    }
+    if (hasExclusiveMaximum()) {
+      hash = (37 * hash) + EXCLUSIVE_MAXIMUM_FIELD_NUMBER;
+      hash = (53 * hash) + getExclusiveMaximum().hashCode();
+    }
+    if (hasMinimum()) {
+      hash = (37 * hash) + MINIMUM_FIELD_NUMBER;
+      hash = (53 * hash) + getMinimum().hashCode();
+    }
+    if (hasExclusiveMinimum()) {
+      hash = (37 * hash) + EXCLUSIVE_MINIMUM_FIELD_NUMBER;
+      hash = (53 * hash) + getExclusiveMinimum().hashCode();
+    }
     hash = (37 * hash) + MAX_LENGTH_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getMaxLength());
@@ -1744,10 +1816,26 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
       type_ = 0;
       format_ = "";
       multipleOf_ = 0D;
-      maximum_ = 0D;
-      exclusiveMaximum_ = 0D;
-      minimum_ = 0D;
-      exclusiveMinimum_ = 0D;
+      maximum_ = null;
+      if (maximumBuilder_ != null) {
+        maximumBuilder_.dispose();
+        maximumBuilder_ = null;
+      }
+      exclusiveMaximum_ = null;
+      if (exclusiveMaximumBuilder_ != null) {
+        exclusiveMaximumBuilder_.dispose();
+        exclusiveMaximumBuilder_ = null;
+      }
+      minimum_ = null;
+      if (minimumBuilder_ != null) {
+        minimumBuilder_.dispose();
+        minimumBuilder_ = null;
+      }
+      exclusiveMinimum_ = null;
+      if (exclusiveMinimumBuilder_ != null) {
+        exclusiveMinimumBuilder_.dispose();
+        exclusiveMinimumBuilder_ = null;
+      }
       maxLength_ = 0L;
       minLength_ = 0L;
       pattern_ = null;
@@ -1932,16 +2020,24 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
         result.multipleOf_ = multipleOf_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.maximum_ = maximum_;
+        result.maximum_ = maximumBuilder_ == null
+            ? maximum_
+            : maximumBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.exclusiveMaximum_ = exclusiveMaximum_;
+        result.exclusiveMaximum_ = exclusiveMaximumBuilder_ == null
+            ? exclusiveMaximum_
+            : exclusiveMaximumBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.minimum_ = minimum_;
+        result.minimum_ = minimumBuilder_ == null
+            ? minimum_
+            : minimumBuilder_.build();
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.exclusiveMinimum_ = exclusiveMinimum_;
+        result.exclusiveMinimum_ = exclusiveMinimumBuilder_ == null
+            ? exclusiveMinimum_
+            : exclusiveMinimumBuilder_.build();
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.maxLength_ = maxLength_;
@@ -2086,17 +2182,17 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
       if (other.getMultipleOf() != 0D) {
         setMultipleOf(other.getMultipleOf());
       }
-      if (other.getMaximum() != 0D) {
-        setMaximum(other.getMaximum());
+      if (other.hasMaximum()) {
+        mergeMaximum(other.getMaximum());
       }
-      if (other.getExclusiveMaximum() != 0D) {
-        setExclusiveMaximum(other.getExclusiveMaximum());
+      if (other.hasExclusiveMaximum()) {
+        mergeExclusiveMaximum(other.getExclusiveMaximum());
       }
-      if (other.getMinimum() != 0D) {
-        setMinimum(other.getMinimum());
+      if (other.hasMinimum()) {
+        mergeMinimum(other.getMinimum());
       }
-      if (other.getExclusiveMinimum() != 0D) {
-        setExclusiveMinimum(other.getExclusiveMinimum());
+      if (other.hasExclusiveMinimum()) {
+        mergeExclusiveMinimum(other.getExclusiveMinimum());
       }
       if (other.getMaxLength() != 0L) {
         setMaxLength(other.getMaxLength());
@@ -2344,26 +2440,34 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
               bitField0_ |= 0x00000100;
               break;
             } // case 113
-            case 121: {
-              maximum_ = input.readDouble();
+            case 122: {
+              input.readMessage(
+                  getMaximumFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000200;
               break;
-            } // case 121
-            case 129: {
-              exclusiveMaximum_ = input.readDouble();
+            } // case 122
+            case 130: {
+              input.readMessage(
+                  getExclusiveMaximumFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000400;
               break;
-            } // case 129
-            case 137: {
-              minimum_ = input.readDouble();
+            } // case 130
+            case 138: {
+              input.readMessage(
+                  getMinimumFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000800;
               break;
-            } // case 137
-            case 145: {
-              exclusiveMinimum_ = input.readDouble();
+            } // case 138
+            case 146: {
+              input.readMessage(
+                  getExclusiveMinimumFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00001000;
               break;
-            } // case 145
+            } // case 146
             case 152: {
               maxLength_ = input.readUInt64();
               bitField0_ |= 0x00002000;
@@ -3363,132 +3467,480 @@ org.mojolang.mojo.openapi.ReferenceableSchema defaultValue) {
       return this;
     }
 
-    private double maximum_ ;
+    private org.mojolang.mojo.core.Value maximum_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> maximumBuilder_;
     /**
-     * <code>double maximum = 15;</code>
-     * @return The maximum.
+     * <code>.mojo.core.Value maximum = 15;</code>
+     * @return Whether the maximum field is set.
      */
-    @java.lang.Override
-    public double getMaximum() {
-      return maximum_;
+    public boolean hasMaximum() {
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>double maximum = 15;</code>
-     * @param value The maximum to set.
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value maximum = 15;</code>
+     * @return The maximum.
      */
-    public Builder setMaximum(double value) {
-      
-      maximum_ = value;
+    public org.mojolang.mojo.core.Value getMaximum() {
+      if (maximumBuilder_ == null) {
+        return maximum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : maximum_;
+      } else {
+        return maximumBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.core.Value maximum = 15;</code>
+     */
+    public Builder setMaximum(org.mojolang.mojo.core.Value value) {
+      if (maximumBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maximum_ = value;
+      } else {
+        maximumBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>double maximum = 15;</code>
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value maximum = 15;</code>
      */
-    public Builder clearMaximum() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      maximum_ = 0D;
+    public Builder setMaximum(
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
+      if (maximumBuilder_ == null) {
+        maximum_ = builderForValue.build();
+      } else {
+        maximumBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
-
-    private double exclusiveMaximum_ ;
     /**
-     * <code>double exclusive_maximum = 16;</code>
-     * @return The exclusiveMaximum.
+     * <code>.mojo.core.Value maximum = 15;</code>
      */
-    @java.lang.Override
-    public double getExclusiveMaximum() {
-      return exclusiveMaximum_;
+    public Builder mergeMaximum(org.mojolang.mojo.core.Value value) {
+      if (maximumBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0) &&
+          maximum_ != null &&
+          maximum_ != org.mojolang.mojo.core.Value.getDefaultInstance()) {
+          getMaximumBuilder().mergeFrom(value);
+        } else {
+          maximum_ = value;
+        }
+      } else {
+        maximumBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
     }
     /**
-     * <code>double exclusive_maximum = 16;</code>
-     * @param value The exclusiveMaximum to set.
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value maximum = 15;</code>
      */
-    public Builder setExclusiveMaximum(double value) {
-      
-      exclusiveMaximum_ = value;
+    public Builder clearMaximum() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      maximum_ = null;
+      if (maximumBuilder_ != null) {
+        maximumBuilder_.dispose();
+        maximumBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.core.Value maximum = 15;</code>
+     */
+    public org.mojolang.mojo.core.Value.Builder getMaximumBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getMaximumFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.core.Value maximum = 15;</code>
+     */
+    public org.mojolang.mojo.core.ValueOrBuilder getMaximumOrBuilder() {
+      if (maximumBuilder_ != null) {
+        return maximumBuilder_.getMessageOrBuilder();
+      } else {
+        return maximum_ == null ?
+            org.mojolang.mojo.core.Value.getDefaultInstance() : maximum_;
+      }
+    }
+    /**
+     * <code>.mojo.core.Value maximum = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
+        getMaximumFieldBuilder() {
+      if (maximumBuilder_ == null) {
+        maximumBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
+                getMaximum(),
+                getParentForChildren(),
+                isClean());
+        maximum_ = null;
+      }
+      return maximumBuilder_;
+    }
+
+    private org.mojolang.mojo.core.Value exclusiveMaximum_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> exclusiveMaximumBuilder_;
+    /**
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+     * @return Whether the exclusiveMaximum field is set.
+     */
+    public boolean hasExclusiveMaximum() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+     * @return The exclusiveMaximum.
+     */
+    public org.mojolang.mojo.core.Value getExclusiveMaximum() {
+      if (exclusiveMaximumBuilder_ == null) {
+        return exclusiveMaximum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMaximum_;
+      } else {
+        return exclusiveMaximumBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+     */
+    public Builder setExclusiveMaximum(org.mojolang.mojo.core.Value value) {
+      if (exclusiveMaximumBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exclusiveMaximum_ = value;
+      } else {
+        exclusiveMaximumBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>double exclusive_maximum = 16;</code>
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
      */
-    public Builder clearExclusiveMaximum() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      exclusiveMaximum_ = 0D;
+    public Builder setExclusiveMaximum(
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
+      if (exclusiveMaximumBuilder_ == null) {
+        exclusiveMaximum_ = builderForValue.build();
+      } else {
+        exclusiveMaximumBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
-
-    private double minimum_ ;
     /**
-     * <code>double minimum = 17;</code>
-     * @return The minimum.
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
      */
-    @java.lang.Override
-    public double getMinimum() {
-      return minimum_;
+    public Builder mergeExclusiveMaximum(org.mojolang.mojo.core.Value value) {
+      if (exclusiveMaximumBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0) &&
+          exclusiveMaximum_ != null &&
+          exclusiveMaximum_ != org.mojolang.mojo.core.Value.getDefaultInstance()) {
+          getExclusiveMaximumBuilder().mergeFrom(value);
+        } else {
+          exclusiveMaximum_ = value;
+        }
+      } else {
+        exclusiveMaximumBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
     /**
-     * <code>double minimum = 17;</code>
-     * @param value The minimum to set.
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
      */
-    public Builder setMinimum(double value) {
-      
-      minimum_ = value;
+    public Builder clearExclusiveMaximum() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      exclusiveMaximum_ = null;
+      if (exclusiveMaximumBuilder_ != null) {
+        exclusiveMaximumBuilder_.dispose();
+        exclusiveMaximumBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+     */
+    public org.mojolang.mojo.core.Value.Builder getExclusiveMaximumBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getExclusiveMaximumFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+     */
+    public org.mojolang.mojo.core.ValueOrBuilder getExclusiveMaximumOrBuilder() {
+      if (exclusiveMaximumBuilder_ != null) {
+        return exclusiveMaximumBuilder_.getMessageOrBuilder();
+      } else {
+        return exclusiveMaximum_ == null ?
+            org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMaximum_;
+      }
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_maximum = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
+        getExclusiveMaximumFieldBuilder() {
+      if (exclusiveMaximumBuilder_ == null) {
+        exclusiveMaximumBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
+                getExclusiveMaximum(),
+                getParentForChildren(),
+                isClean());
+        exclusiveMaximum_ = null;
+      }
+      return exclusiveMaximumBuilder_;
+    }
+
+    private org.mojolang.mojo.core.Value minimum_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> minimumBuilder_;
+    /**
+     * <code>.mojo.core.Value minimum = 17;</code>
+     * @return Whether the minimum field is set.
+     */
+    public boolean hasMinimum() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>.mojo.core.Value minimum = 17;</code>
+     * @return The minimum.
+     */
+    public org.mojolang.mojo.core.Value getMinimum() {
+      if (minimumBuilder_ == null) {
+        return minimum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : minimum_;
+      } else {
+        return minimumBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.core.Value minimum = 17;</code>
+     */
+    public Builder setMinimum(org.mojolang.mojo.core.Value value) {
+      if (minimumBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        minimum_ = value;
+      } else {
+        minimumBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>double minimum = 17;</code>
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value minimum = 17;</code>
      */
-    public Builder clearMinimum() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      minimum_ = 0D;
+    public Builder setMinimum(
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
+      if (minimumBuilder_ == null) {
+        minimum_ = builderForValue.build();
+      } else {
+        minimumBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
-
-    private double exclusiveMinimum_ ;
     /**
-     * <code>double exclusive_minimum = 18;</code>
-     * @return The exclusiveMinimum.
+     * <code>.mojo.core.Value minimum = 17;</code>
      */
-    @java.lang.Override
-    public double getExclusiveMinimum() {
-      return exclusiveMinimum_;
+    public Builder mergeMinimum(org.mojolang.mojo.core.Value value) {
+      if (minimumBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          minimum_ != null &&
+          minimum_ != org.mojolang.mojo.core.Value.getDefaultInstance()) {
+          getMinimumBuilder().mergeFrom(value);
+        } else {
+          minimum_ = value;
+        }
+      } else {
+        minimumBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
     /**
-     * <code>double exclusive_minimum = 18;</code>
-     * @param value The exclusiveMinimum to set.
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value minimum = 17;</code>
      */
-    public Builder setExclusiveMinimum(double value) {
-      
-      exclusiveMinimum_ = value;
+    public Builder clearMinimum() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      minimum_ = null;
+      if (minimumBuilder_ != null) {
+        minimumBuilder_.dispose();
+        minimumBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.core.Value minimum = 17;</code>
+     */
+    public org.mojolang.mojo.core.Value.Builder getMinimumBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getMinimumFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.core.Value minimum = 17;</code>
+     */
+    public org.mojolang.mojo.core.ValueOrBuilder getMinimumOrBuilder() {
+      if (minimumBuilder_ != null) {
+        return minimumBuilder_.getMessageOrBuilder();
+      } else {
+        return minimum_ == null ?
+            org.mojolang.mojo.core.Value.getDefaultInstance() : minimum_;
+      }
+    }
+    /**
+     * <code>.mojo.core.Value minimum = 17;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
+        getMinimumFieldBuilder() {
+      if (minimumBuilder_ == null) {
+        minimumBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
+                getMinimum(),
+                getParentForChildren(),
+                isClean());
+        minimum_ = null;
+      }
+      return minimumBuilder_;
+    }
+
+    private org.mojolang.mojo.core.Value exclusiveMinimum_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> exclusiveMinimumBuilder_;
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     * @return Whether the exclusiveMinimum field is set.
+     */
+    public boolean hasExclusiveMinimum() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     * @return The exclusiveMinimum.
+     */
+    public org.mojolang.mojo.core.Value getExclusiveMinimum() {
+      if (exclusiveMinimumBuilder_ == null) {
+        return exclusiveMinimum_ == null ? org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMinimum_;
+      } else {
+        return exclusiveMinimumBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     */
+    public Builder setExclusiveMinimum(org.mojolang.mojo.core.Value value) {
+      if (exclusiveMinimumBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exclusiveMinimum_ = value;
+      } else {
+        exclusiveMinimumBuilder_.setMessage(value);
+      }
       bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
-     * <code>double exclusive_minimum = 18;</code>
-     * @return This builder for chaining.
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     */
+    public Builder setExclusiveMinimum(
+        org.mojolang.mojo.core.Value.Builder builderForValue) {
+      if (exclusiveMinimumBuilder_ == null) {
+        exclusiveMinimum_ = builderForValue.build();
+      } else {
+        exclusiveMinimumBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     */
+    public Builder mergeExclusiveMinimum(org.mojolang.mojo.core.Value value) {
+      if (exclusiveMinimumBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0) &&
+          exclusiveMinimum_ != null &&
+          exclusiveMinimum_ != org.mojolang.mojo.core.Value.getDefaultInstance()) {
+          getExclusiveMinimumBuilder().mergeFrom(value);
+        } else {
+          exclusiveMinimum_ = value;
+        }
+      } else {
+        exclusiveMinimumBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
      */
     public Builder clearExclusiveMinimum() {
       bitField0_ = (bitField0_ & ~0x00001000);
-      exclusiveMinimum_ = 0D;
+      exclusiveMinimum_ = null;
+      if (exclusiveMinimumBuilder_ != null) {
+        exclusiveMinimumBuilder_.dispose();
+        exclusiveMinimumBuilder_ = null;
+      }
       onChanged();
       return this;
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     */
+    public org.mojolang.mojo.core.Value.Builder getExclusiveMinimumBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getExclusiveMinimumFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     */
+    public org.mojolang.mojo.core.ValueOrBuilder getExclusiveMinimumOrBuilder() {
+      if (exclusiveMinimumBuilder_ != null) {
+        return exclusiveMinimumBuilder_.getMessageOrBuilder();
+      } else {
+        return exclusiveMinimum_ == null ?
+            org.mojolang.mojo.core.Value.getDefaultInstance() : exclusiveMinimum_;
+      }
+    }
+    /**
+     * <code>.mojo.core.Value exclusive_minimum = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder> 
+        getExclusiveMinimumFieldBuilder() {
+      if (exclusiveMinimumBuilder_ == null) {
+        exclusiveMinimumBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.mojolang.mojo.core.Value, org.mojolang.mojo.core.Value.Builder, org.mojolang.mojo.core.ValueOrBuilder>(
+                getExclusiveMinimum(),
+                getParentForChildren(),
+                isClean());
+        exclusiveMinimum_ = null;
+      }
+      return exclusiveMinimumBuilder_;
     }
 
     private long maxLength_ ;

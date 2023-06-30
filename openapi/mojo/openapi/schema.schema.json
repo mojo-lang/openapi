@@ -47,10 +47,10 @@
             "$ref": "#/components/schemas/mojo.core.Value"
         },
         "exclusiveMaximum": {
-            "$ref": "#/components/schemas/mojo.core.Float64Value"
+            "$ref": "#/components/schemas/mojo.core.Value"
         },
         "exclusiveMinimum": {
-            "$ref": "#/components/schemas/mojo.core.Float64Value"
+            "$ref": "#/components/schemas/mojo.core.Value"
         },
         "externalDocs": {
             "$ref": "#/components/schemas/mojo.openapi.ExternalDocument"
@@ -79,7 +79,7 @@
             "format": "UInt64"
         },
         "maximum": {
-            "$ref": "#/components/schemas/mojo.core.Float64Value"
+            "$ref": "#/components/schemas/mojo.core.Value"
         },
         "minItems": {
             "title": "mojo.core.UInt64",
@@ -98,7 +98,7 @@
             "format": "UInt64"
         },
         "minimum": {
-            "$ref": "#/components/schemas/mojo.core.Float64Value"
+            "$ref": "#/components/schemas/mojo.core.Value"
         },
         "multipleOf": {
             "title": "mojo.core.Float64",

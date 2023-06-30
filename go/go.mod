@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/brianvoe/gofakeit/v6 v6.18.0
 	github.com/json-iterator/go v1.1.12
-	github.com/mojo-lang/core/go v0.0.0-20230427095043-961105c650c8
+	github.com/mojo-lang/core/go v0.0.0-20230630083453-9f020b9e1810
 	github.com/mojo-lang/document/go v0.0.0-20230427095224-881190052073
 	github.com/stretchr/testify v1.8.0
 	google.golang.org/protobuf v1.30.0

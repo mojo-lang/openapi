@@ -9,10 +9,10 @@
 | `type` | `string` |  | N |  | Value MUST be a string. Multiple types via an array are not supported. |
 | `format` | `string` |  | N |  | format is an open string-valued property,and can have any value. Formats such as "Email", "Uuid", and so on,MAY be used even though undefined by this specification.Types that are not accompanied by a format property follow the type definition in the JSON Schema.Tools that do not recognize a specific format MAY default back to the type alone, as if the format is not specified. |
 | `multipleOf` | `number` | `Float64` | N |  | The value of "multipleOf" MUST be a number, strictly greater than 0.<br>A numeric instance is valid only if division by this keyword's value results in an integer.<br>The `multiple_of` will be less than 1, when the numeric has a fixed decimals.For example, `multiple_of` will be `0.01`, when the numeric need to hold two decimals, and any greater precision will be rejected. |
-| `maximum` | `number` | `Float64` | N |  | Wrapper type for the Generic T type<br>实例化名称规格， TValue  TValues  TValuesMap |
-| `exclusiveMaximum` | `number` | `Float64` | N |  | Wrapper type for the Generic T type<br>实例化名称规格， TValue  TValues  TValuesMap |
-| `minimum` | `number` | `Float64` | N |  | Wrapper type for the Generic T type<br>实例化名称规格， TValue  TValues  TValuesMap |
-| `exclusiveMinimum` | `number` | `Float64` | N |  | Wrapper type for the Generic T type<br>实例化名称规格， TValue  TValues  TValuesMap |
+| `maximum` | `mojo.core.Value` |  | N |  |
+| `exclusiveMaximum` | `mojo.core.Value` |  | N |  |
+| `minimum` | `mojo.core.Value` |  | N |  |
+| `exclusiveMinimum` | `mojo.core.Value` |  | N |  |
 | `maxLength` | `integer` | `UInt64` | N |  |
 | `minLength` | `integer` | `UInt64` | N |  | A string instance is valid against this keyword if its length is greater than, or equal to, the value of this keyword.The length of a string instance is defined as the number of its characters as defined by RFC 7159.Omitting this keyword has the same behavior as a value of 0. |
 | `pattern` | `mojo.core.Regex` |  | N |  |  |
