@@ -292,24 +292,86 @@ func (x *Schema) GenerateExample(index map[string]*Schema) *core.Value {
 }
 
 func (x *Schema) SupplementExample(index map[string]*Schema) *core.Value {
+	return x.supplementExample(context.Background(), index, make(core.Options))
+}
+
+func (x *Schema) supplementExample(ctx context.Context, index map[string]*Schema, options core.Options) *core.Value {
 	if x != nil {
 		if x.Example != nil {
 			return x.Example
 		}
+
+		key := ""
+		if len(x.Title) > 0 {
+			key = x.Title
+		} else {
+			key = fmt.Sprintf("%p", x)
+		}
+
+		if ctx.Value(key) != nil { // self referenced
+			return nil
+		}
+		ctx = context.WithValue(ctx, key, x)
+
 		switch x.Type {
+		case Schema_TYPE_NULL:
+		case Schema_TYPE_BOOLEAN:
+			return core.NewBoolValue(gofakeit.Bool())
+		case Schema_TYPE_INTEGER:
+			switch x.Format {
+			case "int32", "Int32", "core.Int32", "mojo.core.Int32":
+				return core.NewInt32Value(gofakeit.Int32())
+			case "int64", "Int64", "core.Int64", "mojo.core.Int64":
+				return core.NewInt64Value(gofakeit.Int64())
+			case "uint32", "UInt32", "core.UInt32", "mojo.core.UInt32":
+				return core.NewUInt32Value(gofakeit.Uint32())
+			case "uint64", "UInt64", "core.UInt64", "mojo.core.UInt64":
+				return core.NewUInt64Value(gofakeit.Uint64())
+			default:
+				return core.NewInt32Value(gofakeit.Int32())
+			}
+		case Schema_TYPE_NUMBER:
+			return core.NewFloat64Value(gofakeit.Float64())
+		case Schema_TYPE_STRING:
+			return core.NewStringValue(x.generateStringExample(options))
+		case Schema_TYPE_ARRAY:
+			var values []*core.Value
+			for i := 0; i < 3; i++ {
+				if value := x.Items.GetSchemaOf(index).supplementExample(ctx, index, options); value != nil {
+					values = append(values, value)
+				}
+			}
+			return core.NewArrayValue(values...)
 		case Schema_TYPE_OBJECT:
-			if x.AdditionalProperties == nil && len(x.Properties) > 0 { // struct
+			if x.AdditionalProperties != nil { // map
+				values := make(map[string]*core.Value)
+				for i := 0; i < 3; i++ {
+					if value := x.AdditionalProperties.GetSchemaOf(index).supplementExample(ctx, index, options); value != nil {
+						key := gofakeit.Name()
+						for j := 0; j < 100; j++ {
+							if _, ok := values[key]; !ok {
+								break
+							}
+							key = gofakeit.Name()
+						}
+						values[key] = value
+					}
+				}
+				return core.NewMapValue(values)
+			} else {
 				values := make(map[string]interface{})
 				for key, value := range x.Properties {
-					if v := value.GetSchemaOf(index).generateExample(context.Background(), index, make(core.Options)); v != nil {
+					options["label"] = key
+					if v := value.GetSchemaOf(index).supplementExample(ctx, index, options); v != nil {
 						values[key] = v
 					}
 				}
+				delete(options, "label")
+
 				obj, _ := core.NewObjectFromMap(values)
 				return core.NewObjectValue(obj)
 			}
 		}
-		return x.generateExample(context.Background(), index, make(core.Options))
 	}
 	return nil
 }
