@@ -336,7 +336,17 @@ func (x *Schema) supplementExample(ctx context.Context, index map[string]*Schema
 			return core.NewStringValue(x.generateStringExample(options))
 		case Schema_TYPE_ARRAY:
 			var values []*core.Value
-			for i := 0; i < 3; i++ {
+			defaultItems := uint64(3)
+			if x.ReadOnly {
+				defaultItems = uint64(1)
+			}
+			if x.MaxItems > 0 && x.MaxItems >= x.MinItems && x.MaxItems < defaultItems {
+				defaultItems = x.MaxItems
+			}
+			if x.MinItems > 0 && (x.MaxItems == 0 || x.MinItems <= x.MaxItems) && x.MinItems > defaultItems {
+				defaultItems = x.MinItems
+			}
+			for i := 0; i < int(defaultItems); i++ {
 				if value := x.Items.GetSchemaOf(index).supplementExample(ctx, index, options); value != nil {
 					values = append(values, value)
 				}
@@ -345,7 +355,17 @@ func (x *Schema) supplementExample(ctx context.Context, index map[string]*Schema
 		case Schema_TYPE_OBJECT:
 			if x.AdditionalProperties != nil { // map
 				values := make(map[string]*core.Value)
-				for i := 0; i < 3; i++ {
+				defaultProperties := uint64(3)
+				if x.ReadOnly {
+					defaultProperties = uint64(1)
+				}
+				if x.MaxProperties > 0 && x.MaxProperties >= x.MinProperties && x.MaxProperties < defaultProperties {
+					defaultProperties = x.MaxProperties
+				}
+				if x.MinProperties > 0 && (x.MaxProperties == 0 || x.MinProperties <= x.MaxProperties) && x.MinProperties > defaultProperties {
+					defaultProperties = x.MinProperties
+				}
+				for i := 0; i < int(defaultProperties); i++ {
 					if value := x.AdditionalProperties.GetSchemaOf(index).supplementExample(ctx, index, options); value != nil {
 						key := gofakeit.Name()
 						for j := 0; j < 100; j++ {
@@ -413,7 +433,17 @@ func (x *Schema) generateExample(ctx context.Context, index map[string]*Schema, 
 			return core.NewStringValue(x.generateStringExample(options))
 		case Schema_TYPE_ARRAY:
 			var values []*core.Value
-			for i := 0; i < 3; i++ {
+			defaultItems := uint64(3)
+			if x.ReadOnly {
+				defaultItems = uint64(1)
+			}
+			if x.MaxItems > 0 && x.MaxItems >= x.MinItems && x.MaxItems < defaultItems {
+				defaultItems = x.MaxItems
+			}
+			if x.MinItems > 0 && (x.MaxItems == 0 || x.MinItems <= x.MaxItems) && x.MinItems > defaultItems {
+				defaultItems = x.MinItems
+			}
+			for i := 0; i < int(defaultItems); i++ {
 				if value := x.Items.GetSchemaOf(index).generateExample(ctx, index, options); value != nil {
 					values = append(values, value)
 				}
@@ -422,7 +452,17 @@ func (x *Schema) generateExample(ctx context.Context, index map[string]*Schema, 
 		case Schema_TYPE_OBJECT:
 			if x.AdditionalProperties != nil { // map
 				values := make(map[string]*core.Value)
-				for i := 0; i < 3; i++ {
+				defaultProperties := uint64(3)
+				if x.ReadOnly {
+					defaultProperties = uint64(1)
+				}
+				if x.MaxProperties > 0 && x.MaxProperties >= x.MinProperties && x.MaxProperties < defaultProperties {
+					defaultProperties = x.MaxProperties
+				}
+				if x.MinProperties > 0 && (x.MaxProperties == 0 || x.MinProperties <= x.MaxProperties) && x.MinProperties > defaultProperties {
+					defaultProperties = x.MinProperties
+				}
+				for i := 0; i < int(defaultProperties); i++ {
 					if value := x.AdditionalProperties.GetSchemaOf(index).generateExample(ctx, index, options); value != nil {
 						key := gofakeit.Name()
 						for j := 0; j < 100; j++ {

@@ -79,3 +79,18 @@ func TestSchema_GetMaximum(t *testing.T) {
 		}
 	}
 }
+
+func TestSchema_SupplementExample_Array(t *testing.T) {
+	api := &OpenAPI{}
+	content, err := ioutil.ReadFile("./testdata/supplement_example_test.json")
+	if assert.NoError(t, err) {
+		err = jsoniter.Unmarshal(content, api)
+		if assert.NoError(t, err) {
+			api.SupplementExample()
+			schema := api.Components.Schemas["JqGridRequestBean"]
+			s := schema.Properties["classyModeIds"].GetSchema()
+			vs := s.SupplementExample(api.Components.Schemas).GetValues()
+			assert.Equal(t, 1, len(vs))
+		}
+	}
+}

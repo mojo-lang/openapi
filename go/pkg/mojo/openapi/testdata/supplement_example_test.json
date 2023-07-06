@@ -279,7 +279,8 @@
             "items": {
               "type": "string"
             },
-            "type": "array"
+            "type": "array",
+            "maxItems": 1
           },
           "creater": {
             "type": "string"
