@@ -4,7 +4,9 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"math"
 	"sort"
+	"strconv"
 
 	"github.com/brianvoe/gofakeit/v6"
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
@@ -319,19 +321,34 @@ func (x *Schema) supplementExample(ctx context.Context, index map[string]*Schema
 			return core.NewBoolValue(gofakeit.Bool())
 		case Schema_TYPE_INTEGER:
 			switch x.Format {
+			case "int8", "Int8", "core.Int8", "mojo.core.Int8":
+				return core.NewInt8Value(int8(fakeInt(x, 8)))
+			case "int16", "Int16", "core.Int16", "mojo.core.Int16":
+				return core.NewInt16Value(int16(fakeInt(x, 16)))
 			case "int32", "Int32", "core.Int32", "mojo.core.Int32":
-				return core.NewInt32Value(gofakeit.Int32())
+				return core.NewInt32Value(int32(fakeInt(x, 32)))
 			case "int64", "Int64", "core.Int64", "mojo.core.Int64":
-				return core.NewInt64Value(gofakeit.Int64())
+				return core.NewInt64Value(int64(fakeInt(x, 64)))
+			case "uint8", "UInt8", "core.UInt8", "mojo.core.UInt8":
+				return core.NewUIntValue(fakeUInt(x, 8))
+			case "uint16", "UInt16", "core.UInt16", "mojo.core.UInt16":
+				return core.NewUIntValue(fakeUInt(x, 16))
 			case "uint32", "UInt32", "core.UInt32", "mojo.core.UInt32":
-				return core.NewUInt32Value(gofakeit.Uint32())
+				return core.NewUInt32Value(uint32(fakeUInt(x, 32)))
 			case "uint64", "UInt64", "core.UInt64", "mojo.core.UInt64":
-				return core.NewUInt64Value(gofakeit.Uint64())
+				return core.NewUInt64Value(uint64(fakeUInt(x, 64)))
 			default:
-				return core.NewInt32Value(gofakeit.Int32())
+				return core.NewInt32Value(int32(fakeInt(x, 32)))
 			}
 		case Schema_TYPE_NUMBER:
-			return core.NewFloat64Value(gofakeit.Float64())
+			switch x.Format {
+			case "float32", "Float32", "float", "core.Float32", "mojo.core.Float32":
+				return core.NewFloat32Value(fakeFloat32(x))
+			case "float64", "Float64", "double", "core.Float64", "mojo.core.Float64":
+				return core.NewFloat64Value(fakeFloat64(x))
+			default:
+				return core.NewFloat64Value(fakeFloat64(x))
+			}
 		case Schema_TYPE_STRING:
 			return core.NewStringValue(x.generateStringExample(options))
 		case Schema_TYPE_ARRAY:
@@ -396,6 +413,154 @@ func (x *Schema) supplementExample(ctx context.Context, index map[string]*Schema
 	return nil
 }
 
+func fakeInt(s *Schema, bits int) int {
+	value := 0
+	if s.Maximum != nil {
+		max := s.Maximum.GetInt64()
+		min := 0
+		if s.Minimum != nil {
+			min = int(s.Minimum.GetInt64())
+		} else {
+			switch bits {
+			case 8:
+				min = math.MinInt8
+			case 16:
+				min = math.MinInt16
+			case 32:
+				min = math.MinInt32
+			case 64:
+				min = math.MinInt64
+			default:
+				min = math.MinInt32
+			}
+		}
+		value = gofakeit.IntRange(min, int(max))
+	} else {
+		if s.Minimum != nil {
+			min := s.Minimum.GetInt64()
+			max := 0
+			switch bits {
+			case 8:
+				max = math.MaxInt8
+			case 16:
+				max = math.MaxInt16
+			case 32:
+				max = math.MaxInt32
+			case 64:
+				max = math.MaxInt64
+			default:
+				max = math.MaxInt32
+			}
+			value = gofakeit.IntRange(int(min), max)
+		}
+	}
+
+	if s.MultipleOf > 1 {
+		value -= value % int(s.MultipleOf)
+	}
+
+	return value
+}
+
+func fakeUInt(s *Schema, bits int) uint {
+	value := uint(0)
+	if s.Maximum != nil {
+		max := s.Maximum.GetUint64()
+		min := uint(0)
+		if s.Minimum != nil {
+			min = uint(s.Minimum.GetUint64())
+		}
+		value = gofakeit.UintRange(min, uint(max))
+	} else {
+		if s.Minimum != nil {
+			min := s.Minimum.GetUint64()
+			max := uint(0)
+			switch bits {
+			case 8:
+				max = math.MaxUint8
+			case 16:
+				max = math.MaxUint16
+			case 32:
+				max = math.MaxUint32
+			case 64:
+				max = math.MaxUint64
+			default:
+				max = math.MaxUint32
+			}
+			value = gofakeit.UintRange(uint(min), uint(max))
+		}
+	}
+
+	if s.MultipleOf > 1 {
+		value -= value % uint(s.MultipleOf)
+	}
+
+	return value
+}
+
+func fakeFloat32(s *Schema) float32 {
+	value := float32(0)
+	if s.Maximum != nil {
+		max := s.Maximum.GetFloat32()
+		min := float32(math.SmallestNonzeroFloat32)
+		if s.Minimum != nil {
+			min = s.Minimum.GetFloat32()
+		}
+		value = gofakeit.Float32Range(min, max)
+	} else {
+		if s.Minimum != nil {
+			min := s.Minimum.GetFloat32()
+			max := math.MaxFloat32
+			value = gofakeit.Float32Range(min, float32(max))
+		}
+	}
+
+	if s.MultipleOf > 0 && s.MultipleOf < 1 {
+		prec := 16
+		for i := 1; i < 16; i++ {
+			if math.Pow(s.MultipleOf, float64(i)) >= 1 {
+				prec = i
+				break
+			}
+		}
+		v, _ := strconv.ParseFloat(strconv.FormatFloat(float64(value), 'f', prec, 32), 32)
+		value = float32(v)
+	}
+
+	return value
+}
+
+func fakeFloat64(s *Schema) float64 {
+	value := float64(0)
+	if s.Maximum != nil {
+		max := s.Maximum.GetFloat64()
+		min := math.SmallestNonzeroFloat64
+		if s.Minimum != nil {
+			min = s.Minimum.GetFloat64()
+		}
+		value = gofakeit.Float64Range(min, max)
+	} else {
+		if s.Minimum != nil {
+			min := s.Minimum.GetFloat64()
+			max := math.MaxFloat64
+			value = gofakeit.Float64Range(min, max)
+		}
+	}
+
+	if s.MultipleOf > 0 && s.MultipleOf < 1 {
+		prec := 16
+		for i := 1; i < 16; i++ {
+			if math.Pow(s.MultipleOf, float64(i)) >= 1 {
+				prec = i
+				break
+			}
+		}
+		value, _ = strconv.ParseFloat(strconv.FormatFloat(value, 'f', prec, 64), 64)
+	}
+
+	return value
+}
+
 func (x *Schema) generateExample(ctx context.Context, index map[string]*Schema, options core.Options) *core.Value {
 	if x != nil {
 		key := ""
@@ -416,19 +581,34 @@ func (x *Schema) generateExample(ctx context.Context, index map[string]*Schema, 
 			return core.NewBoolValue(gofakeit.Bool())
 		case Schema_TYPE_INTEGER:
 			switch x.Format {
+			case "int8", "Int8", "core.Int8", "mojo.core.Int8":
+				return core.NewInt8Value(int8(fakeInt(x, 8)))
+			case "int16", "Int16", "core.Int16", "mojo.core.Int16":
+				return core.NewInt16Value(int16(fakeInt(x, 16)))
 			case "int32", "Int32", "core.Int32", "mojo.core.Int32":
-				return core.NewInt32Value(gofakeit.Int32())
+				return core.NewInt32Value(int32(fakeInt(x, 32)))
 			case "int64", "Int64", "core.Int64", "mojo.core.Int64":
-				return core.NewInt64Value(gofakeit.Int64())
+				return core.NewInt64Value(int64(fakeInt(x, 64)))
+			case "uint8", "UInt8", "core.UInt8", "mojo.core.UInt8":
+				return core.NewUIntValue(fakeUInt(x, 8))
+			case "uint16", "UInt16", "core.UInt16", "mojo.core.UInt16":
+				return core.NewUIntValue(fakeUInt(x, 16))
 			case "uint32", "UInt32", "core.UInt32", "mojo.core.UInt32":
-				return core.NewUInt32Value(gofakeit.Uint32())
+				return core.NewUInt32Value(uint32(fakeUInt(x, 32)))
 			case "uint64", "UInt64", "core.UInt64", "mojo.core.UInt64":
-				return core.NewUInt64Value(gofakeit.Uint64())
+				return core.NewUInt64Value(uint64(fakeUInt(x, 64)))
 			default:
-				return core.NewInt32Value(gofakeit.Int32())
+				return core.NewInt32Value(int32(fakeInt(x, 32)))
 			}
 		case Schema_TYPE_NUMBER:
-			return core.NewFloat64Value(gofakeit.Float64())
+			switch x.Format {
+			case "float32", "Float32", "float", "core.Float32", "mojo.core.Float32":
+				return core.NewFloat32Value(fakeFloat32(x))
+			case "float64", "Float64", "double", "core.Float64", "mojo.core.Float64":
+				return core.NewFloat64Value(fakeFloat64(x))
+			default:
+				return core.NewFloat64Value(fakeFloat64(x))
+			}
 		case Schema_TYPE_STRING:
 			return core.NewStringValue(x.generateStringExample(options))
 		case Schema_TYPE_ARRAY:

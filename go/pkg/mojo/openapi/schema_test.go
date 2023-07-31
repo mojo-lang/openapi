@@ -66,6 +66,27 @@ func TestSchema_SupplementExample(t *testing.T) {
 	assert.Equal(t, "baz", v.GetObject().GetValue("bar").GetString())
 }
 
+func TestSchema_SupplementExample2(t *testing.T) {
+	schema := &Schema{Type: Schema_TYPE_OBJECT, Properties: map[string]*ReferenceableSchema{
+		"foo": NewReferenceableSchema(&Schema{Type: Schema_TYPE_INTEGER, Format: "int16", Maximum: core.NewInt16Value(100), Minimum: core.NewInt16Value(0), MultipleOf: 5}),
+		"bar": NewReferenceableSchema(&Schema{Type: Schema_TYPE_INTEGER, Format: "uint32", Maximum: core.NewUInt32Value(1000)}),
+		"baz": NewReferenceableSchema(&Schema{Type: Schema_TYPE_NUMBER, Maximum: core.NewFloat64Value(1000.0)}),
+	}}
+	v := schema.SupplementExample(nil)
+	assert.NotNil(t, v)
+	assert.Equal(t, core.ValueKind_VALUE_KIND_OBJECT, v.GetKind())
+	assert.Equal(t, core.ValueKind_VALUE_KIND_INTEGER, v.GetObject().GetValue("foo").GetKind())
+
+	value1 := v.GetObject().GetValue("foo").GetInt()
+	assert.True(t, value1 >= 0 && value1 <= 100)
+
+	value2 := v.GetObject().GetValue("bar").GetUint()
+	assert.True(t, value2 <= 1000)
+
+	value3 := v.GetObject().GetValue("baz").GetFloat64()
+	assert.True(t, value3 <= 1000.0)
+}
+
 func TestSchema_GetMaximum(t *testing.T) {
 	api := &OpenAPI{}
 	content, err := ioutil.ReadFile("./testdata/supplement_example_test.json")
