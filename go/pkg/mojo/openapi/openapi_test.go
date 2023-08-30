@@ -1,13 +1,17 @@
 package openapi
 
 import (
-	"io/ioutil"
+	_ "embed"
+	"os"
 	"testing"
 
 	jsoniter "github.com/json-iterator/go"
 	"github.com/mojo-lang/core/go/pkg/mojo/core"
 	"github.com/stretchr/testify/assert"
 )
+
+//go:embed testdata/api-docs_v2.json
+var apiV2File []byte
 
 func TestOpenAPI_GetOperation(t *testing.T) {
 	o := New()
@@ -60,7 +64,7 @@ func TestOpenAPI_SupplementExample(t *testing.T) {
 
 func TestOpenAPI_SupplementExample2(t *testing.T) {
 	api := &OpenAPI{}
-	content, err := ioutil.ReadFile("./testdata/supplement_example_test.json")
+	content, err := os.ReadFile("./testdata/supplement_example_test.json")
 	if assert.NoError(t, err) {
 		err = jsoniter.Unmarshal(content, api)
 		if assert.NoError(t, err) {
@@ -68,4 +72,16 @@ func TestOpenAPI_SupplementExample2(t *testing.T) {
 		}
 	}
 
+}
+
+func TestOpenAPI_Parse(t *testing.T) {
+	api, err := Parse(apiV2File)
+	assert.NoError(t, err)
+	assert.Equal(t, uint64(3), api.Openapi.Major)
+}
+
+func TestOpenAPI_ParseFile(t *testing.T) {
+	api, err := ParseFile("testdata/api-docs_v2.json")
+	assert.NoError(t, err)
+	assert.Equal(t, uint64(3), api.Openapi.Major)
 }
