@@ -46,20 +46,32 @@ func (x *Schema) ValidateValue(value *core.Value, index map[string]*Schema) erro
 			// TODO add min max check
 			if value.GetKind() == core.ValueKind_VALUE_KIND_INTEGER {
 				return nil
+			} else if value.GetKind() == core.ValueKind_VALUE_KIND_STRING {
+				if _, err := strconv.ParseInt(value.GetString(), 10, 64); err != nil {
+					return fmt.Errorf("the example value type should only be integer, %s", value.GetString())
+				}
+				return nil
 			} else {
 				return fmt.Errorf("the example value type should only be integer")
 			}
 		case Schema_TYPE_NUMBER:
 			if value.GetKind() == core.ValueKind_VALUE_KIND_NUMBER {
 				return nil
+			} else if value.GetKind() == core.ValueKind_VALUE_KIND_STRING {
+				if _, err := strconv.ParseFloat(value.GetString(), 64); err != nil {
+					return fmt.Errorf("the example value type should only be number, %s", value.GetString())
+				}
+				return nil
 			} else {
 				return fmt.Errorf("the example value type should only be number")
 			}
 		case Schema_TYPE_STRING:
 			// TODO add pattern check
-			if value.GetKind() == core.ValueKind_VALUE_KIND_STRING || value.GetKind() == core.ValueKind_VALUE_KIND_BYTES {
+			switch value.GetKind() {
+			case core.ValueKind_VALUE_KIND_STRING, core.ValueKind_VALUE_KIND_BYTES,
+				core.ValueKind_VALUE_KIND_INTEGER, core.ValueKind_VALUE_KIND_NUMBER:
 				return nil
-			} else {
+			default:
 				return fmt.Errorf("the example value type should only be string")
 			}
 		case Schema_TYPE_ARRAY:
