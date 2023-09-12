@@ -13,7 +13,7 @@ func TestSchema_Parse(t *testing.T) {
 	s := `{
 			"maxLength": 32,
 			"minLength": 1,
-			"pattern": "^[\u4E00-\u9FA5A-Za-z0-9_.]{1,32}$",
+			"pattern": "^[\\u4E00-\\u9FA5A-Za-z0-9_.]{1,32}$",
 			"type": "string",
 			"description": "名称",
 			"format": "Name"
