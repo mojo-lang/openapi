@@ -132,3 +132,12 @@ func TestSchema_SupplementExample_Array(t *testing.T) {
 		}
 	}
 }
+
+func TestFakeString(t *testing.T) {
+	str := FakeString(&Schema{
+		Type:   Schema_TYPE_STRING,
+		Format: "Date",
+	})
+
+	assert.NotEmpty(t, str)
+}

@@ -7,7 +7,7 @@ require (
 	github.com/daveshanley/vacuum v0.3.7
 	github.com/getkin/kin-openapi v0.118.0
 	github.com/json-iterator/go v1.1.12
-	github.com/mojo-lang/core/go v0.0.0-20230912062637-b300b51a0677
+	github.com/mojo-lang/core/go v0.0.0-20230919060842-d7cfd4ca1d3a
 	github.com/mojo-lang/document/go v0.0.0-20230427095224-881190052073
 	github.com/mojo-lang/yaml/go v0.0.0-20230830025808-885352a38ce8
 	github.com/stretchr/testify v1.8.4
