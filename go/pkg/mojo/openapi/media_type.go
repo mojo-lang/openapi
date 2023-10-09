@@ -26,6 +26,8 @@ func (x *MediaType) supplementExample(index map[string]*Schema, mediaType string
 				return example
 			case core.ApplicationWwwFormUrlencoded:
 				return example
+			default:
+				return example
 			}
 		}
 	}
@@ -39,6 +41,8 @@ func (x *MediaType) generateExample(index map[string]*Schema, mediaType string) 
 			case core.ApplicationJson:
 				return example
 			case core.ApplicationWwwFormUrlencoded:
+				return example
+			default:
 				return example
 			}
 		}
