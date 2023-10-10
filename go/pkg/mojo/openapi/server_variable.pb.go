@@ -41,7 +41,7 @@ func (x *ServerVariable) Reset() {
 	}
 }
 
-func (x *ServerVariable) ToText() string {
+func (x *ServerVariable) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

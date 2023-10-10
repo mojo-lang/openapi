@@ -41,7 +41,7 @@ func (x *ExternalDocument) Reset() {
 	}
 }
 
-func (x *ExternalDocument) ToText() string {
+func (x *ExternalDocument) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

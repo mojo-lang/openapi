@@ -40,7 +40,7 @@ func (x *LintResult) Reset() {
 	}
 }
 
-func (x *LintResult) ToText() string {
+func (x *LintResult) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
@@ -99,7 +99,7 @@ func (x *LintOperation) Reset() {
 	}
 }
 
-func (x *LintOperation) ToText() string {
+func (x *LintOperation) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

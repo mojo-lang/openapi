@@ -57,7 +57,7 @@ func (x SecurityScheme_Type) Enum() *SecurityScheme_Type {
 	return p
 }
 
-func (x SecurityScheme_Type) ToText() string {
+func (x SecurityScheme_Type) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
@@ -102,7 +102,7 @@ func (x *SecurityScheme) Reset() {
 	}
 }
 
-func (x *SecurityScheme) ToText() string {
+func (x *SecurityScheme) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

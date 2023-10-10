@@ -45,7 +45,7 @@ func (x *Link) Reset() {
 	}
 }
 
-func (x *Link) ToText() string {
+func (x *Link) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

@@ -43,7 +43,7 @@ func (x *Reference) Reset() {
 	}
 }
 
-func (x *Reference) ToText() string {
+func (x *Reference) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

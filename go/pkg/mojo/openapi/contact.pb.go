@@ -42,7 +42,7 @@ func (x *Contact) Reset() {
 	}
 }
 
-func (x *Contact) ToText() string {
+func (x *Contact) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

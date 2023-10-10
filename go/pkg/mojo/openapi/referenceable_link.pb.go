@@ -42,7 +42,7 @@ func (x *ReferenceableLink) Reset() {
 	}
 }
 
-func (x *ReferenceableLink) ToText() string {
+func (x *ReferenceableLink) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

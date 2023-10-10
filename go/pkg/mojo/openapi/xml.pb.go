@@ -44,7 +44,7 @@ func (x *Xml) Reset() {
 	}
 }
 
-func (x *Xml) ToText() string {
+func (x *Xml) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 

@@ -41,7 +41,7 @@ func (x *License) Reset() {
 	}
 }
 
-func (x *License) ToText() string {
+func (x *License) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
