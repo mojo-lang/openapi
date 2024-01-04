@@ -27,6 +27,10 @@ func (x *Components) GetSchema(url *core.Url) *Schema {
 	}
 
 	segments := strings.Split(url.GetFragment(), "/")
+	if len(segments) > 0 && len(segments[0]) == 0 {
+		segments = segments[1:]
+	}
+
 	if len(segments) > 2 && segments[0] == "components" && segments[1] == "schemas" {
 		object := segments[len(segments)-1]
 		return x.Schemas[object]
